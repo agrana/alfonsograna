@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="hero-section">
+    <h1 class="page-heading">{{ page.title }}</h1>
+    <p class="page-description">{{ page.description }}</p>
+</div>
+
+<div class="content-section">
+    {{ content }}
+</div>
+
+{% if site.posts.size > 0 %}
+<div class="posts-section">
+    <div class="card">
+        <h2>Recent Posts</h2>
+        <ul class="post-list">
+            {% for post in site.posts limit:5 %}
+            <li>
+                <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+                <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+                {% if post.excerpt %}
+                <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        <div style="margin-top: 2rem;">
+            <a href="{{ "/posts/" | relative_url }}" class="btn">View All Posts</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="cta-section">
+    <div class="card">
+        <h2>Get in Touch</h2>
+        <p>Interested in working together or just want to say hello? I'd love to hear from you!</p>
+        <div style="margin-top: 1.5rem;">
+            <a href="{{ "/about/" | relative_url }}" class="btn">Learn More About Me</a>
+            {% if site.email %}
+            <a href="mailto:{{ site.email }}" class="btn btn-secondary" style="margin-left: 1rem;">Send Email</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

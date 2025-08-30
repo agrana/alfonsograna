@@ -28,3 +28,5 @@ Feel free to reach out to me through:
 ## About This Site
 
 This site is built with [Jekyll](https://jekyllrb.com/), a static site generator that makes it easy to create simple, fast, and secure websites. It's hosted on GitHub Pages for easy deployment and maintenance.
+
+The design features a modern, clean interface with smooth animations and responsive layout that works great on all devices.
