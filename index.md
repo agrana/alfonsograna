@@ -1,8 +1,9 @@
 ---
-layout: home
-title: Welcome
-description: Welcome to my personal Jekyll site. I'm passionate about technology, writing, and sharing knowledge.
+layout: default
+title: "Welcome"
 ---
+
+# Welcome
 
 Welcome to my personal site! I'm passionate about technology, writing, and sharing knowledge. This site serves as a platform for me to share my thoughts, experiences, and insights.
 
