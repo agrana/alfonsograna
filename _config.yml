@@ -9,6 +9,10 @@ url: "https://agrana.github.io" # the base hostname & protocol for your site, e.
 twitter_username: jekyllrb
 github_username:  jekyll
 
+# Social media profiles
+medium_username: yourusername
+linkedin_username: yourusername
+
 # Build settings
 remote_theme: pages-themes/hacker@v0.2.0
 plugins:
@@ -18,3 +22,7 @@ plugins:
 # Theme configuration
 show_downloads: false
 show_excerpts: true
+
+# Cross-posting settings
+canonical_url: true
+medium_crosspost: true
