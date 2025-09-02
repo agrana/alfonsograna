@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "If your coding assistant execute commands do this"
-date: 2025-09-02 16:51:00 -0002
+date: 2025-09-02 10:51:00 -0002
 categories: ai coding-assistants coding
 ---
 
