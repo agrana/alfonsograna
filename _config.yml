@@ -26,3 +26,6 @@ show_excerpts: true
 # Cross-posting settings
 canonical_url: true
 medium_crosspost: true
+
+# Allow future posts to be displayed
+future: true

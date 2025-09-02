@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "If your coding assistant execute commands do this"
-date: 2025-09-02 10:51:00 -0002
+date: 2025-09-02 10:51:00 -0000
 categories: ai coding-assistants coding
+excerpt: "Learn how to make your coding assistant more efficient by using CLI commands and GitLab push options for creating merge requests automatically."
 ---
 
 # Let your coding assistant to run local commands is always cheaper than MCP
