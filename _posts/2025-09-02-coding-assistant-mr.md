@@ -3,14 +3,15 @@ layout: post
 title: "If your coding assistant execute commands do this"
 date: 2025-09-02 10:51:00 -0000
 categories: ai coding-assistants coding
+tags: [git, gitlab, cli, automation, productivity, coding-assistant, cursor, ai]
 excerpt: "Learn how to make your coding assistant more efficient by using CLI commands and GitLab push options for creating merge requests automatically."
 ---
 
-# Let your coding assistant to run local commands is always cheaper than MCP
+## Let your coding assistant to run local commands is always cheaper than MCP
 
 When you have a cli command to do what you need to as the external tools is always cheaper in tokens to instruct the assistant to use the command insteand of using  an MCP server.
 
-# Let your coding assistants open your MRs in Gitlab
+## Let your coding assistants open your MRs in Gitlab
 
 When working with cursor I usually create my branches and commit messages with the AI
 So convinient and my commit messages are so much better one line per change explaining clearly what I want to achieve is awesome
@@ -31,7 +32,7 @@ git push \
 
 If this does not work you can also use the cli `glab mr` command.
 
-# Telling Cursor to use this
+## Telling Cursor to use this
 
 So now I can crete a rule in cursor to instruct the model to crete MRs when I mention it.
 
