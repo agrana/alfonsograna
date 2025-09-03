@@ -9,6 +9,10 @@ url: "https://agrana.github.io" # the base hostname & protocol for your site, e.
 twitter_username: jekyllrb
 github_username:  jekyll
 
+# Author information
+author: "Alfonso Grana"
+author_name: "Alfonso Grana"
+
 # Social media profiles
 medium_username: yourusername
 linkedin_username: yourusername

@@ -5,6 +5,7 @@ date: 2025-09-02 10:51:00 -0000
 categories: ai coding-assistants coding
 tags: [git, gitlab, cli, automation, productivity, coding-assistant, cursor, ai]
 excerpt: "Learn how to make your coding assistant more efficient by using CLI commands and GitLab push options for creating merge requests automatically."
+author: "Alfonso Grana"
 ---
 
 ## Prefer local CLI over MCP
