@@ -24,3 +24,30 @@ layout: default
   
 
 {% endif %}
+
+<!-- Mermaid.js for diagram rendering -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      themeVariables: {
+        primaryColor: '#00ff00',
+        primaryTextColor: '#ffffff',
+        primaryBorderColor: '#00ff00',
+        lineColor: '#00ff00',
+        secondaryColor: '#006100',
+        tertiaryColor: '#ffffff',
+        background: '#1a1a1a',
+        mainBkg: '#1a1a1a',
+        secondBkg: '#2a2a2a',
+        tertiaryBkg: '#3a3a3a'
+      },
+      flowchart: {
+        htmlLabels: true,
+        curve: 'basis'
+      }
+    });
+  });
+</script>
