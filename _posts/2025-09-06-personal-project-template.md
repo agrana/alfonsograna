@@ -98,8 +98,17 @@ The template includes a working demo (todo list with auth) that shows:
 
 Here's how everything flows together:
 
-```
-👤 User → ☁️ Cloudflare → ▲ Vercel → 🗄️ Supabase → 🔐 Google Auth
+```mermaid
+graph LR
+    A[👤 User] --> B[☁️ Cloudflare]
+    B --> C[▲ Vercel]
+    C --> D[🗄️ Supabase]
+    D --> E[🔐 Google Auth]
+    
+    B --> F[DNS & CDN]
+    C --> G[Next.js App]
+    D --> H[Database & Auth]
+    E --> I[Social Login]
 ```
 
 **Cloudflare** handles DNS, CDN, and security. **Vercel** hosts your Next.js app. **Supabase** provides the database and auth. **Google Auth** enables social login.

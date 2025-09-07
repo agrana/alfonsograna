@@ -22,6 +22,7 @@ remote_theme: pages-themes/hacker@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+  - jekyll-mermaid
 
 # Theme configuration
 show_downloads: false
@@ -33,3 +34,17 @@ medium_crosspost: true
 
 # Allow future posts to be displayed
 future: true
+
+# Mermaid configuration
+mermaid:
+  version: "10.6.1"
+  theme: "dark"
+  config:
+    theme: "dark"
+    themeVariables:
+      primaryColor: "#00ff00"
+      primaryTextColor: "#ffffff"
+      primaryBorderColor: "#00ff00"
+      lineColor: "#00ff00"
+      secondaryColor: "#006100"
+      tertiaryColor: "#ffffff"
