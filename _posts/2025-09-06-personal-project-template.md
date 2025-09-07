@@ -29,7 +29,9 @@ By the time you're done, you've spent **days** on boilerplate instead of buildin
 
 ## The Solution: A Production-Ready Template
 
-I created a **personal project template** that eliminates the setup tax. Here's what you get:
+I created a **personal project template** that eliminates the setup tax. 
+
+Here's what you get:
 
 ### 🚀 **Modern Stack, Zero Configuration**
 
@@ -94,6 +96,20 @@ The template includes a working demo (todo list with auth) that shows:
 - Responsive design
 - Server-side rendering
 
+### 💰 **Cost-Effective with Generous Free Tiers**
+
+One of the best parts? This entire stack runs on **generous free tiers**:
+
+- **Vercel**: Unlimited personal projects, 100GB bandwidth/month
+- **Supabase**: 500MB database, 50,000 monthly active users, 2GB bandwidth
+- **Cloudflare**: Free DNS, CDN, and basic security features
+- **Google Auth**: Free OAuth integration
+- **GitHub**: Free hosting for your template and documentation
+
+**Total cost for personal projects: $0/month** 🎉
+
+This means you can build, test, and deploy multiple projects without worrying about infrastructure costs. Perfect for learning, side projects, and early-stage startups.
+
 ## The Architecture
 
 Here's how everything flows together:
@@ -117,16 +133,17 @@ graph LR
 
 Since using this template, I've been able to:
 
-- **Start new projects in 30 minutes** instead of 3 days
+- **Start new projects in 30 minutes** instead of multiple hours
 - **Focus on features** instead of infrastructure
 - **Maintain consistent quality** across all projects
 - **Reduce cognitive load** when starting new projects
+- **Build without budget constraints** - everything runs on free tiers
+- **Experiment freely** without worrying about hosting costs
 
 ## The Technical Details
 
 The template includes:
 
-- **Comprehensive architecture diagrams** (Mermaid)
 - **Interactive setup scripts** for easy configuration
 - **Pre-commit hooks** for code quality
 - **Infrastructure modules** for reusability
@@ -137,7 +154,7 @@ The template includes:
 
 Ready to eliminate the setup tax? The template is available on GitHub:
 
-**🔗 [Explore the Template →](https://github.com/your-username/personal-project-template)**
+**🔗 [Explore the Template →](https://github.com/agrana/free_personal_stack)**
 
 ## Key Takeaways
 
@@ -148,6 +165,8 @@ Ready to eliminate the setup tax? The template is available on GitHub:
 3. **Developer experience matters** - If the tooling is hard to use, developers won't use it.
 
 4. **Documentation is essential** - Good docs aren't just nice to have; they're critical for adoption.
+
+5. **Free tiers enable experimentation** - Generous free tiers from modern providers make it possible to build production-ready apps without upfront costs.
 
 ## What's Next?
 
