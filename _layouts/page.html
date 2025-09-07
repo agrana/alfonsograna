@@ -30,7 +30,7 @@ layout: default
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     mermaid.initialize({
-      startOnLoad: true,
+      startOnLoad: false,
       theme: 'dark',
       themeVariables: {
         primaryColor: '#00ff00',
@@ -49,5 +49,18 @@ layout: default
         curve: 'basis'
       }
     });
+    
+    // Process all mermaid code blocks
+    const mermaidBlocks = document.querySelectorAll('code.language-mermaid');
+    mermaidBlocks.forEach(function(block) {
+      const parent = block.parentElement;
+      const diagram = document.createElement('div');
+      diagram.className = 'mermaid';
+      diagram.textContent = block.textContent;
+      parent.replaceWith(diagram);
+    });
+    
+    // Render all mermaid diagrams
+    mermaid.run();
   });
 </script>
