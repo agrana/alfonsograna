@@ -184,7 +184,7 @@ Building this template has transformed how I approach personal projects. Instead
 
 ---
 
-*Have questions about the template? Check out the [GitHub repository](https://github.com/your-username/personal-project-template) or reach out on [Twitter](https://twitter.com/your-username).*
+*Have questions about the template? Check out the [GitHub repository](https://github.com/agrana/free_personal_stack) or reach out on [Twitter](https://twitter.com/agrana).*
 
 ---
 
