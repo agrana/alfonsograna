@@ -4,7 +4,7 @@ title: "From Idea to Production in 30 Minutes: My Personal Project Template"
 date: 2025-09-02 10:51:00 -0000
 categories: [productivity, devops, web-development, infrastructure, templates]
 tags: [nextjs, supabase, terraform, devops, web-development, productivity, infrastructure, typescript, vercel, cloudflare, automation, project-template]
-excerpt: "How I built a comprehensive template that combines Next.js, Supabase, Terraform, and modern DevOps to eliminate the "setup tax" on personal projects."
+excerpt: "How I built a comprehensive template that combines Next.js, Supabase, Terraform, and modern DevOps to eliminate the setup tax on personal projects."
 author: "Alfonso Grana"
 ---
 
