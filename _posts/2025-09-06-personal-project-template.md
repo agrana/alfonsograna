@@ -8,8 +8,6 @@ excerpt: "How I built a comprehensive template that combines Next.js, Supabase, 
 author: "Alfonso Grana"
 ---
 
-# From Idea to Production in 30 Minutes: My Personal Project Template
-
 *How I built a comprehensive template that combines Next.js, Supabase, Terraform, and modern DevOps to eliminate the "setup tax" on personal projects.*
 
 ---
