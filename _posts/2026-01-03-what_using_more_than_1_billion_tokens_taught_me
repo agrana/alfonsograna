@@ -1,3 +1,14 @@
+---
+layout: post
+title: "What using more than 1 billion tokens in cursor thaught me"
+date: 2026-01-03 10:51:00 -0000
+categories: [productivity, devops, web-development, infrastructure, templates]
+tags: [developmen, coding-assistants, AI]
+excerpt: "What using more thatn 1 billion tokens in cursor thaught me"
+author: "Alfonso Grana"
+---
+
+# What using more thatn 1 billion tokens in cursor thaught me
 
 Recently received the cursor year wrap and it turns out that fired up 3.5K agents and consumed 1.15 billion tokens.
 
