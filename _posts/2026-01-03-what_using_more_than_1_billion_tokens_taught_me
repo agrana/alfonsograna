@@ -1,0 +1,21 @@
+
+Recently received the cursor year wrap and it turns out that fired up 3.5K agents and consumed 1.15 billion tokens.
+
+That got me thinking about how coding with AI affected my workflow.   
+
+So here are few notes from my experience.
+
+- **Writing clearly is now more important than ever**. If the problem is vague, the output will be long as the model is rewarded for providing a valid answer it needs to write more to hit the right case in a vague description. Spend time thinking and writing specs, constrains, edge cases that are 1 unambiguous and 2 straight to the point. The model won’t resolve ambiguity for you it will confidently pick one interpretation. At the end of the day Isn't dealing with ambiguity [what actually makes you senior](https://terriblesoftware.org/2025/11/25/what-actually-makes-you-senior/) anyway?
+    
+- **Expect verbosity and protect against it.**  AI will generate unnecessary code, extra abstractions, and “nice-to-have” scaffolding. Trim or discard the slop before opening a PR. Remember to clean up after you changed path the agent will leave the old answer around if you don't specifically ask to clean up dead code #dead-code-prevention[what we can do to automate this] Agent rules help but are not always enough. Be ready to read  way more code than before. Your throughput increases, but so does the volume you need to review and prune before the code is showable.
+
+- **Never merge what you don’t understand.** ~~Shipping mystery code is like skipping a class: it feels fine today, then compounds into confusion later when the system grows.~~
+  You need to treat each feature like flying an aircraft[mention to book] engage at take-off establish test pre-commit hooks quality gates and at the landing security scanning dependencies, clean up dead code and comments that don't add nothing, peer review. 
+  
+  ~~Always have this in mind [The lethal trifecta for AI agents: private data, untrusted content, and external communication](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)~~
+    
+- **Exploring options is cheap now.** You can ask for 3 different approaches, try the smallest viable version of each, then commit to the best one once you see it working. If something does not feel right start from scratch you know what to ask now. 
+    
+- **If you’re about to buy a SaaS tool~~, think again.~~** The economics have changed. Many “small internal tools” are now realistic to build yourself faster than procurement, often cheaper than the subscription. 
+    
+- **Framework and language consolidation is real.**  Around the ecosystems the models know best. For many apps: **Next.js in Vercel + Supabase** goes a long way for free.
