@@ -38,7 +38,7 @@ permalink: /home-hermes-setup/
 
 <div class="diagram-page">
 
-A map of the home AI operating layer: access from Mac, phone, and web apps into the Fedora mini PC running Hermes, with memory, notes, LLM providers, coding agents, and deployment tools around it.
+A readable web version of the home AI operating layer: access from Mac, phone, and web apps into the Fedora mini PC running Hermes, with memory, notes, LLM providers, coding agents, and deployment tools around it. The original Excalidraw source is still available below.
 
 <div class="diagram-actions">
   <a href="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}">Open SVG</a>
