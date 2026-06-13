@@ -6,7 +6,7 @@ permalink: /home-hermes-setup/
 
 <style>
 .diagram-page {
-  max-width: 1120px;
+  max-width: 1180px;
 }
 .diagram-frame {
   background: #fff;
@@ -19,7 +19,7 @@ permalink: /home-hermes-setup/
 .diagram-frame img {
   display: block;
   width: 100%;
-  min-width: 760px;
+  min-width: 900px;
   height: auto;
 }
 .diagram-actions {
@@ -38,7 +38,7 @@ permalink: /home-hermes-setup/
 
 <div class="diagram-page">
 
-A map of the current Hermes-at-home setup: WhatsApp as the conversation entry point, Hermes running on the Fedora mini PC, and Codex/Cursor tools connected for inference and coding work.
+A map of the home AI operating layer: access from Mac, phone, and web apps into the Fedora mini PC running Hermes, with memory, notes, LLM providers, coding agents, and deployment tools around it.
 
 <div class="diagram-actions">
   <a href="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}">Open SVG</a>
@@ -46,7 +46,7 @@ A map of the current Hermes-at-home setup: WhatsApp as the conversation entry po
 </div>
 
 <div class="diagram-frame">
-  <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home Hermes setup diagram">
+  <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
 </div>
 
 </div>
