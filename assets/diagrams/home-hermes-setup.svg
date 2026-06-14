@@ -1,157 +1,199 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">
-<title id="title">Home AI Operating Layer</title>
-<desc id="desc">Readable architecture diagram of the home Hermes setup with access channels, Fedora mini PC control plane, external intelligence services, coding agents, and deployment targets.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1180" viewBox="0 0 1700 1180" role="img" aria-labelledby="title desc">
+<title id="title">Home AI Operating Layer — Hermes Chat as the Strategic Center</title>
+<desc id="desc">Architecture diagram of Alfons' home Hermes setup. Hermes Chat sits at the center of the Fedora mini PC strategy, reached through Hermes Gateway from phone and messaging channels, connected to Honcho and Obsidian as memory, and to web apps through GitHub, Vercel, and Supabase.</desc>
 <defs>
   <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#2563eb"/></marker>
   <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#16a34a"/></marker>
   <marker id="arrow-purple" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#7c3aed"/></marker>
   <marker id="arrow-orange" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#ea580c"/></marker>
   <marker id="arrow-gray" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#64748b"/></marker>
-  <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.14"/></filter>
+  <marker id="arrow-red" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#dc2626"/></marker>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="4" stdDeviation="9" flood-color="#0f172a" flood-opacity="0.14"/></filter>
   <style>
-    .title { font: 800 34px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #111827; }
+    .title { font: 800 36px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #111827; }
     .subtitle { font: 400 17px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #4b5563; }
-    .section { font: 700 21px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #111827; }
-    .card-title { font: 700 18px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #111827; }
+    .machine { font: 600 15px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #475569; }
+    .section { font: 800 21px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #111827; }
+    .card-title { font: 800 18px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #111827; }
     .card-body { font: 400 15px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #374151; }
-    .small { font: 600 13px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #334155; }
+    .card-body-strong { font: 700 15px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #1f2937; }
+    .small { font: 700 13px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #334155; }
     .caption { font: 500 14px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #475569; }
+    .tiny { font: 600 12px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #64748b; }
   </style>
 </defs>
-<rect width="1600" height="1080" fill="#fbfdff"/>
-<text x="80" y="70" class="title">Home AI Operating Layer</text>
-<text x="80" y="102" class="subtitle">Fedora mini PC running Hermes + Honcho, reachable from Mac and phone, with coding agents and LLM providers behind it.</text>
+<rect width="1700" height="1180" fill="#fbfdff"/>
+<text x="80" y="66" class="title">Home AI Operating Layer</text>
+<text x="80" y="98" class="subtitle">Hermes Chat is the center of the strategy: the conversation surface that coordinates memory, tools, agents, and shipping.</text>
+<text x="80" y="126" class="machine">Machine: fedora.home · Fedora Linux 44 · AMD Ryzen 3 3300U · 13Gi RAM · 475G disk · kernel 6.19.10-300.fc44.x86_64</text>
 
-<rect x="70" y="140" width="360" height="560" rx="24" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10 9"/>
-<text x="98" y="182" class="section" fill="#94a3b8">Access</text>
-<rect x="480" y="140" width="600" height="560" rx="24" fill="#eff6ff" stroke="#60a5fa" stroke-width="2" stroke-dasharray="10 9"/>
-<text x="508" y="182" class="section" fill="#60a5fa">Home Fedora mini PC</text>
-<rect x="1130" y="140" width="390" height="560" rx="24" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" stroke-dasharray="10 9"/>
-<text x="1158" y="182" class="section" fill="#f59e0b">External intelligence</text>
-<path d="M385,257 C455,257 500,305 570,305" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M385,387 C455,387 500,335 570,335" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M385,517 C455,517 500,360 570,360" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
-<path d="M650,360 L650,420" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M735,360 C790,360 870,420 925,420" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M650,510 L650,565" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
-<path d="M925,510 L925,565" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
-<path d="M900,292 C980,292 1090,257 1170,257" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
-<path d="M900,325 C980,325 1090,372 1170,372" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
-<path d="M900,355 C1010,355 1060,515 1170,515" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M1035,465 C1105,465 1255,515 1325,515" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M1035,465 C1090,465 1115,652 1170,652" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
+<!-- Columns -->
+<rect x="70" y="165" width="360" height="610" rx="24" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10 9"/>
+<text x="98" y="207" class="section" fill="#94a3b8">Access surfaces</text>
+<rect x="475" y="165" width="620" height="610" rx="24" fill="#eff6ff" stroke="#60a5fa" stroke-width="2" stroke-dasharray="10 9"/>
+<text x="503" y="207" class="section" fill="#60a5fa">Home Fedora mini PC</text>
+<rect x="1140" y="165" width="485" height="610" rx="24" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" stroke-dasharray="10 9"/>
+<text x="1168" y="207" class="section" fill="#f59e0b">External systems + web apps</text>
+
+<!-- Arrows behind cards -->
+<path d="M385,285 C465,285 530,360 600,405" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M385,415 C455,415 505,285 575,285" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M655,338 C655,360 655,374 655,392" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M740,485 C715,525 700,548 690,580" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<path d="M875,485 C900,525 922,548 955,580" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
+<path d="M930,360 C1030,300 1080,277 1180,277" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
+<path d="M930,405 C1035,405 1085,395 1190,395" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
+<path d="M930,450 C1035,500 1085,545 1190,545" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M1422,587 L1422,635" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
+<path d="M1302,587 C1260,610 1238,624 1220,650" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<path d="M1348,692 C1298,712 1258,724 1210,724" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
+<path d="M1430,692 C1470,715 1500,725 1535,725" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+
+<!-- Access cards -->
 <g id="mac" filter="url(#shadow)">
-<rect x="115" y="215" width="270" height="84" rx="18" fill="#ffffff"/>
-<rect x="115" y="215" width="270" height="84" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
-<text x="137" y="247" class="card-title">MacBook</text>
-<text x="137" y="275" class="card-body">RDP / SSH / browser</text>
+  <rect x="115" y="243" width="270" height="84" rx="18" fill="#ffffff"/>
+  <rect x="115" y="243" width="270" height="84" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="137" y="275" class="card-title">MacBook</text>
+  <text x="137" y="303" class="card-body">RDP / SSH / browser</text>
 </g>
 <g id="phone" filter="url(#shadow)">
-<rect x="115" y="345" width="270" height="84" rx="18" fill="#ffffff"/>
-<rect x="115" y="345" width="270" height="84" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
-<text x="137" y="377" class="card-title">Phone</text>
-<text x="137" y="405" class="card-body">WhatsApp / voice notes</text>
+  <rect x="115" y="373" width="270" height="104" rx="18" fill="#ffffff"/>
+  <rect x="115" y="373" width="270" height="104" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="137" y="405" class="card-title">Phone</text>
+  <text x="137" y="433" class="card-body">WhatsApp / voice notes</text>
+  <text x="137" y="455" class="card-body-strong">enters through Gateway</text>
 </g>
-<g id="webapps" filter="url(#shadow)">
-<rect x="115" y="475" width="270" height="84" rx="18" fill="#ffffff"/>
-<rect x="115" y="475" width="270" height="84" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
-<text x="137" y="507" class="card-title">Web apps</text>
-<text x="137" y="535" class="card-body">SavedTube + dashboards</text>
+<g id="operator" filter="url(#shadow)">
+  <rect x="115" y="540" width="270" height="104" rx="18" fill="#ffffff"/>
+  <rect x="115" y="540" width="270" height="104" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+  <text x="137" y="572" class="card-title">Alfons</text>
+  <text x="137" y="600" class="card-body">strategy, prompts, decisions</text>
+  <text x="137" y="622" class="card-body">from any access surface</text>
 </g>
-<g id="hermes" filter="url(#shadow)">
-<rect x="570" y="250" width="330" height="110" rx="18" fill="#ffffff"/>
-<rect x="570" y="250" width="330" height="110" rx="18" fill="#dff4ff" stroke="#0284c7" stroke-width="2.5"/>
-<text x="592" y="282" class="card-title">Hermes Agent</text>
-<text x="592" y="310" class="card-body">orchestrates tools, memory,</text>
-<text x="592" y="332" class="card-body">messages, coding delegates</text>
-</g>
+
+<!-- Center column cards -->
 <g id="gateway" filter="url(#shadow)">
-<rect x="535" y="420" width="230" height="90" rx="18" fill="#ffffff"/>
-<rect x="535" y="420" width="230" height="90" rx="18" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
-<text x="557" y="452" class="card-title">Hermes Gateway</text>
-<text x="557" y="480" class="card-body">messaging bridge</text>
+  <rect x="545" y="242" width="220" height="96" rx="18" fill="#ffffff"/>
+  <rect x="545" y="242" width="220" height="96" rx="18" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <text x="567" y="274" class="card-title">Hermes Gateway</text>
+  <text x="567" y="302" class="card-body">messaging bridge</text>
+  <text x="567" y="324" class="card-body">phone/chat ingress</text>
+</g>
+<g id="hermes-chat" filter="url(#shadow)">
+  <rect x="590" y="392" width="360" height="114" rx="22" fill="#ffffff"/>
+  <rect x="590" y="392" width="360" height="114" rx="22" fill="#dff4ff" stroke="#0284c7" stroke-width="4"/>
+  <text x="620" y="428" class="card-title">Hermes Chat</text>
+  <text x="620" y="457" class="card-body-strong">CENTER OF THE STRATEGY</text>
+  <text x="620" y="481" class="card-body">conversation → intent → actions</text>
 </g>
 <g id="tools" filter="url(#shadow)">
-<rect x="815" y="420" width="220" height="90" rx="18" fill="#ffffff"/>
-<rect x="815" y="420" width="220" height="90" rx="18" fill="#ccfbf1" stroke="#0f766e" stroke-width="2.5"/>
-<text x="837" y="452" class="card-title">CLI tools</text>
-<text x="837" y="480" class="card-body">terminal + browser</text>
+  <rect x="815" y="242" width="220" height="96" rx="18" fill="#ffffff"/>
+  <rect x="815" y="242" width="220" height="96" rx="18" fill="#ccfbf1" stroke="#0f766e" stroke-width="2.5"/>
+  <text x="837" y="274" class="card-title">Hermes Agent</text>
+  <text x="837" y="302" class="card-body">tools + browser</text>
+  <text x="837" y="324" class="card-body">terminal + skills</text>
 </g>
 <g id="honcho" filter="url(#shadow)">
-<rect x="535" y="565" width="230" height="90" rx="18" fill="#ffffff"/>
-<rect x="535" y="565" width="230" height="90" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="2.5"/>
-<text x="557" y="597" class="card-title">Honcho</text>
-<text x="557" y="625" class="card-body">persistent memory</text>
+  <rect x="535" y="580" width="285" height="124" rx="18" fill="#ffffff"/>
+  <rect x="535" y="580" width="285" height="124" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="557" y="612" class="card-title">Honcho</text>
+  <text x="557" y="640" class="card-body-strong">external agent memory</text>
+  <text x="557" y="662" class="card-body">semantic recall + user model</text>
+  <text x="557" y="684" class="card-body">used by Hermes Chat/Agent</text>
 </g>
 <g id="obsidian" filter="url(#shadow)">
-<rect x="815" y="565" width="220" height="90" rx="18" fill="#ffffff"/>
-<rect x="815" y="565" width="220" height="90" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
-<text x="837" y="597" class="card-title">Obsidian</text>
-<text x="837" y="625" class="card-body">notes vault</text>
+  <rect x="850" y="580" width="220" height="124" rx="18" fill="#ffffff"/>
+  <rect x="850" y="580" width="220" height="124" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <text x="872" y="612" class="card-title">Obsidian</text>
+  <text x="872" y="640" class="card-body-strong">external memory</text>
+  <text x="872" y="662" class="card-body">notes vault, CV,</text>
+  <text x="872" y="684" class="card-body">project knowledge</text>
 </g>
+
+<!-- External systems -->
 <g id="openai" filter="url(#shadow)">
-<rect x="1170" y="215" width="290" height="84" rx="18" fill="#ffffff"/>
-<rect x="1170" y="215" width="290" height="84" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
-<text x="1192" y="247" class="card-title">OpenAI / ChatGPT</text>
-<text x="1192" y="275" class="card-body">reasoning + APIs</text>
+  <rect x="1190" y="235" width="185" height="84" rx="18" fill="#ffffff"/>
+  <rect x="1190" y="235" width="185" height="84" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="1212" y="267" class="card-title">OpenAI</text>
+  <text x="1212" y="295" class="card-body">reasoning APIs</text>
 </g>
 <g id="gemini" filter="url(#shadow)">
-<rect x="1170" y="330" width="290" height="84" rx="18" fill="#ffffff"/>
-<rect x="1170" y="330" width="290" height="84" rx="18" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/>
-<text x="1192" y="362" class="card-title">Gemini / Google</text>
-<text x="1192" y="390" class="card-body">Drive, docs, 2TB plan</text>
+  <rect x="1410" y="235" width="185" height="84" rx="18" fill="#ffffff"/>
+  <rect x="1410" y="235" width="185" height="84" rx="18" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="1432" y="267" class="card-title">Gemini</text>
+  <text x="1432" y="295" class="card-body">Google workspace</text>
 </g>
-<g id="cursor" filter="url(#shadow)">
-<rect x="1170" y="475" width="135" height="84" rx="18" fill="#ffffff"/>
-<rect x="1170" y="475" width="135" height="84" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
-<text x="1192" y="507" class="card-title">Cursor</text>
-<text x="1192" y="535" class="card-body">agent CLI</text>
+<g id="coding" filter="url(#shadow)">
+  <rect x="1190" y="355" width="405" height="84" rx="18" fill="#ffffff"/>
+  <rect x="1190" y="355" width="405" height="84" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="1212" y="387" class="card-title">Coding delegates</text>
+  <text x="1212" y="415" class="card-body">Cursor Agent CLI + Codex CLI</text>
 </g>
-<g id="codex" filter="url(#shadow)">
-<rect x="1325" y="475" width="135" height="84" rx="18" fill="#ffffff"/>
-<rect x="1325" y="475" width="135" height="84" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
-<text x="1347" y="507" class="card-title">Codex</text>
-<text x="1347" y="535" class="card-body">coding CLI</text>
+<g id="webapps" filter="url(#shadow)">
+  <rect x="1190" y="505" width="405" height="84" rx="18" fill="#ffffff"/>
+  <rect x="1190" y="505" width="405" height="84" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
+  <text x="1212" y="537" class="card-title">Web apps</text>
+  <text x="1212" y="565" class="card-body">SavedTube + dashboards + product UI</text>
 </g>
 <g id="github" filter="url(#shadow)">
-<rect x="1170" y="610" width="290" height="84" rx="18" fill="#ffffff"/>
-<rect x="1170" y="610" width="290" height="84" rx="18" fill="#e2e8f0" stroke="#64748b" stroke-width="2.5"/>
-<text x="1192" y="642" class="card-title">GitHub / Vercel</text>
-<text x="1192" y="670" class="card-body">PRs, CI, deploys</text>
+  <rect x="1165" y="650" width="160" height="84" rx="18" fill="#ffffff"/>
+  <rect x="1165" y="650" width="160" height="84" rx="18" fill="#e2e8f0" stroke="#64748b" stroke-width="2.5"/>
+  <text x="1187" y="682" class="card-title">GitHub</text>
+  <text x="1187" y="710" class="card-body">PRs + CI</text>
 </g>
-<rect x="422" y="228" width="130" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
-<text x="430" y="245" class="small" fill="#2563eb">remote control</text>
-<rect x="424" y="351" width="114" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
-<text x="432" y="368" class="small" fill="#16a34a">voice / text</text>
-<rect x="427" y="483" width="114" height="24" rx="8" fill="#fbfdff" stroke="#7c3aed" stroke-width="1" opacity="0.96"/>
-<text x="435" y="500" class="small" fill="#7c3aed">product work</text>
-<rect x="594" y="381" width="82" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
-<text x="602" y="398" class="small" fill="#16a34a">messages</text>
-<rect x="782" y="381" width="98" height="24" rx="8" fill="#fbfdff" stroke="#0f766e" stroke-width="1" opacity="0.96"/>
-<text x="790" y="398" class="small" fill="#0f766e">tool calls</text>
-<rect x="594" y="531" width="80" height="24" rx="8" fill="#fbfdff" stroke="#7c3aed" stroke-width="1" opacity="0.96"/>
-<text x="602" y="548" class="small" fill="#7c3aed">context</text>
-<rect x="882" y="531" width="80" height="24" rx="8" fill="#fbfdff" stroke="#ea580c" stroke-width="1" opacity="0.96"/>
-<text x="890" y="548" class="small" fill="#ea580c">notes</text>
-<rect x="992" y="229" width="90" height="24" rx="8" fill="#fbfdff" stroke="#dc2626" stroke-width="1" opacity="0.96"/>
-<text x="1000" y="246" class="small" fill="#dc2626">LLM calls</text>
-<rect x="1002" y="333" width="90" height="24" rx="8" fill="#fbfdff" stroke="#ea580c" stroke-width="1" opacity="0.96"/>
-<text x="1010" y="350" class="small" fill="#ea580c">workspace</text>
-<rect x="1042" y="568" width="114" height="24" rx="8" fill="#fbfdff" stroke="#64748b" stroke-width="1" opacity="0.96"/>
-<text x="1050" y="585" class="small" fill="#64748b">ship changes</text>
-<g transform="translate(90,745)">
-<text x="0" y="0" class="section">Flow legend</text>
-<line x1="0" y1="38" x2="54" y2="38" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
-<text x="70" y="43" class="caption">Access / coding delegation</text>
-<line x1="0" y1="72" x2="54" y2="72" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
-<text x="70" y="77" class="caption">Messages and memory context</text>
-<line x1="0" y1="106" x2="54" y2="106" stroke="#ea580c" stroke-width="4" stroke-linecap="round"/>
-<text x="70" y="111" class="caption">LLM / workspace integrations</text>
-<line x1="0" y1="140" x2="54" y2="140" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
-<text x="70" y="145" class="caption">Shipping path</text>
+<g id="vercel" filter="url(#shadow)">
+  <rect x="1348" y="650" width="160" height="84" rx="18" fill="#ffffff"/>
+  <rect x="1348" y="650" width="160" height="84" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="1370" y="682" class="card-title">Vercel</text>
+  <text x="1370" y="710" class="card-body">deploys</text>
 </g>
-<g filter="url(#shadow)"><rect x="430" y="755" width="1090" height="170" rx="22" fill="#ffffff"/><rect x="430" y="755" width="1090" height="170" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/><text x="470" y="805" class="section">Operating principle</text>
-<text x="470" y="845" class="subtitle">Hermes is the local control plane: it listens across channels, reasons with provider models, remembers through Honcho,</text>
-<text x="470" y="873" class="subtitle">edits notes and code through tools, and delegates implementation to Cursor or Codex when needed.</text>
-<text x="470" y="901" class="subtitle">The Fedora mini PC is the always-on home base; Mac and phone are access surfaces.</text>
-</g></svg>
+<g id="supabase" filter="url(#shadow)">
+  <rect x="1530" y="650" width="80" height="84" rx="18" fill="#ffffff"/>
+  <rect x="1530" y="650" width="80" height="84" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="1544" y="682" class="card-title" font-size="16">DB</text>
+  <text x="1543" y="710" class="tiny">Supabase</text>
+</g>
+
+<!-- Labels -->
+<rect x="430" y="255" width="128" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
+<text x="438" y="272" class="small" fill="#2563eb">remote control</text>
+<rect x="416" y="350" width="146" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
+<text x="424" y="367" class="small" fill="#16a34a">phone → gateway</text>
+<rect x="598" y="355" width="112" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
+<text x="606" y="372" class="small" fill="#16a34a">chat ingress</text>
+<rect x="702" y="530" width="98" height="24" rx="8" fill="#fbfdff" stroke="#7c3aed" stroke-width="1" opacity="0.96"/>
+<text x="710" y="547" class="small" fill="#7c3aed">memory</text>
+<rect x="884" y="530" width="132" height="24" rx="8" fill="#fbfdff" stroke="#ea580c" stroke-width="1" opacity="0.96"/>
+<text x="892" y="547" class="small" fill="#ea580c">notes memory</text>
+<rect x="1018" y="302" width="82" height="24" rx="8" fill="#fbfdff" stroke="#dc2626" stroke-width="1" opacity="0.96"/>
+<text x="1026" y="319" class="small" fill="#dc2626">LLMs</text>
+<rect x="1030" y="500" width="130" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
+<text x="1038" y="517" class="small" fill="#2563eb">build product</text>
+<rect x="1334" y="611" width="118" height="24" rx="8" fill="#fbfdff" stroke="#64748b" stroke-width="1" opacity="0.96"/>
+<text x="1342" y="628" class="small" fill="#64748b">ship path</text>
+
+<!-- Legend and notes -->
+<g transform="translate(90,830)">
+  <text x="0" y="0" class="section">Flow legend</text>
+  <line x1="0" y1="38" x2="54" y2="38" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+  <text x="70" y="43" class="caption">Access / coding delegation</text>
+  <line x1="0" y1="72" x2="54" y2="72" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+  <text x="70" y="77" class="caption">Phone and messaging ingress through Hermes Gateway</text>
+  <line x1="0" y1="106" x2="54" y2="106" stroke="#7c3aed" stroke-width="4" stroke-linecap="round"/>
+  <text x="70" y="111" class="caption">Agent memory and durable context</text>
+  <line x1="0" y1="140" x2="54" y2="140" stroke="#ea580c" stroke-width="4" stroke-linecap="round"/>
+  <text x="70" y="145" class="caption">Workspace / notes integrations</text>
+  <line x1="0" y1="174" x2="54" y2="174" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
+  <text x="70" y="179" class="caption">Web-app shipping path</text>
+</g>
+<g filter="url(#shadow)">
+  <rect x="560" y="828" width="1065" height="245" rx="22" fill="#ffffff"/>
+  <rect x="560" y="828" width="1065" height="245" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="600" y="878" class="section">Operating principle</text>
+  <text x="600" y="918" class="subtitle">Hermes Chat is the strategic center: Alfons turns intent into actions, memory, notes, code, and shipped apps.</text>
+  <text x="600" y="950" class="subtitle">Hermes Gateway is not the memory layer; it is the always-on messaging bridge for phone/WhatsApp traffic.</text>
+  <text x="600" y="982" class="subtitle">Messages reach Gateway first, then land in Hermes Chat where Hermes Agent can reason, use tools, and delegate.</text>
+  <text x="600" y="1014" class="subtitle">Honcho is agent memory for semantic recall and user/profile context. Obsidian is external memory as notes.</text>
+  <text x="600" y="1046" class="subtitle">Web apps live outside the machine: GitHub source/PRs, Vercel deploys, Supabase product data.</text>
+</g>
+</svg>
