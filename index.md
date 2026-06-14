@@ -1,15 +1,10 @@
 ---
-layout: page 
-title: "Welcome"
+layout: page
+title: "Home"
 permalink: /
+home: true
 ---
 
-# Welcome
+<p class="lead">Notes on building with AI, shipping side projects, and running a home lab stack.</p>
 
-Welcome to my personal site! I'm passionate about technology, writing, and sharing knowledge. This site serves as a platform for me to share my thoughts, experiences, and insights.
-
-Feel free to explore and learn more about me through my blog posts and the about page.
-
-## Recent Posts
-
-Check out my latest blog posts below:
+<p>I'm Alfonso — I write about dev tooling, infrastructure, and what actually works when you delegate coding to agents. Start with the posts below, or read <a href="{{ '/about/' | relative_url }}">about me</a>.</p>

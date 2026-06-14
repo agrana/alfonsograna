@@ -2,65 +2,11 @@
 layout: default
 ---
 
-{{ content }}
+<div class="page-content">
+  {{ content }}
 
-{% if page.title == "Welcome" %}
-  <h2>Recent Blog Posts</h2>
-  <ul class="post-list">
-    {% for post in site.posts limit:5 %}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%B %d, %Y" }}</span>
-      <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title }}
-        </a>
-      </h3>
-      {% if post.excerpt %}
-        <p>{{ post.excerpt }}</p>
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-  
-
-{% endif %}
-
-<!-- Mermaid.js for diagram rendering -->
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    mermaid.initialize({
-      startOnLoad: false,
-      theme: 'dark',
-      themeVariables: {
-        primaryColor: '#00ff00',
-        primaryTextColor: '#ffffff',
-        primaryBorderColor: '#00ff00',
-        lineColor: '#00ff00',
-        secondaryColor: '#006100',
-        tertiaryColor: '#ffffff',
-        background: '#1a1a1a',
-        mainBkg: '#1a1a1a',
-        secondBkg: '#2a2a2a',
-        tertiaryBkg: '#3a3a3a'
-      },
-      flowchart: {
-        htmlLabels: true,
-        curve: 'basis'
-      }
-    });
-    
-    // Process all mermaid code blocks
-    const mermaidBlocks = document.querySelectorAll('code.language-mermaid');
-    mermaidBlocks.forEach(function(block) {
-      const parent = block.parentElement;
-      const diagram = document.createElement('div');
-      diagram.className = 'mermaid';
-      diagram.textContent = block.textContent;
-      parent.replaceWith(diagram);
-    });
-    
-    // Render all mermaid diagrams
-    mermaid.run();
-  });
-</script>
+  {% if page.home %}
+    {% include post-list.html limit=5 %}
+    {% include featured-links.html %}
+  {% endif %}
+</div>
