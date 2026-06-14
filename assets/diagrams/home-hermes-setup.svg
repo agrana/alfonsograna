@@ -123,9 +123,9 @@
   <text x="1212" y="437" class="card-title">Cursor + Codex CLIs</text>
   <text x="1212" y="465" class="card-body">coding agents</text>
 </g>
-<text x="1190" y="520" class="category">SHIPPING</text>
 <g id="shipping-stack-box">
   <rect x="1165" y="538" width="445" height="98" rx="20" fill="#f8fafc" stroke="#64748b" stroke-width="2" stroke-dasharray="8 7"/>
+  <text x="1187" y="562" class="category">SHIPPING</text>
 </g>
 <g id="github" filter="url(#shadow)">
   <rect x="1185" y="578" width="122" height="46" rx="14" fill="#ffffff"/>
