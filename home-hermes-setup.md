@@ -38,7 +38,7 @@ permalink: /home-hermes-setup/
 
 <div class="diagram-page">
 
-A readable web version of the home AI operating layer: access from Mac and phone into the Fedora mini PC, with Hermes Chat positioned as the strategic center. Phone and voice-note traffic enter through Hermes Gateway, Honcho and Obsidian are shown as external agent-memory/context layers, and web apps are grouped with GitHub, Vercel, and Supabase in the external systems column. The original Excalidraw source is still available below.
+A readable web version of the home AI operating layer: access from Mac and phone into the Fedora mini PC, with Hermes Chat positioned as the strategic center. Phone and voice-note traffic enter through Hermes Gateway, Honcho and Obsidian are shown as external agent-memory/context layers, and GitHub, Vercel, and Supabase are grouped as the shipping stack that feeds the generic web apps surface. The original Excalidraw source is still available below.
 
 <div class="diagram-actions">
   <a href="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}">Open SVG</a>
