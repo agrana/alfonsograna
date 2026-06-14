@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1180" viewBox="0 0 1700 1180" role="img" aria-labelledby="title desc">
 <title id="title">Home AI Operating Layer — Hermes Chat as the Strategic Center</title>
-<desc id="desc">Architecture diagram of Alfons' home Hermes setup. Hermes Chat is physically centered inside the Fedora mini PC column, with categories arranged around it: access surfaces on the left, gateway ingress and execution tools above, memory below, and external systems plus web apps on the right.</desc>
+<desc id="desc">Architecture diagram of Alfons' home Hermes setup. Hermes Chat is physically centered inside the Fedora mini PC column, with categories arranged around it: access surfaces on the left, gateway ingress and execution tools above, memory below, and external systems and a generic web apps surface on the right.</desc>
 <defs>
   <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#2563eb"/></marker>
   <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#16a34a"/></marker>
@@ -55,11 +55,6 @@
 <path d="M935,452 C1025,360 1090,278 1190,278" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
 <path d="M935,475 C1045,445 1085,397 1190,397" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
 <path d="M935,500 C1045,515 1085,548 1190,548" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
-<path d="M1392,590 L1392,642" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
-<path d="M1320,590 C1280,620 1248,636 1215,650" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
-<path d="M1428,590 C1490,620 1535,640 1568,650" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M1320,692 L1348,692" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
-<path d="M1508,692 L1530,692" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
 
 <!-- Access cards -->
 <g id="mac" filter="url(#shadow)">
@@ -137,30 +132,32 @@
   <text x="1212" y="437" class="card-title">Cursor Agent CLI + Codex CLI</text>
   <text x="1212" y="465" class="card-body">implementation delegates</text>
 </g>
-<text x="1190" y="530" class="category">WEB APPS + SHIPPING</text>
+<text x="1190" y="530" class="category">WEB APPS</text>
 <g id="webapps" filter="url(#shadow)">
   <rect x="1190" y="548" width="405" height="84" rx="18" fill="#ffffff"/>
   <rect x="1190" y="548" width="405" height="84" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
   <text x="1212" y="580" class="card-title">Web apps</text>
-  <text x="1212" y="608" class="card-body">SavedTube + dashboards + product UI</text>
+  <text x="1212" y="608" class="card-body">public product surfaces</text>
 </g>
+<g id="shipping-stack-box">
+  <rect x="1165" y="650" width="445" height="104" rx="20" fill="#f8fafc" stroke="#64748b" stroke-width="2" stroke-dasharray="8 7"/>
+  <text x="1187" y="678" class="category">SHIPPING STACK</text>
+</g>
+<path d="M1392,650 L1392,632" fill="none" stroke="#64748b" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
 <g id="github" filter="url(#shadow)">
-  <rect x="1165" y="650" width="160" height="84" rx="18" fill="#ffffff"/>
-  <rect x="1165" y="650" width="160" height="84" rx="18" fill="#e2e8f0" stroke="#64748b" stroke-width="2.5"/>
-  <text x="1187" y="682" class="card-title">GitHub</text>
-  <text x="1187" y="710" class="card-body">source + PRs</text>
+  <rect x="1185" y="692" width="122" height="46" rx="14" fill="#ffffff"/>
+  <rect x="1185" y="692" width="122" height="46" rx="14" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+  <text x="1206" y="722" class="small">GitHub</text>
 </g>
 <g id="vercel" filter="url(#shadow)">
-  <rect x="1348" y="650" width="160" height="84" rx="18" fill="#ffffff"/>
-  <rect x="1348" y="650" width="160" height="84" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
-  <text x="1370" y="682" class="card-title">Vercel</text>
-  <text x="1370" y="710" class="card-body">deploys</text>
+  <rect x="1328" y="692" width="122" height="46" rx="14" fill="#ffffff"/>
+  <rect x="1328" y="692" width="122" height="46" rx="14" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="1351" y="722" class="small">Vercel</text>
 </g>
 <g id="supabase" filter="url(#shadow)">
-  <rect x="1530" y="650" width="80" height="84" rx="18" fill="#ffffff"/>
-  <rect x="1530" y="650" width="80" height="84" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
-  <text x="1544" y="682" class="card-title">DB</text>
-  <text x="1543" y="710" class="tiny">Supabase</text>
+  <rect x="1470" y="692" width="122" height="46" rx="14" fill="#ffffff"/>
+  <rect x="1470" y="692" width="122" height="46" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="1491" y="722" class="small">Supabase</text>
 </g>
 
 <!-- Compact flow labels -->
@@ -179,9 +176,9 @@
 <rect x="1038" y="324" width="82" height="24" rx="8" fill="#fbfdff" stroke="#dc2626" stroke-width="1" opacity="0.96"/>
 <text x="1046" y="341" class="small" fill="#dc2626">LLMs</text>
 <rect x="1038" y="500" width="130" height="24" rx="8" fill="#fbfdff" stroke="#9333ea" stroke-width="1" opacity="0.96"/>
-<text x="1046" y="517" class="small" fill="#9333ea">product work</text>
-<rect x="1334" y="626" width="118" height="24" rx="8" fill="#fbfdff" stroke="#64748b" stroke-width="1" opacity="0.96"/>
-<text x="1342" y="643" class="small" fill="#64748b">ship path</text>
+<text x="1046" y="517" class="small" fill="#9333ea">web work</text>
+<rect x="1328" y="632" width="130" height="24" rx="8" fill="#fbfdff" stroke="#64748b" stroke-width="1" opacity="0.96"/>
+<text x="1336" y="649" class="small" fill="#64748b">ships web apps</text>
 
 <!-- Legend and operating notes -->
 <g transform="translate(90,830)">
@@ -205,6 +202,6 @@
   <text x="600" y="950" class="subtitle">Around it by category: Gateway and Agent above, memory/context below, external services to the right.</text>
   <text x="600" y="982" class="subtitle">Hermes Gateway is not memory; it is messaging ingress. Phone/WhatsApp reaches Gateway first, then Chat.</text>
   <text x="600" y="1014" class="subtitle">Honcho is agent memory for recall and profile context. Obsidian is external memory as human notes.</text>
-  <text x="600" y="1046" class="subtitle">Web apps sit outside the machine with GitHub source/PRs, Vercel deploys, and Supabase data.</text>
+  <text x="600" y="1046" class="subtitle">GitHub, Vercel, and Supabase are grouped as the shipping stack that feeds the generic Web apps surface.</text>
 </g>
 </svg>
