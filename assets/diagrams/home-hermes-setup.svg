@@ -48,13 +48,13 @@
 <!-- Connections behind cards -->
 <path d="M385,425 C435,425 475,300 545,300" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
 <path d="M385,295 C455,295 485,302 545,302" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M645,340 C675,372 708,395 745,420" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M920,340 C895,360 862,385 825,405" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M745,530 C720,558 700,588 680,615" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
-<path d="M825,530 C855,562 902,592 940,615" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
-<path d="M935,452 C1025,360 1090,278 1190,278" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
-<path d="M935,475 C1045,445 1085,397 1190,397" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M935,500 C1045,565 1085,674 1190,674" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<path d="M655,352 L655,381 C655,398 678,410 700,410" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M925,352 L925,381 C925,398 902,410 870,410" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M720,530 C700,565 688,600 677.5,635" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<path d="M850,530 C870,565 915,600 960,635" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
+<path d="M935,455 C1000,400 1090,330 1190,302" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
+<path d="M935,470 C1020,447 1105,447 1190,447" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M935,485 C1020,560 1105,680 1190,716" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
 
 <!-- Access cards -->
 <g id="phone" filter="url(#shadow)">
@@ -165,18 +165,18 @@
 <text x="438" y="415" class="small" fill="#2563eb">remote control</text>
 <rect x="416" y="255" width="146" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
 <text x="424" y="272" class="small" fill="#16a34a">phone → gateway</text>
-<rect x="640" y="374" width="118" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
-<text x="648" y="391" class="small" fill="#16a34a">chat ingress</text>
-<rect x="840" y="374" width="92" height="24" rx="8" fill="#fbfdff" stroke="#0f766e" stroke-width="1" opacity="0.96"/>
-<text x="848" y="391" class="small" fill="#0f766e">tool use</text>
-<rect x="692" y="558" width="98" height="24" rx="8" fill="#fbfdff" stroke="#7c3aed" stroke-width="1" opacity="0.96"/>
-<text x="700" y="575" class="small" fill="#7c3aed">memory</text>
-<rect x="880" y="558" width="132" height="24" rx="8" fill="#fbfdff" stroke="#ea580c" stroke-width="1" opacity="0.96"/>
-<text x="888" y="575" class="small" fill="#ea580c">notes memory</text>
-<rect x="1038" y="324" width="82" height="24" rx="8" fill="#fbfdff" stroke="#dc2626" stroke-width="1" opacity="0.96"/>
-<text x="1046" y="341" class="small" fill="#dc2626">LLMs</text>
-<rect x="1038" y="500" width="130" height="24" rx="8" fill="#fbfdff" stroke="#9333ea" stroke-width="1" opacity="0.96"/>
-<text x="1046" y="517" class="small" fill="#9333ea">web work</text>
+<rect x="548" y="368" width="118" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
+<text x="556" y="385" class="small" fill="#16a34a">chat ingress</text>
+<rect x="900" y="368" width="92" height="24" rx="8" fill="#fbfdff" stroke="#0f766e" stroke-width="1" opacity="0.96"/>
+<text x="908" y="385" class="small" fill="#0f766e">tool use</text>
+<rect x="618" y="548" width="98" height="24" rx="8" fill="#fbfdff" stroke="#7c3aed" stroke-width="1" opacity="0.96"/>
+<text x="626" y="565" class="small" fill="#7c3aed">memory</text>
+<rect x="918" y="548" width="132" height="24" rx="8" fill="#fbfdff" stroke="#ea580c" stroke-width="1" opacity="0.96"/>
+<text x="926" y="565" class="small" fill="#ea580c">notes memory</text>
+<rect x="1048" y="360" width="82" height="24" rx="8" fill="#fbfdff" stroke="#dc2626" stroke-width="1" opacity="0.96"/>
+<text x="1056" y="377" class="small" fill="#dc2626">LLMs</text>
+<rect x="1048" y="462" width="130" height="24" rx="8" fill="#fbfdff" stroke="#9333ea" stroke-width="1" opacity="0.96"/>
+<text x="1056" y="479" class="small" fill="#9333ea">web work</text>
 <rect x="1328" y="638" width="130" height="24" rx="8" fill="#fbfdff" stroke="#64748b" stroke-width="1" opacity="0.96"/>
 <text x="1336" y="655" class="small" fill="#64748b">ships web apps</text>
 
