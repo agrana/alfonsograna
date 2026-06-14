@@ -46,29 +46,29 @@
 <text x="526" y="622" class="category">MEMORY + CONTEXT</text>
 
 <!-- Connections behind cards -->
-<path d="M385,285 C435,285 475,300 545,300" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M385,425 C455,425 485,302 545,302" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M385,425 C435,425 475,300 545,300" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M385,295 C455,295 485,302 545,302" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
 <path d="M645,340 C675,372 708,395 745,420" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
 <path d="M920,340 C895,360 862,385 825,405" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
 <path d="M745,530 C720,558 700,588 680,615" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
 <path d="M825,530 C855,562 902,592 940,615" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
 <path d="M935,452 C1025,360 1090,278 1190,278" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
 <path d="M935,475 C1045,445 1085,397 1190,397" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M935,500 C1045,515 1085,548 1190,548" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<path d="M935,500 C1045,565 1085,674 1190,674" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
 
 <!-- Access cards -->
-<g id="mac" filter="url(#shadow)">
-  <rect x="115" y="243" width="270" height="84" rx="18" fill="#ffffff"/>
-  <rect x="115" y="243" width="270" height="84" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
-  <text x="137" y="275" class="card-title">MacBook</text>
-  <text x="137" y="303" class="card-body">RDP / SSH / browser</text>
-</g>
 <g id="phone" filter="url(#shadow)">
-  <rect x="115" y="373" width="270" height="104" rx="18" fill="#ffffff"/>
-  <rect x="115" y="373" width="270" height="104" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
-  <text x="137" y="405" class="card-title">Phone</text>
-  <text x="137" y="433" class="card-body">WhatsApp / voice notes</text>
-  <text x="137" y="455" class="card-body-strong">enters through Gateway</text>
+  <rect x="115" y="243" width="270" height="104" rx="18" fill="#ffffff"/>
+  <rect x="115" y="243" width="270" height="104" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="137" y="275" class="card-title">Phone</text>
+  <text x="137" y="303" class="card-body">WhatsApp / voice notes</text>
+  <text x="137" y="325" class="card-body-strong">enters through Gateway</text>
+</g>
+<g id="mac" filter="url(#shadow)">
+  <rect x="115" y="383" width="270" height="84" rx="18" fill="#ffffff"/>
+  <rect x="115" y="383" width="270" height="84" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="137" y="415" class="card-title">MacBook</text>
+  <text x="137" y="443" class="card-body">RDP / SSH / browser</text>
 </g>
 <g id="operator" filter="url(#shadow)">
   <rect x="115" y="540" width="270" height="104" rx="18" fill="#ffffff"/>
@@ -102,7 +102,8 @@
   <rect x="535" y="635" width="285" height="86" rx="18" fill="#ffffff"/>
   <rect x="535" y="635" width="285" height="86" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="2.5"/>
   <text x="557" y="667" class="card-title">Honcho</text>
-  <text x="557" y="695" class="card-body-strong">agent memory + recall</text>
+  <text x="557" y="690" class="card-body-strong">session-persistent agent memory</text>
+  <text x="557" y="712" class="card-body">recall + user modeling</text>
 </g>
 <g id="obsidian" filter="url(#shadow)">
   <rect x="850" y="635" width="220" height="86" rx="18" fill="#ffffff"/>
@@ -132,39 +133,38 @@
   <text x="1212" y="437" class="card-title">Cursor Agent CLI + Codex CLI</text>
   <text x="1212" y="465" class="card-body">implementation delegates</text>
 </g>
-<text x="1190" y="530" class="category">WEB APPS</text>
-<g id="webapps" filter="url(#shadow)">
-  <rect x="1190" y="548" width="405" height="84" rx="18" fill="#ffffff"/>
-  <rect x="1190" y="548" width="405" height="84" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
-  <text x="1212" y="580" class="card-title">Web apps</text>
-  <text x="1212" y="608" class="card-body">public product surfaces</text>
-</g>
+<text x="1190" y="520" class="category">SHIPPING STACK</text>
 <g id="shipping-stack-box">
-  <rect x="1165" y="650" width="445" height="104" rx="20" fill="#f8fafc" stroke="#64748b" stroke-width="2" stroke-dasharray="8 7"/>
-  <text x="1187" y="678" class="category">SHIPPING STACK</text>
+  <rect x="1165" y="538" width="445" height="98" rx="20" fill="#f8fafc" stroke="#64748b" stroke-width="2" stroke-dasharray="8 7"/>
 </g>
-<path d="M1392,650 L1392,632" fill="none" stroke="#64748b" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
 <g id="github" filter="url(#shadow)">
-  <rect x="1185" y="692" width="122" height="46" rx="14" fill="#ffffff"/>
-  <rect x="1185" y="692" width="122" height="46" rx="14" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
-  <text x="1206" y="722" class="small">GitHub</text>
+  <rect x="1185" y="578" width="122" height="46" rx="14" fill="#ffffff"/>
+  <rect x="1185" y="578" width="122" height="46" rx="14" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+  <text x="1206" y="608" class="small">GitHub</text>
 </g>
 <g id="vercel" filter="url(#shadow)">
-  <rect x="1328" y="692" width="122" height="46" rx="14" fill="#ffffff"/>
-  <rect x="1328" y="692" width="122" height="46" rx="14" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-  <text x="1351" y="722" class="small">Vercel</text>
+  <rect x="1328" y="578" width="122" height="46" rx="14" fill="#ffffff"/>
+  <rect x="1328" y="578" width="122" height="46" rx="14" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="1351" y="608" class="small">Vercel</text>
 </g>
 <g id="supabase" filter="url(#shadow)">
-  <rect x="1470" y="692" width="122" height="46" rx="14" fill="#ffffff"/>
-  <rect x="1470" y="692" width="122" height="46" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-  <text x="1491" y="722" class="small">Supabase</text>
+  <rect x="1470" y="578" width="122" height="46" rx="14" fill="#ffffff"/>
+  <rect x="1470" y="578" width="122" height="46" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="1491" y="608" class="small">Supabase</text>
+</g>
+<path d="M1392,636 L1392,674" fill="none" stroke="#64748b" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
+<g id="webapps" filter="url(#shadow)">
+  <rect x="1190" y="674" width="405" height="84" rx="18" fill="#ffffff"/>
+  <rect x="1190" y="674" width="405" height="84" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
+  <text x="1212" y="706" class="card-title">Web apps</text>
+  <text x="1212" y="734" class="card-body">public product surfaces</text>
 </g>
 
 <!-- Compact flow labels -->
-<rect x="430" y="255" width="128" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
-<text x="438" y="272" class="small" fill="#2563eb">remote control</text>
-<rect x="416" y="350" width="146" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
-<text x="424" y="367" class="small" fill="#16a34a">phone → gateway</text>
+<rect x="430" y="398" width="128" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
+<text x="438" y="415" class="small" fill="#2563eb">remote control</text>
+<rect x="416" y="255" width="146" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
+<text x="424" y="272" class="small" fill="#16a34a">phone → gateway</text>
 <rect x="640" y="374" width="118" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
 <text x="648" y="391" class="small" fill="#16a34a">chat ingress</text>
 <rect x="840" y="374" width="92" height="24" rx="8" fill="#fbfdff" stroke="#0f766e" stroke-width="1" opacity="0.96"/>
@@ -177,8 +177,8 @@
 <text x="1046" y="341" class="small" fill="#dc2626">LLMs</text>
 <rect x="1038" y="500" width="130" height="24" rx="8" fill="#fbfdff" stroke="#9333ea" stroke-width="1" opacity="0.96"/>
 <text x="1046" y="517" class="small" fill="#9333ea">web work</text>
-<rect x="1328" y="632" width="130" height="24" rx="8" fill="#fbfdff" stroke="#64748b" stroke-width="1" opacity="0.96"/>
-<text x="1336" y="649" class="small" fill="#64748b">ships web apps</text>
+<rect x="1328" y="638" width="130" height="24" rx="8" fill="#fbfdff" stroke="#64748b" stroke-width="1" opacity="0.96"/>
+<text x="1336" y="655" class="small" fill="#64748b">ships web apps</text>
 
 <!-- Legend and operating notes -->
 <g transform="translate(90,830)">
@@ -202,6 +202,6 @@
   <text x="600" y="950" class="subtitle">Around it by category: Gateway and Agent above, memory/context below, external services to the right.</text>
   <text x="600" y="982" class="subtitle">Hermes Gateway is not memory; it is messaging ingress. Phone/WhatsApp reaches Gateway first, then Chat.</text>
   <text x="600" y="1014" class="subtitle">Honcho is agent memory for recall and profile context. Obsidian is external memory as human notes.</text>
-  <text x="600" y="1046" class="subtitle">GitHub, Vercel, and Supabase are grouped as the shipping stack that feeds the generic Web apps surface.</text>
+  <text x="600" y="1046" class="subtitle">GitHub, Vercel, and Supabase sit above Web apps as the shipping stack that feeds the generic surface.</text>
 </g>
 </svg>
