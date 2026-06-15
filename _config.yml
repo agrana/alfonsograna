@@ -1,8 +1,8 @@
 title: "Alfonso's Blog"
 email: a@alfonsograna.com
 description: >-
-  Alfonso Grana writes about AI-assisted development, home lab tooling,
-  and shipping personal projects.
+  Alfonso Grana writes about the practice of shipping software,
+  building with AI, and other nerdy stuff.
 baseurl: "/alfonsograna" # the subpath of your site, e.g. /blog
 url: "https://agrana.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: "agrana"
