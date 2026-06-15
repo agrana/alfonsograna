@@ -6,7 +6,7 @@ layout: default
   {{ content }}
 
   {% if page.home %}
-    {% include post-list.html limit=5 %}
     {% include featured-links.html %}
+    {% include post-list.html limit=5 %}
   {% endif %}
 </div>
