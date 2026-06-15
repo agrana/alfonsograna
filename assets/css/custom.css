@@ -1,14 +1,29 @@
-/* Homepage and shared polish — complements jekyll-theme-hacker */
+/* Sober personal page polish — complements jekyll-theme-hacker */
 
 :root {
   --accent-green: #9fbc73;
-  --accent-green-link: #86b875;
-  --accent-green-border: rgba(159, 188, 115, 0.24);
-  --accent-green-border-strong: rgba(159, 188, 115, 0.42);
-  --accent-green-wash: rgba(159, 188, 115, 0.045);
+  --accent-green-link: #9bbf83;
+  --accent-green-border: rgba(159, 188, 115, 0.22);
+  --muted-text: #8f958f;
+  --body-text: #d8d8d0;
+  --page-bg: #181818;
 }
 
-/* Calm the Hacker theme's default fluorescent greens. */
+body {
+  background: var(--page-bg);
+  color: var(--body-text);
+}
+
+.container {
+  max-width: 640px;
+}
+
+/* Calm the Hacker theme's default fluorescent greens and decorative header. */
+header {
+  padding: 5.5rem 0 2.75rem;
+  border-bottom: 1px solid rgba(159, 188, 115, 0.12);
+}
+
 header h1,
 header h1 a,
 h1,
@@ -21,150 +36,137 @@ h6 {
   text-shadow: none;
 }
 
-a {
-  color: var(--accent-green-link);
+header h1 {
+  margin: 0 0 1rem;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+header h2 {
+  max-width: 620px;
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
   text-shadow: none;
 }
 
-header {
-  border-bottom-color: var(--accent-green-border);
+#downloads {
+  display: none;
 }
 
-.lead {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #d8dee9;
-  margin: 0 0 1rem;
+#main_content {
+  padding-top: 2.75rem;
 }
 
-.section-heading {
-  margin: 2.25rem 0 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--accent-green-border);
-  color: var(--accent-green);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+#main_content p {
+  margin: 0 0 1.35rem;
+  color: var(--body-text);
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
-.post-list-section {
-  margin-top: 0.5rem;
-}
-
-.post-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 1rem;
-}
-
-.post-list .post-card {
-  list-style: none !important;
-  list-style-image: none !important;
-  background-image: none !important;
-}
-
-.post-list .post-card::marker {
-  content: "";
-}
-
-.post-card {
-  margin: 0;
-  padding: 1.1rem 1.25rem;
-  border: 1px solid var(--accent-green-border);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.02);
-  transition: border-color 0.15s ease, background 0.15s ease;
-}
-
-.post-card:hover {
-  border-color: var(--accent-green-border-strong);
-  background: var(--accent-green-wash);
-}
-
-.post-card-title {
-  margin: 0.35rem 0 0.5rem;
-  font-size: 1.2rem;
-  line-height: 1.35;
-}
-
-.post-card-title .post-link {
-  color: var(--accent-green);
-  text-decoration: none;
-}
-
-.post-card-title .post-link:hover {
-  text-decoration: underline;
-}
-
-.post-meta {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #8b949e;
-}
-
-.post-meta-sep {
-  margin: 0 0.35rem;
-}
-
-.post-categories {
-  color: #7d8590;
-}
-
-.post-excerpt {
-  margin: 0 0 0.85rem;
-  line-height: 1.55;
-  color: #c9d1d9;
-}
-
-.read-more {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 600;
+a,
+#main_content a {
   color: var(--accent-green-link);
-  text-decoration: none;
+  text-shadow: none;
+  text-decoration: underline;
+  text-decoration-color: rgba(159, 188, 115, 0.55);
+  text-underline-offset: 0.16em;
 }
 
-.read-more:hover {
-  text-decoration: underline;
+a:hover,
+#main_content a:hover {
+  color: #bed0a1;
+  text-decoration-color: #bed0a1;
+}
+
+.section-heading,
+.featured-links h2 {
+  margin: 2.35rem 0 1rem;
+  padding: 0;
+  border: 0;
+  color: var(--accent-green);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 .featured-links {
-  margin: 2rem 0 0;
-  padding: 1rem 1.25rem;
-  border: 1px dashed var(--accent-green-border);
-  border-radius: 6px;
-}
-
-.featured-links h2 {
-  margin: 0 0 0.75rem;
-  font-size: 1rem;
-  color: var(--accent-green);
-}
-
-.featured-links ul {
-  list-style: none;
-  margin: 0;
+  margin: 2.4rem 0 0;
   padding: 0;
+  border: 0;
+  border-radius: 0;
 }
 
-.featured-links li {
-  list-style: none !important;
+.featured-links ul,
+.post-list {
+  list-style: square;
+  margin: 0 0 0 1.05rem;
+  padding: 0;
+  display: block;
+}
+
+.featured-links li,
+.post-list .post-card {
+  margin: 0.45rem 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none !important;
   list-style-image: none !important;
-  background-image: none !important;
 }
 
-.featured-links li::marker {
-  content: "";
+.featured-links li::marker,
+.post-list .post-card::marker {
+  color: var(--muted-text);
+  content: normal;
 }
 
-.featured-links li + li {
-  margin-top: 0.5rem;
+.post-list-section {
+  margin-top: 2.5rem;
 }
 
-.featured-links a {
-  color: var(--accent-green-link);
+.post-card article {
+  display: block;
+}
+
+.post-card-title {
+  display: inline;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.post-card-title .post-link {
+  color: var(--body-text);
+  text-decoration-color: rgba(216, 216, 208, 0.42);
+}
+
+.post-card-title .post-link:hover {
+  color: #f0f0e6;
+  text-decoration-color: #f0f0e6;
+}
+
+.post-meta {
+  display: inline;
+  margin: 0 0 0 0.45rem;
+  color: var(--muted-text);
+  font-size: 0.88rem;
+}
+
+.post-meta::before {
+  content: "— ";
+}
+
+.post-categories,
+.post-excerpt,
+.read-more,
+.post-meta-sep {
+  display: none;
 }
 
 /* Post page tweaks */
@@ -199,23 +201,36 @@ header {
 .post-actions .btn-secondary {
   display: inline-block;
   padding: 0.45rem 0.85rem;
-  border: 1px solid var(--accent-green-border-strong);
+  border: 1px solid var(--accent-green-border);
   border-radius: 4px;
   color: var(--accent-green);
   text-decoration: none;
 }
 
 .post-actions .btn-secondary:hover {
-  background: var(--accent-green-wash);
+  background: rgba(159, 188, 115, 0.045);
   text-decoration: none;
 }
 
 @media (max-width: 640px) {
-  .post-card {
-    padding: 1rem;
+  header {
+    padding: 3.5rem 0 2rem;
   }
 
-  .post-card-title {
-    font-size: 1.1rem;
+  .container {
+    max-width: 100%;
+  }
+
+  #main_content {
+    padding-top: 2rem;
+  }
+
+  .post-meta {
+    display: block;
+    margin: 0.1rem 0 0;
+  }
+
+  .post-meta::before {
+    content: "";
   }
 }

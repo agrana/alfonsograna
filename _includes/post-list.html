@@ -1,28 +1,16 @@
 <section class="post-list-section" aria-labelledby="recent-posts-heading">
-  <h2 id="recent-posts-heading" class="section-heading">Recent posts</h2>
+  <h2 id="recent-posts-heading" class="section-heading">Writing</h2>
   <ul class="post-list">
     {% assign post_limit = include.limit | default: 5 %}
     {% for post in site.posts limit:post_limit %}
     <li class="post-card">
       <article>
-        <p class="post-meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-          {% if post.categories.size > 0 %}
-          <span class="post-meta-sep" aria-hidden="true">·</span>
-          <span class="post-categories">{{ post.categories | join: ", " }}</span>
-          {% endif %}
-        </p>
         <h3 class="post-card-title">
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
         </h3>
-        <p class="post-excerpt">
-          {% if post.excerpt %}
-            {{ post.excerpt | strip_html | truncate: 200 }}
-          {% else %}
-            {{ post.content | strip_html | truncate: 200 }}
-          {% endif %}
+        <p class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
         </p>
-        <a class="read-more" href="{{ post.url | relative_url }}">Read post →</a>
       </article>
     </li>
     {% endfor %}

@@ -5,6 +5,8 @@ permalink: /
 home: true
 ---
 
-<p class="lead">Notes on building with AI, shipping software, and other nerdy experiments.</p>
+<p>I’m a software engineer interested in AI tools, coding agents, and the practice of shipping useful software. I use this site to write about what I’m learning while building small projects, experimenting with personal systems, and working with machines as collaborators.</p>
 
-<p>I'm Alfonso — I write about what I learn while using AI tools, coding agents, and practical systems to turn ideas into working software. Start with the pages and posts below, or read <a href="{{ '/about/' | relative_url }}">about me</a>.</p>
+<p>Lately, I’ve been thinking about how AI changes the way we build: what becomes faster, what becomes messier, and what still requires taste, judgment, and patience.</p>
+
+<p>You can read the writing below, browse the <a href="https://github.com/agrana/alfonsograna">code</a>, or find me on <a href="https://github.com/agrana">GitHub</a>.</p>
