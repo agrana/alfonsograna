@@ -49,7 +49,7 @@ A readable web version of the home AI stack: WhatsApp and SSH/RDP into a Fedora 
   <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
 </div>
 
-## Hermes usage snapshot
+<h2>Hermes usage snapshot</h2>
 
 <div class="diagram-frame">
   <img src="{{ '/assets/images/hermes-agent-token-usage.png' | relative_url }}" alt="Hermes Agent leading a coding assistant token usage dashboard">
