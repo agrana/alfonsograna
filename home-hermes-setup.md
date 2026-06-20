@@ -46,7 +46,7 @@ Agent usage on OpenRouter.
   <img src="{{ '/assets/images/hermes-agent-token-usage.png' | relative_url }}" alt="Hermes Agent leading a coding assistant token usage dashboard">
 </div>
 
-A readable web version of the home AI stack: WhatsApp and SSH/RDP into a Fedora mini PC running Hermes (chat + agent), Gateway for inbound messages, Honcho and Obsidian for memory, and external LLMs, coding CLIs, and a shipping path to web apps. The Excalidraw source is still available below.
+A readable web version of the home AI stack: WhatsApp and SSH/RDP into a Fedora mini PC running Hermes (chat + agent), Gateway for inbound messages, Honcho and Obsidian for memory, with external systems separated into inference, coding/shipping, and IoT control. The Excalidraw source is still available below.
 
 <div class="diagram-actions">
   <a href="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}">Open SVG</a>
