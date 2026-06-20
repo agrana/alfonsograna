@@ -38,6 +38,14 @@ permalink: /home-hermes-setup/
 
 <div class="diagram-page">
 
+<h2>Hermes usage snapshot</h2>
+
+Agent usage on OpenRouter.
+
+<div class="diagram-frame">
+  <img src="{{ '/assets/images/hermes-agent-token-usage.png' | relative_url }}" alt="Hermes Agent leading a coding assistant token usage dashboard">
+</div>
+
 A readable web version of the home AI stack: WhatsApp and SSH/RDP into a Fedora mini PC running Hermes (chat + agent), Gateway for inbound messages, Honcho and Obsidian for memory, and external LLMs, coding CLIs, and a shipping path to web apps. The Excalidraw source is still available below.
 
 <div class="diagram-actions">
@@ -47,12 +55,6 @@ A readable web version of the home AI stack: WhatsApp and SSH/RDP into a Fedora 
 
 <div class="diagram-frame">
   <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
-</div>
-
-<h2>Hermes usage snapshot</h2>
-
-<div class="diagram-frame">
-  <img src="{{ '/assets/images/hermes-agent-token-usage.png' | relative_url }}" alt="Hermes Agent leading a coding assistant token usage dashboard">
 </div>
 
 </div>
