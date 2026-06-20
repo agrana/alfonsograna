@@ -20,7 +20,7 @@ It is also a useful way to understand what someone can learn about you from publ
 2. **Search yourself manually first**
 
    Search each identity in multiple search engines using quotes, variations, and combinations like name plus city, username plus project, or email plus company.
-   Do this in a private window and from a logged-out browser so your own browsing history does not hide what a stranger would see.
+   Do this in a private window and try simple dorks like `"your name" "your city"`, `"your.email@example.com"`, `site:github.com "your username"`, or `filetype:pdf "your name"`.
 
 3. **Check people-search and breach surfaces**
 
