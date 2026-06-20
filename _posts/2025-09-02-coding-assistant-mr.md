@@ -10,7 +10,7 @@ author: "Alfonso Grana"
 
 If your coding assistant can execute commands, it already has everything it needs to talk to GitHub, GitLab, your cloud, your database. You usually don't need to bolt an MCP server on top.
 
-I run **Cursor's agent** (and the same applies to the Cursor CLI, `cursor-agent`). When I ask it to do something on GitHub, I let it shell out to **`gh`, the GitHub CLI**, instead of wiring up the GitHub MCP server. The result is the same actions with far less context overhead.
+I run **Cursor's agent** (and the same applies to the Cursor CLI, `cursor-agent`, or **Claude Code**, Anthropic's terminal agent). When I ask any of them to do something on GitHub, I let it shell out to **`gh`, the GitHub CLI**, instead of wiring up the GitHub MCP server. The result is the same actions with far less context overhead.
 
 ## What an agent can actually do with `gh`
 
@@ -81,16 +81,6 @@ alwaysApply: true
 - Do not use the GitHub MCP server unless `gh` cannot do the job.
 - Open PRs with `gh pr create`, self-assign, write a real description.
 - Squash-merge with `gh pr merge --squash`.
-```
-
-On GitLab the same idea applies — let the agent open the MR straight from `git push` with push options instead of a server:
-
-```bash
-git push \
-  -o merge_request.create \
-  -o merge_request.target=main \
-  -o merge_request.squash \
-  -o merge_request.title="[JIRA-KEY] title"
 ```
 
 Same outcome, near-zero context tax. If the command already does the job, let the agent run the command.
