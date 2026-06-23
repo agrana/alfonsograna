@@ -6,7 +6,7 @@ permalink: /about/
 
 # About Me
 
-Hello! I'm [Your Name], and this is my personal website built with Jekyll.
+Hello! I'm [Alfonso], and this is my personal website.
 
 ## What I Do
 
@@ -21,12 +21,6 @@ I'm passionate about technology, writing, and sharing knowledge. This site serve
 
 Feel free to reach out to me through:
 
-- Email: [your-email@example.com](mailto:your-email@example.com)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Twitter: [@yourusername](https://twitter.com/yourusername)
-
-## About This Site
-
-This site is built with [Jekyll](https://jekyllrb.com/), a static site generator that makes it easy to create simple, fast, and secure websites. It's hosted on GitHub Pages for easy deployment and maintenance.
-
-The design features a modern, clean interface with smooth animations and responsive layout that works great on all devices.
+- Email: [1@alfonsograna.com](mailto:1@alfonsograna.com)
+- GitHub: [@agrana](https://github.com/agrana)
+- Twitter: [@agrana](https://twitter.com/agrana)

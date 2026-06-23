@@ -5,8 +5,11 @@ permalink: /
 home: true
 ---
 
-<p>I’m a software engineer interested in AI tools, coding agents, and the practice of shipping useful software. I use this site to write about what I’m learning while building small projects, experimenting with personal systems, and working with machines as collaborators.</p>
+<p>I’m a Software Engineer based in Eindhoven, the Netherlands. I’m interested in the craft of shipping software: not only writing code, but building the systems, habits, and feedback loops that help teams deliver value reliably.
 
-<p>Lately, I’ve been thinking about how AI changes the way we build: what becomes faster, what becomes messier, and what still requires taste, judgment, and patience.</p>
+Over the last 20 years, I’ve built my career on learning fast and experiment new methods and keep them when they bring meaningful value to the work. In the past 5 years, I’ve focused deeply on CI/CD as the backbone of software delivery.
 
-<p>You can read the writing below, browse the <a href="https://github.com/agrana/alfonsograna">code</a>, or find me on <a href="https://github.com/agrana">GitHub</a>.</p>
+I enjoy working in environments where the impact of engineering decisions is visible in the company’s results.
+</p>
+
+<p>You can find me on <a href="https://github.com/agrana">GitHub</a> and <a href="https://linkedin.com/aflonsograna">Linkedin</a>.</p>
