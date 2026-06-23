@@ -12,4 +12,4 @@ Over the last 20 years, I’ve built my career on learning fast and experiment n
 I enjoy working in environments where the impact of engineering decisions is visible in the company’s results.
 </p>
 
-<p>You can find me on <a href="https://github.com/agrana">GitHub</a> and <a href="https://linkedin.com/aflonsograna">Linkedin</a>.</p>
+<p>You can find me on <a href="https://github.com/agrana">GitHub</a> and <a href="https://www.linkedin.com/in/alfonsograna/)">Linkedin</a>.</p>
