@@ -1,12 +1,19 @@
 /* Sober personal page polish — complements jekyll-theme-hacker */
 
 :root {
-  --accent-green: #9fbc73;
-  --accent-green-link: #9bbf83;
-  --accent-green-border: rgba(159, 188, 115, 0.22);
-  --muted-text: #8f958f;
-  --body-text: #d8d8d0;
-  --page-bg: #181818;
+  /* Nordic Fog palette */
+  --fog-ivory: #fff9f0;
+  --fog-mist: #e8e0d6;
+  --fog-stone: #c9c6c0;
+  --fog-slate: #7c7f85;
+  --fog-charcoal: #2a2d33;
+
+  --accent: var(--fog-ivory);
+  --accent-link: var(--fog-mist);
+  --accent-border: rgba(124, 127, 133, 0.3);
+  --muted-text: #969aa1;
+  --body-text: var(--fog-stone);
+  --page-bg: var(--fog-charcoal);
 }
 
 body {
@@ -36,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--accent-green);
+  color: var(--accent);
   text-shadow: none;
 }
 
@@ -74,17 +81,17 @@ header h2 {
 
 a,
 #main_content a {
-  color: var(--accent-green-link);
+  color: var(--accent-link);
   text-shadow: none;
   text-decoration: underline;
-  text-decoration-color: rgba(159, 188, 115, 0.55);
+  text-decoration-color: rgba(124, 127, 133, 0.6);
   text-underline-offset: 0.16em;
 }
 
 a:hover,
 #main_content a:hover {
-  color: #bed0a1;
-  text-decoration-color: #bed0a1;
+  color: var(--fog-ivory);
+  text-decoration-color: var(--fog-ivory);
 }
 
 .section-heading,
@@ -92,7 +99,7 @@ a:hover,
   margin: 2.35rem 0 1rem;
   padding: 0;
   border: 0;
-  color: var(--accent-green);
+  color: var(--accent);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0;
@@ -147,12 +154,12 @@ a:hover,
 
 .post-card-title .post-link {
   color: var(--body-text);
-  text-decoration-color: rgba(216, 216, 208, 0.42);
+  text-decoration-color: rgba(201, 198, 192, 0.42);
 }
 
 .post-card-title .post-link:hover {
-  color: #f0f0e6;
-  text-decoration-color: #f0f0e6;
+  color: var(--fog-ivory);
+  text-decoration-color: var(--fog-ivory);
 }
 
 .post-meta {
@@ -177,7 +184,7 @@ a:hover,
 .post .post-header {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--accent-green-border);
+  border-bottom: 1px solid var(--accent-border);
 }
 
 .post .post-title {
@@ -187,7 +194,7 @@ a:hover,
 .post .post-footer {
   margin-top: 2.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--accent-green-border);
+  border-top: 1px solid var(--accent-border);
 }
 
 .post-navigation {
@@ -199,20 +206,20 @@ a:hover,
 }
 
 .post-navigation a {
-  color: var(--accent-green-link);
+  color: var(--accent-link);
 }
 
 .post-actions .btn-secondary {
   display: inline-block;
   padding: 0.45rem 0.85rem;
-  border: 1px solid var(--accent-green-border);
+  border: 1px solid var(--accent-border);
   border-radius: 4px;
-  color: var(--accent-green);
+  color: var(--accent);
   text-decoration: none;
 }
 
 .post-actions .btn-secondary:hover {
-  background: rgba(159, 188, 115, 0.045);
+  background: rgba(124, 127, 133, 0.08);
   text-decoration: none;
 }
 
