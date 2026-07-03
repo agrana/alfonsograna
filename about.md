@@ -3,18 +3,17 @@ layout: page
 title: "About"
 permalink: /about/
 ---
-
+x`
 # About Me
 
-Hello! I'm [Alfonso], and this is my personal website.
+Hello! I'm **Alfonso**, and this is my personal website.
 
 ## What I Do
 
 I'm passionate about technology, writing, and sharing knowledge. This site serves as a platform for me to:
 
 - Share my thoughts and experiences
-- Document my learning journey
-- Connect with like-minded individuals
+- Document my journeys 
 - Showcase my projects and work
 
 ## Get in Touch
