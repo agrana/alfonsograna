@@ -6,9 +6,9 @@ This is the single source of truth for agent instructions—keep it concise.
 ## Project
 
 Personal blog + site for Alfonso Grana, built with **Jekyll 4.3** and deployed to
-**GitHub Pages**. Repo: `agrana/alfonsograna`, served under base path `/alfonsograna`
-at https://agrana.github.io/alfonsograna/. Theme is the remote `pages-themes/hacker`,
-with overrides in `assets/css/custom.css`.
+**GitHub Pages**. Repo: `agrana/alfonsograna`, served from the domain root at
+https://alfonsograna.com/. Theme is the remote `pages-themes/hacker`, with overrides
+in `assets/css/custom.css`.
 
 ## Layout
 
@@ -25,7 +25,7 @@ with overrides in `assets/css/custom.css`.
 
 ```bash
 bundle install              # first time
-bundle exec jekyll serve    # serves at http://localhost:4000/alfonsograna/
+bundle exec jekyll serve    # serves at http://localhost:4000/
 ```
 
 Deployment is automatic: pushing to `main` triggers `.github/workflows/pages.yml`.
