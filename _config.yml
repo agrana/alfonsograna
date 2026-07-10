@@ -2,8 +2,8 @@ title: "Alfonso Grana"
 email: a@alfonsograna.com
 description: >-
   Building with AI, shipping software, and other nerdy stuff.
-baseurl: "/alfonsograna" # the subpath of your site, e.g. /blog
-url: "https://agrana.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # served from the root of the custom domain
+url: "https://alfonsograna.com"
 twitter_username: "agrana"
 github_username:  "agrana"
 repository_url: "https://github.com/agrana/alfonsograna"
