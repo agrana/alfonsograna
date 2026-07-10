@@ -7,8 +7,8 @@ This is the single source of truth for agent instructions—keep it concise.
 
 Personal blog + site for Alfonso Grana, built with **Jekyll 4.3** and deployed to
 **GitHub Pages**. Repo: `agrana/alfonsograna`, served from the domain root at
-https://alfonsograna.com/. Theme is the remote `pages-themes/hacker`, with overrides
-in `assets/css/custom.css`.
+https://alfonsograna.com/. Theme is the remote `pages-themes/hacker`, with an
+editorial STIX Two Text design system and overrides in `assets/css/custom.css`.
 
 ## Layout
 

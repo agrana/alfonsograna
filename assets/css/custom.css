@@ -1,67 +1,76 @@
-/* Sober personal page polish — complements jekyll-theme-hacker */
+/* Editorial typography inspired by classic technical writing sites. */
 
 :root {
-  /* Nordic Fog palette */
-  --fog-ivory: #fff9f0;
-  --fog-mist: #e8e0d6;
-  --fog-stone: #c9c6c0;
-  --fog-slate: #7c7f85;
-  --fog-charcoal: #2a2d33;
+  --page-bg: #1a1a1a;
+  --heading-text: #f2f2f2;
+  --body-text: #eaeaea;
+  --muted-text: #afafaf;
+  --marker-text: #9ca3af;
+  --link-underline: #737373;
+  --accent-border: #3a3a3a;
+}
 
-  --accent: var(--fog-ivory);
-  --accent-link: var(--fog-mist);
-  --accent-border: rgba(124, 127, 133, 0.3);
-  --muted-text: #969aa1;
-  --body-text: var(--fog-stone);
-  --page-bg: var(--fog-charcoal);
+html {
+  background: var(--page-bg);
 }
 
 body {
   background: var(--page-bg);
   color: var(--body-text);
+  font-family: "STIX Two Text", Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-kerning: normal;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .container {
-  max-width: 640px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 650px;
+  padding-right: 32px;
+  padding-left: 32px;
 }
 
-/* Calm the Hacker theme's default fluorescent greens and decorative header. */
-header {
-  padding: 5.5rem 0 2.25rem;
-  border-bottom: 0;
+/* Turn the Hacker theme header into a quiet editorial masthead. */
+body > header {
+  margin: 0;
+  padding: 64px 0 0;
+  border: 0;
+  background: transparent;
 }
 
-header h1::before {
+body > header h1::before {
   content: none;
 }
 
-header h1,
-header h1 a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--accent);
+body > header h1,
+body > header h1 a {
+  margin: 0 0 4px;
+  color: var(--heading-text);
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
   text-shadow: none;
 }
 
-header h1 {
-  margin: 0 0 1rem;
-  font-size: 1.65rem;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-header h2 {
-  max-width: 620px;
+body > header h2 {
+  max-width: none;
   margin: 0;
   color: var(--muted-text);
-  font-size: 1rem;
+  font-family: inherit;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.6;
+  letter-spacing: normal;
+  line-height: 24px;
   text-shadow: none;
+}
+
+#a-title {
+  text-decoration: none;
 }
 
 #downloads {
@@ -69,60 +78,132 @@ header h2 {
 }
 
 #main_content {
-  padding-top: 2.75rem;
+  margin-bottom: 64px;
+  padding-top: 56px;
 }
 
 #main_content p {
-  margin: 0 0 1.35rem;
+  margin: 0 0 16px;
   color: var(--body-text);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+#main_content h1,
+#main_content h2,
+#main_content h3,
+#main_content h4,
+#main_content h5,
+#main_content h6 {
+  color: var(--heading-text);
+  font-family: inherit;
+  text-shadow: none;
+}
+
+#main_content h1,
+.post .post-title {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+#main_content h2,
+.section-heading,
+.featured-links h2 {
+  margin: 48px 0 8px;
+  padding: 0;
+  border: 0;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 28px;
+}
+
+#main_content h3 {
+  margin: 32px 0 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+#main_content h4,
+#main_content h5,
+#main_content h6 {
+  margin: 24px 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 25.5px;
 }
 
 a,
 #main_content a {
-  color: var(--accent-link);
+  color: var(--body-text);
   text-shadow: none;
   text-decoration: underline;
-  text-decoration-color: rgba(124, 127, 133, 0.6);
-  text-underline-offset: 0.16em;
+  text-decoration-color: var(--link-underline);
+  text-underline-offset: 0.14em;
+  transition: color 120ms ease, text-decoration-color 120ms ease;
 }
 
 a:hover,
-#main_content a:hover {
-  color: var(--fog-ivory);
-  text-decoration-color: var(--fog-ivory);
+a:focus-visible,
+#main_content a:hover,
+#main_content a:focus-visible {
+  color: var(--heading-text);
+  text-decoration-color: var(--heading-text);
 }
 
-.section-heading,
-.featured-links h2 {
-  margin: 2.35rem 0 1rem;
-  padding: 0;
-  border: 0;
-  color: var(--accent);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0;
-}
-
-.featured-links {
-  margin: 2.4rem 0 0;
+.featured-links,
+.post-list-section {
+  margin: 48px 0 0;
   padding: 0;
   border: 0;
   border-radius: 0;
 }
 
+.featured-links h2,
+.post-list-section h2 {
+  margin-top: 0;
+}
+
+#main_content ul,
+#main_content ol {
+  margin: 0 0 24px;
+  padding-left: 18px;
+}
+
+#main_content ul {
+  list-style-type: square;
+}
+
+#main_content li {
+  margin: 0 0 4px;
+  padding: 0;
+  color: var(--body-text);
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 1.5;
+  list-style-image: none !important;
+}
+
+#main_content li::marker {
+  color: var(--marker-text);
+}
+
 .featured-links ul,
 .post-list {
-  list-style: square;
-  margin: 0 0 0 1.05rem;
-  padding: 0;
   display: block;
+  margin: 0;
+  padding-left: 16px;
+  list-style: square;
 }
 
 .featured-links li,
 .post-list .post-card {
-  margin: 0.45rem 0;
+  margin: 0 0 4px;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -130,52 +211,28 @@ a:hover,
   list-style-image: none !important;
 }
 
-.featured-links li::marker,
-.post-list .post-card::marker {
-  color: var(--muted-text);
-  content: normal;
-}
-
-/* Replace the Hacker theme's green chevron image with standard round bullets. */
-#main_content ul {
-  list-style-type: disc;
-}
-
-#main_content ul li {
-  list-style-image: none;
-}
-
-.post-list-section {
-  margin-top: 2.5rem;
-}
-
 .post-card article {
   display: block;
 }
 
-.post-card-title {
+#main_content .post-card-title {
   display: inline;
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: 17px;
   font-weight: 400;
+  line-height: 1.5;
 }
 
-.post-card-title .post-link {
+#main_content .post-card-title .post-link {
   color: var(--body-text);
-  text-decoration-color: rgba(201, 198, 192, 0.42);
 }
 
-.post-card-title .post-link:hover {
-  color: var(--fog-ivory);
-  text-decoration-color: var(--fog-ivory);
-}
-
-.post-meta {
+#main_content .post-card .post-meta {
   display: inline;
-  margin: 0 0 0 0.45rem;
+  margin: 0 0 0 0.4rem;
   color: var(--muted-text);
-  font-size: 0.88rem;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .post-meta::before {
@@ -189,68 +246,98 @@ a:hover,
   display: none;
 }
 
-/* Post page tweaks */
+/* Long-form post details. */
 .post .post-header {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  margin: 0 0 32px;
+  padding: 0 0 16px;
   border-bottom: 1px solid var(--accent-border);
+  background: transparent;
 }
 
-.post .post-title {
-  margin-bottom: 0.5rem;
+.post .post-header .post-meta {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 15px;
+}
+
+.post .post-header .post-meta::before {
+  content: none;
 }
 
 .post .post-footer {
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
+  margin-top: 48px;
+  padding-top: 24px;
   border-top: 1px solid var(--accent-border);
 }
 
 .post-navigation {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 16px;
   justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.post-navigation a {
-  color: var(--accent-link);
+  margin-bottom: 16px;
 }
 
 .post-actions .btn-secondary {
   display: inline-block;
-  padding: 0.45rem 0.85rem;
+  padding: 7px 13px;
   border: 1px solid var(--accent-border);
   border-radius: 4px;
-  color: var(--accent);
+  color: var(--body-text);
   text-decoration: none;
 }
 
-.post-actions .btn-secondary:hover {
-  background: rgba(124, 127, 133, 0.08);
+.post-actions .btn-secondary:hover,
+.post-actions .btn-secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
   text-decoration: none;
 }
 
-@media (max-width: 640px) {
-  header {
-    padding: 3.5rem 0 2rem;
-  }
+blockquote {
+  margin: 24px 0;
+  padding: 0 0 0 16px;
+  border-left: 2px solid var(--accent-border);
+  color: var(--muted-text);
+}
 
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 16px;
+  border: 1px solid var(--accent-border);
+  background: #141414;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 650px) {
   .container {
     max-width: 100%;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  body > header {
+    padding-top: 48px;
   }
 
   #main_content {
-    padding-top: 2rem;
+    padding-top: 48px;
   }
 
-  .post-meta {
+  #main_content .post-card .post-meta {
     display: block;
-    margin: 0.1rem 0 0;
+    margin: 0;
   }
 
-  .post-meta::before {
-    content: "";
+  #main_content .post-card .post-meta::before {
+    content: none;
   }
 }
