@@ -136,6 +136,15 @@ a:hover,
   content: normal;
 }
 
+/* Replace the Hacker theme's green chevron image with standard round bullets. */
+#main_content ul {
+  list-style-type: disc;
+}
+
+#main_content ul li {
+  list-style-image: none;
+}
+
 .post-list-section {
   margin-top: 2.5rem;
 }
