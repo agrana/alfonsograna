@@ -49,14 +49,22 @@ Agent usage on OpenRouter.
 
 <h2>How this setup works</h2>
 
-Hermes is a small agent runtime at the center of my home AI setup. That I control via Whatsapp and SSH.
+Hermes is a small agent runtime at the center of my AI setup. 
 
-When I send a WhatsApp message, the Gateway receives the message, finds the right conversation history, rebuilds the context, and hands it to the Hermes agent loop. 
+I hermes control mostly via Whatsapp in a conversation with myself that is monitored by the hermes gateway.
 
-The loop is simple but powerful: 
-build context, call the model, let the model use tools feed tool results back, and finish with a response. If something should be remembered, it can be written back into memory.
+I already had hte habit of sending interesting things that I find to myself in whatsapp. 
+Having hermes monitoring that conversation means I can index that in my knowldege base and use as context in the future.
 
-The context is where personalisation happens. Hermes combines the current conversation with its personality, my user profile, durable memory, available skills, tool descriptions, and relevant past session context. In this setup, Honcho handles richer long-term memory, Obsidian remains the human-readable knowledge base, and local session history keeps day-to-day continuity.
+The loop is this: 
+- build context
+- call the model
+- let the model use tools
+- feed tool results back
+- response
+
+The context is where personalisation happens. 
+Hermes combines the current conversation with its personality, user profile, durable memory, available skills, tool descriptions, and relevant past session context. In this setup, Honcho handles richer long-term memory, Obsidian remains the human-readable knowledge base, and local session history keeps day-to-day continuity.
 
 Cron jobs  Hermes runs its own scheduler loop, stored under <code>~/.hermes/cron/jobs.json</code>, and writes run reports under <code>~/.hermes/cron/output/</code>. 
 
@@ -80,4 +88,3 @@ Cron jobs  Hermes runs its own scheduler loop, stored under <code>~/.hermes/cron
 </div>
 
 </div>
-

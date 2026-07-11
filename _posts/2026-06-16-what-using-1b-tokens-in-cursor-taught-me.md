@@ -8,41 +8,30 @@ excerpt: "After starting 3.5K Cursor agents and using 1.15B tokens, my main less
 author: "Alfonso Grana"
 ---
 
-I recently got my Cursor year wrap.
 
-Apparently I started 3.5K agents and consumed 1.15 billion tokens.
+I started 3.5K agents and consumed 1.15 billion tokens in a couple of months ending 2025.
 
-That number is slightly absurd to see written down. It also made me think about how much my workflow has changed.
+It made me think about how much my workflow has changed.
 
-I am still not in the "uninstall your IDE" phase. I still approve everything manually. I still read diffs. I still want to understand what is going into the codebase.
-
-I have seen the hot takes too: "code is only for diffs", "the IDE is dead", "just let the agents run". Maybe some people are already there. I am not.
-
-But after using Cursor this much, a few things are clear to me.
+After reflectinb aout it a few things stand out.
 
 ## Writing clearly matters more than ever
 
 If the problem statement is vague, the output gets long.
 
-The model tries to produce a correct answer. When the input is ambiguous, it often covers cases. It adds explanations, branches, abstractions, configuration, fallback behavior, and sometimes whole pieces of code that were never really needed.
+When the input is ambiguous, the model will try to cover cases that you don't need. It adds explanations, branches, abstractions, configuration, fallback behavior, that you don't need.
 
-This means the work starts before the prompt is sent.
+The work starts before the prompt is sent.
 
 It is worth spending time writing specs that are unambiguous and straight to the point. What should change? What should stay the same? What constraints matter? What should the agent avoid touching?
 
-The model will not resolve ambiguity for you. It will usually pick one interpretation and keep going.
-
-That can feel productive because something is happening. Code appears. Files change. The agent sounds confident. But if the original request was fuzzy, the result often needs more cleanup than it saved.
-
-And maybe that is not a new problem. Maybe AI just makes it more visible.
-
-At the end of the day, dealing with ambiguity is a big part of what makes someone senior anyway.
+At the end of the day, dealing with ambiguity is a big part of what makes an engineer good anyway.
 
 ## Be ready to read a lot
 
-Reading AI generated output is not the most glamorous part of the job, but it is necessary.
+Reading AI generated output is not the most fun part of the job, but it is necessary.
 
-Cursor can generate a lot of code quickly. Some of it is useful. Some of it is unnecessary. Some of it is old thinking left behind after you changed direction halfway through.
+Agents can generate a lot of code quickly. Some of it is useful. Some of it is unnecessary. Some of it is old thinking left behind after you changed direction halfway through.
 
 That last part happens more often than I expected.
 
@@ -56,7 +45,7 @@ The strange thing is that throughput goes up, but so does the amount of code you
 
 Before, the bottleneck was often typing or searching or remembering some syntax. Now the bottleneck is more often judgment. Is this the right shape? Is this too much? Did we leave anything behind? Would I want to debug this in three months?
 
-AI makes it easier to create code. It does not make the code automatically worth keeping.
+AI makes it easier to create code. But most of the code it produces is less worth keeping in general.
 
 ## Exploration is cheaper now
 
@@ -76,12 +65,8 @@ The cheaper exploration gets, the more important it is to separate exploration f
 
 ## The work moved
 
-Using this much AI did not make engineering judgment less important for me.
+Using more AI moved the work into different places.
 
-It moved more of the work into different places.
-
-Writing the task clearly matters more. Reading the output carefully matters more. Knowing when to delete code matters more. Knowing when to start over matters more.
-
-The assistant can move fast, but it does not know what kind of code you want to live with.
-
-That part is still on you.
+- Taks definitions. Prompting
+- Reviewing AI generated output code, documents. 
+- Verification that the specification is implmented correctly. 
