@@ -21,31 +21,33 @@ permalink: /home-hermes-setup/
   width: 100%;
   height: auto;
 }
-.usage-table {
+.diagram-expand {
+  display: block;
   width: 100%;
-  margin: 1rem 0 .5rem;
-  border-collapse: collapse;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
 }
-.usage-table th,
-.usage-table td {
-  padding: .65rem;
-  text-align: left;
-  border-bottom: 1px solid rgba(255,255,255,0.18);
+.diagram-dialog {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  border: 0;
+  background: #fff;
 }
-.usage-table th:first-child,
-.usage-table td:first-child {
-  width: 4rem;
-  text-align: center;
+.diagram-dialog::backdrop {
+  background: rgba(0,0,0,0.88);
 }
-.source-note {
-  margin-bottom: 1.5rem;
-  font-size: .9rem;
-}
-.diagram-actions {
-  display: flex;
-  gap: .75rem;
-  flex-wrap: wrap;
-  margin: 1rem 0 1.5rem;
+.diagram-dialog img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .diagram-dialog-close {
   position: fixed;
@@ -120,46 +122,35 @@ permalink: /home-hermes-setup/
 
 <p>Hermes is the agent runtime at the center of my home AI setup. It runs continuously on a Fedora PC and connects conversations, tools, memory, scheduled jobs, and external services.</p>
 
+<div class="diagram-frame">
+  <button class="diagram-expand" type="button" aria-label="Expand the home AI operating layer diagram">
+    <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
+  </button>
+</div>
+
+<dialog class="diagram-dialog" aria-label="Expanded home AI operating layer diagram">
+  <button class="diagram-dialog-close" type="button">Close</button>
+  <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
+</dialog>
+
 <h3>WhatsApp is the front door</h3>
 
 <p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the Hermes Gateway. I already used that conversation to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
 
 <h3>The agent loop</h3>
 
-<ol>
-  <li>Build context for the request.</li>
-  <li>Call the selected model.</li>
-  <li>Let the model choose and use tools.</li>
-  <li>Feed the tool results back into the model.</li>
-  <li>Return the final response.</li>
-</ol>
+<div class="mermaid">
+flowchart LR
+    Request[Request] --> Context[Build context]
+    Context --> Model[Call model]
+    Model --> Decision{Use a tool?}
+    Decision -->|Yes| Tool[Run tool]
+    Tool --> Result[Add result to context]
+    Result --> Model
+    Decision -->|No| Response[Return response]
+</div>
 
 <h3>Context and memory</h3>
-
-<p>Context is where personalization happens. Hermes combines the current conversation with its personality, user profile, durable memory, available skills, tool descriptions, and relevant past sessions. Honcho provides richer long-term memory, Obsidian remains the human-readable knowledge base, and local session history maintains day-to-day continuity.</p>
-
-<h3>Scheduled work</h3>
-
-<p>Hermes runs its own scheduler loop. Jobs are stored in <code>~/.hermes/cron/jobs.json</code>, and run reports are written to <code>~/.hermes/cron/output/</code>. This lets the same agent handle both conversations and unattended recurring work.</p>
-
-<h3>Components</h3>
-
-<dl>
-  <dt><strong>WhatsApp</strong></dt>
-  <dd>The messaging interface. Hermes only replies to my own messages.</dd>
-  <dt><strong>Fedora PC</strong></dt>
-  <dd>The always-on execution environment.</dd>
-  <dt><strong>Hermes Gateway</strong></dt>
-  <dd>Turns incoming messages into agent sessions.</dd>
-  <dt><strong>Hermes Agent</strong></dt>
-  <dd>Reasons, calls tools, edits files, runs commands, and coordinates workflows.</dd>
-  <dt><strong>Honcho and Obsidian</strong></dt>
-  <dd>Provide two complementary memory layers: one agent-native and one human-native.</dd>
-  <dt><strong>External services</strong></dt>
-  <dd>Inference providers, coding agents, GitHub, Gmail, Hue lights, and other APIs remain modular and can be swapped without changing the core setup.</dd>
-</dl>
-
-<h3>Architecture</h3>
 
 <p>Context is where personalization happens. Hermes combines the current conversation with its personality, user profile, durable memory, available skills, tool descriptions, and relevant past sessions. Local session history maintains continuity within day-to-day conversations, while Obsidian and Honcho cover two different kinds of long-term context.</p>
 
