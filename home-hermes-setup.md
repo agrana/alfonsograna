@@ -133,6 +133,23 @@ permalink: /home-hermes-setup/
   <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
 </dialog>
 
+<h3>Components</h3>
+
+<dl>
+  <dt><strong>WhatsApp</strong></dt>
+  <dd>The messaging interface. Hermes only replies to my own messages.</dd>
+  <dt><strong>Fedora PC</strong></dt>
+  <dd>The always-on execution environment.</dd>
+  <dt><strong>Hermes Gateway</strong></dt>
+  <dd>Turns incoming messages into agent sessions.</dd>
+  <dt><strong>Hermes Agent</strong></dt>
+  <dd>Reasons, calls tools, edits files, runs commands, and coordinates workflows.</dd>
+  <dt><strong>Honcho and Obsidian</strong></dt>
+  <dd>Provide two complementary memory layers: one agent-native and one human-native.</dd>
+  <dt><strong>External services</strong></dt>
+  <dd>Inference providers, coding agents, GitHub, Gmail, Hue lights, and other APIs remain modular and can be swapped without changing the core setup.</dd>
+</dl>
+
 <h3>WhatsApp is the front door</h3>
 
 <p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the Hermes Gateway. I already used that conversation to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
@@ -169,23 +186,6 @@ flowchart LR
 <p>The scheduler is part of the Hermes Gateway. While the gateway is running, it checks for due jobs every 60 seconds. Each due job starts in a fresh agent session, loads any attached skills, runs its prompt to completion, and delivers the final response to its configured chat or local output. Hermes then records the result and calculates the next run time.</p>
 
 <p>Job definitions are stored in <code>~/.hermes/cron/jobs.json</code>. Reports from individual runs are saved under <code>~/.hermes/cron/output/{job_id}/{timestamp}.md</code>. This lets the same agent handle both conversations and unattended recurring work without carrying unrelated conversation history into a scheduled run.</p>
-
-<h3>Components</h3>
-
-<dl>
-  <dt><strong>WhatsApp</strong></dt>
-  <dd>The messaging interface. Hermes only replies to my own messages.</dd>
-  <dt><strong>Fedora PC</strong></dt>
-  <dd>The always-on execution environment.</dd>
-  <dt><strong>Hermes Gateway</strong></dt>
-  <dd>Turns incoming messages into agent sessions.</dd>
-  <dt><strong>Hermes Agent</strong></dt>
-  <dd>Reasons, calls tools, edits files, runs commands, and coordinates workflows.</dd>
-  <dt><strong>Honcho and Obsidian</strong></dt>
-  <dd>Provide two complementary memory layers: one agent-native and one human-native.</dd>
-  <dt><strong>External services</strong></dt>
-  <dd>Inference providers, coding agents, GitHub, Gmail, Hue lights, and other APIs remain modular and can be swapped without changing the core setup.</dd>
-</dl>
 
 </div>
 
