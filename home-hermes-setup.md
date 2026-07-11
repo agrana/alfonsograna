@@ -13,14 +13,33 @@ permalink: /home-hermes-setup/
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: 12px;
   padding: 1rem;
-  overflow-x: auto;
   box-shadow: 0 18px 48px rgba(0,0,0,0.24);
 }
 .diagram-frame img {
   display: block;
+  max-width: 100%;
   width: 100%;
-  min-width: 900px;
   height: auto;
+}
+.usage-table {
+  width: 100%;
+  margin: 1rem 0 .5rem;
+  border-collapse: collapse;
+}
+.usage-table th,
+.usage-table td {
+  padding: .65rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+.usage-table th:first-child,
+.usage-table td:first-child {
+  width: 4rem;
+  text-align: center;
+}
+.source-note {
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
 }
 .diagram-actions {
   display: flex;
@@ -38,45 +57,83 @@ permalink: /home-hermes-setup/
 
 <div class="diagram-page">
 
-<h2>Hermes usage snapshot</h2>
+<h1>Home Hermes Setup</h1>
 
-Agent usage on OpenRouter.
+<p>There is a reason Hermes is the top agent on OpenRouter: it is designed to keep working beyond a single chat. It runs persistently, carries memory across sessions, builds reusable skills, calls tools, and handles scheduled work. That combination makes it useful as a personal operating layer rather than only a coding assistant.</p>
+
+<h2>Hermes on OpenRouter</h2>
+
+<p>OpenRouter currently ranks Hermes first among coding agents by token volume. This measures public traffic routed through OpenRouter, not the total usage of each agent across every provider, so tools that mainly use their own APIs are undercounted.</p>
 
 <div class="diagram-frame">
   <img src="{{ '/assets/images/hermes-agent-token-usage.png' | relative_url }}" alt="Hermes Agent leading a coding assistant token usage dashboard">
 </div>
 
+<h3>Recent results</h3>
+
+<table class="usage-table">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Coding agent</th>
+      <th>Tokens today</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Hermes Agent</td><td>995B</td></tr>
+    <tr><td>2</td><td>Kilo Code</td><td>262B</td></tr>
+    <tr><td>3</td><td>Claude Code</td><td>196B</td></tr>
+    <tr><td>4</td><td>OpenClaw</td><td>165B</td></tr>
+    <tr><td>5</td><td>Cline</td><td>102B</td></tr>
+  </tbody>
+</table>
+
+<p class="source-note">Source: <a href="https://openrouter.ai/apps/category/coding">OpenRouter Coding Agents Rankings</a>, captured July 12, 2026. OpenRouter also provides an authenticated <a href="https://openrouter.ai/docs/cookbook/administration/data-api">Data API</a> for app rankings and daily model totals.</p>
 
 <h2>How this setup works</h2>
 
-Hermes is a small agent runtime at the center of my AI setup. 
+<p>Hermes is the agent runtime at the center of my home AI setup. It runs continuously on a Fedora PC and connects conversations, tools, memory, scheduled jobs, and external services.</p>
 
-I hermes control mostly via Whatsapp in a conversation with myself that is monitored by the hermes gateway.
+<h3>WhatsApp is the front door</h3>
 
-I already had hte habit of sending interesting things that I find to myself in whatsapp. 
-Having hermes monitoring that conversation means I can index that in my knowldege base and use as context in the future.
+<p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the Hermes Gateway. I already used that conversation to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
 
-The loop is this: 
-- build context
-- call the model
-- let the model use tools
-- feed tool results back
-- response
+<h3>The agent loop</h3>
 
-The context is where personalisation happens. 
-Hermes combines the current conversation with its personality, user profile, durable memory, available skills, tool descriptions, and relevant past session context. In this setup, Honcho handles richer long-term memory, Obsidian remains the human-readable knowledge base, and local session history keeps day-to-day continuity.
+<ol>
+  <li>Build context for the request.</li>
+  <li>Call the selected model.</li>
+  <li>Let the model choose and use tools.</li>
+  <li>Feed the tool results back into the model.</li>
+  <li>Return the final response.</li>
+</ol>
 
-Cron jobs  Hermes runs its own scheduler loop, stored under <code>~/.hermes/cron/jobs.json</code>, and writes run reports under <code>~/.hermes/cron/output/</code>. 
+<h3>Context and memory</h3>
 
+<p>Context is where personalization happens. Hermes combines the current conversation with its personality, user profile, durable memory, available skills, tool descriptions, and relevant past sessions. Honcho provides richer long-term memory, Obsidian remains the human-readable knowledge base, and local session history maintains day-to-day continuity.</p>
 
-<ul>
-  <li><strong>WhatsApp</strong> Messaging interfase hermes only replies to my own messages.</li>
-  <li><strong>Fedora PC</strong> is the always-on execution environment.</li>
-  <li><strong>Hermes Gateway</strong> turns incoming messages into agent sessions.</li>
-  <li><strong>Hermes Agent</strong> reasons, calls tools, edits files, runs commands and coordinates workflows.</li>
-  <li><strong>Honcho + Obsidian</strong> give the system memory: one agent-native, one human-native.</li>
-  <li><strong>External services</strong> stay modular: inference providers, coding agents, GitHub, Gmail, Hue lights and other APIs can be swapped without changing the core setup.</li>
-</ul>
+<h3>Scheduled work</h3>
+
+<p>Hermes runs its own scheduler loop. Jobs are stored in <code>~/.hermes/cron/jobs.json</code>, and run reports are written to <code>~/.hermes/cron/output/</code>. This lets the same agent handle both conversations and unattended recurring work.</p>
+
+<h3>Components</h3>
+
+<dl>
+  <dt><strong>WhatsApp</strong></dt>
+  <dd>The messaging interface. Hermes only replies to my own messages.</dd>
+  <dt><strong>Fedora PC</strong></dt>
+  <dd>The always-on execution environment.</dd>
+  <dt><strong>Hermes Gateway</strong></dt>
+  <dd>Turns incoming messages into agent sessions.</dd>
+  <dt><strong>Hermes Agent</strong></dt>
+  <dd>Reasons, calls tools, edits files, runs commands, and coordinates workflows.</dd>
+  <dt><strong>Honcho and Obsidian</strong></dt>
+  <dd>Provide two complementary memory layers: one agent-native and one human-native.</dd>
+  <dt><strong>External services</strong></dt>
+  <dd>Inference providers, coding agents, GitHub, Gmail, Hue lights, and other APIs remain modular and can be swapped without changing the core setup.</dd>
+</dl>
+
+<h3>Architecture</h3>
 
 <div class="diagram-actions">
   <a href="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}">Open SVG</a>
