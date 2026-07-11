@@ -21,6 +21,46 @@ permalink: /home-hermes-setup/
   width: 100%;
   height: auto;
 }
+.diagram-expand {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.diagram-dialog {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  border: 0;
+  background: #fff;
+}
+.diagram-dialog::backdrop {
+  background: rgba(0,0,0,0.88);
+}
+.diagram-dialog img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.diagram-dialog-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  padding: .5rem .75rem;
+  border: 1px solid #111827;
+  border-radius: 8px;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+}
 .usage-table {
   width: 100%;
   margin: 1rem 0 .5rem;
@@ -40,18 +80,6 @@ permalink: /home-hermes-setup/
 .source-note {
   margin-bottom: 1.5rem;
   font-size: .9rem;
-}
-.diagram-actions {
-  display: flex;
-  gap: .75rem;
-  flex-wrap: wrap;
-  margin: 1rem 0 1.5rem;
-}
-.diagram-actions a {
-  display: inline-block;
-  padding: .45rem .7rem;
-  border: 1px solid currentColor;
-  border-radius: 8px;
 }
 </style>
 
@@ -94,27 +122,53 @@ permalink: /home-hermes-setup/
 
 <p>Hermes is the agent runtime at the center of my home AI setup. It runs continuously on a Fedora PC and connects conversations, tools, memory, scheduled jobs, and external services.</p>
 
+<div class="diagram-frame">
+  <button class="diagram-expand" type="button" aria-label="Expand the home AI operating layer diagram">
+    <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
+  </button>
+</div>
+
+<dialog class="diagram-dialog" aria-label="Expanded home AI operating layer diagram">
+  <button class="diagram-dialog-close" type="button">Close</button>
+  <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
+</dialog>
+
 <h3>WhatsApp is the front door</h3>
 
 <p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the Hermes Gateway. I already used that conversation to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
 
 <h3>The agent loop</h3>
 
-<ol>
-  <li>Build context for the request.</li>
-  <li>Call the selected model.</li>
-  <li>Let the model choose and use tools.</li>
-  <li>Feed the tool results back into the model.</li>
-  <li>Return the final response.</li>
-</ol>
+<div class="mermaid">
+flowchart LR
+    Request[Request] --> Context[Build context]
+    Context --> Model[Call model]
+    Model --> Decision{Use a tool?}
+    Decision -->|Yes| Tool[Run tool]
+    Tool --> Result[Add result to context]
+    Result --> Model
+    Decision -->|No| Response[Return response]
+</div>
 
 <h3>Context and memory</h3>
 
-<p>Context is where personalization happens. Hermes combines the current conversation with its personality, user profile, durable memory, available skills, tool descriptions, and relevant past sessions. Honcho provides richer long-term memory, Obsidian remains the human-readable knowledge base, and local session history maintains day-to-day continuity.</p>
+<p>Context is where personalization happens. Hermes combines the current conversation with its personality, user profile, durable memory, available skills, tool descriptions, and relevant past sessions. Local session history maintains continuity within day-to-day conversations, while Obsidian and Honcho cover two different kinds of long-term context.</p>
+
+<h4>Obsidian: the human-readable knowledge base</h4>
+
+<p>Obsidian holds the material I want to read, organize, and edit myself: saved links, research, project notes, summaries, and connections between ideas. Because the vault is made of Markdown files, Hermes can search and update it with normal file tools while the knowledge remains portable and easy to audit.</p>
+
+<h4>Honcho: agent-native memory</h4>
+
+<p>Honcho gives Hermes persistent memory across sessions. It builds a model of my preferences, goals, communication style, and recurring patterns from previous conversations. Hermes can retrieve relevant conclusions through semantic search and inject session context when responding, so useful personal context does not have to be restated in every conversation.</p>
 
 <h3>Scheduled work</h3>
 
-<p>Hermes runs its own scheduler loop. Jobs are stored in <code>~/.hermes/cron/jobs.json</code>, and run reports are written to <code>~/.hermes/cron/output/</code>. This lets the same agent handle both conversations and unattended recurring work.</p>
+<p>Hermes cron jobs turn a prompt into unattended recurring work. A job can use a standard cron expression or a natural-language schedule and can include specific skills and a delivery target.</p>
+
+<p>The scheduler is part of the Hermes Gateway. While the gateway is running, it checks for due jobs every 60 seconds. Each due job starts in a fresh agent session, loads any attached skills, runs its prompt to completion, and delivers the final response to its configured chat or local output. Hermes then records the result and calculates the next run time.</p>
+
+<p>Job definitions are stored in <code>~/.hermes/cron/jobs.json</code>. Reports from individual runs are saved under <code>~/.hermes/cron/output/{job_id}/{timestamp}.md</code>. This lets the same agent handle both conversations and unattended recurring work without carrying unrelated conversation history into a scheduled run.</p>
 
 <h3>Components</h3>
 
@@ -133,15 +187,18 @@ permalink: /home-hermes-setup/
   <dd>Inference providers, coding agents, GitHub, Gmail, Hue lights, and other APIs remain modular and can be swapped without changing the core setup.</dd>
 </dl>
 
-<h3>Architecture</h3>
-
-<div class="diagram-actions">
-  <a href="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}">Open SVG</a>
-  <a href="{{ '/assets/diagrams/home-hermes-setup.excalidraw' | relative_url }}">Download Excalidraw source</a>
 </div>
 
-<div class="diagram-frame">
-  <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
-</div>
+<script>
+  const diagramDialog = document.querySelector('.diagram-dialog');
+  const diagramExpandButton = document.querySelector('.diagram-expand');
+  const diagramCloseButton = document.querySelector('.diagram-dialog-close');
 
-</div>
+  diagramExpandButton.addEventListener('click', () => diagramDialog.showModal());
+  diagramCloseButton.addEventListener('click', () => diagramDialog.close());
+  diagramDialog.addEventListener('click', (event) => {
+    if (event.target === diagramDialog) {
+      diagramDialog.close();
+    }
+  });
+</script>
