@@ -90,13 +90,23 @@ permalink: /my-hermes-agent-setup/
 
 <h1>My Hermes Agent Setup</h1>
 
-<p>There is a reason <a href="https://hermes-agent.nousresearch.com/">Hermes</a> is the top agent on <a href="https://openrouter.ai/">OpenRouter</a>: it is designed to keep working beyond a single chat. It runs persistently, carries memory across sessions, builds reusable skills, calls tools, and handles scheduled work. That combination makes it useful as a personal assistant coordinating work for other agents. OpenRouter currently ranks Hermes first among coding agents by token volume. This measures public traffic routed through OpenRouter, not the total usage of each agent across every provider, so tools that mainly use their own APIs are undercounted.</p>
+<h2>Why Hermes</h2>
+
+<p><a href="https://hermes-agent.nousresearch.com/">Hermes</a> is designed from the ground up to work beyond individual sessions. It runs persistently, carries memory forward, turns successful procedures into reusable skills, schedules unattended work, and delegates tasks to subagents. That makes it useful as a personal assistant that coordinates work rather than simply answering one prompt at a time.</p>
+
+<h3>Hermes vs. OpenClaw</h3>
+
+<p>Both Hermes and <a href="https://docs.openclaw.ai/">OpenClaw</a> are self-hosted, multi-channel agents with support for different model providers. I chose Hermes because its core emphasis is the learning loop: persistent memory, reusable skills, and skill improvement across sessions. OpenClaw places more emphasis on its messaging gateway, channel plugins, and connected-device ecosystem; those are valuable, but less central to how I want to use the agent.</p>
+
+<h3>OpenRouter usage</h3>
+
+<p>On <a href="https://openrouter.ai/">OpenRouter</a>, Hermes currently ranks first among coding agents by token volume. This measures public traffic routed through OpenRouter, not the total usage of each agent across every provider, so tools that mainly use their own APIs are undercounted.</p>
 
 <div class="diagram-frame">
   <img src="{{ '/assets/images/my-hermes-agent-setup-openrouter-usage.png' | relative_url }}" alt="My Hermes Agent Setup OpenRouter usage ranking">
 </div>
 
-<h3>Recent results</h3>
+<h4>Recent results</h4>
 
 <table class="usage-table">
   <thead>
