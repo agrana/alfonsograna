@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1280" viewBox="0 0 1700 1280" role="img" aria-labelledby="title desc">
-<title id="title">Home AI Operating Layer</title>
-<desc id="desc">Architecture diagram of Alfons' self-hosted Hermes setup on a Linux box: WhatsApp and SSH/RDP access, Hermes gateway and core, memory layers, Hue lamp control, and separated external inference, coding, and shipping systems.</desc>
+<title id="title">My Hermes Agent Setup</title>
+<desc id="desc">Architecture diagram of My Hermes Agent Setup on a self-hosted Linux box: WhatsApp and SSH/RDP access, Hermes gateway and core, memory layers, Hue lamp control, and separated external inference, coding, and shipping systems.</desc>
 <defs>
   <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#2563eb"/></marker>
   <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#16a34a"/></marker>
@@ -25,7 +25,7 @@
   </style>
 </defs>
 <rect width="1700" height="1280" fill="#fbfdff"/>
-<text x="80" y="66" class="title">Home AI Operating Layer</text>
+<text x="80" y="66" class="title">My Hermes Agent Setup</text>
 <text x="80" y="98" class="subtitle">One self-hosted Linux box runs Hermes — chat, tools, memory, inference, coding, shipping, and IoT hooks.</text>
 <text x="80" y="126" class="machine">Host: any always-on Linux machine · hardware and distribution are interchangeable</text>
 

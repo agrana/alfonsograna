@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="620" viewBox="0 0 1500 620" role="img" aria-labelledby="title desc">
-<title id="title">Hermes agent loop</title>
-<desc id="desc">Flow diagram showing a request entering Hermes, context being built, a model deciding whether to use a tool, tool results returning to the model, and a final response.</desc>
+<title id="title">My Hermes Agent Setup — Agent Loop</title>
+<desc id="desc">Flow diagram of the agent loop in My Hermes Agent Setup, showing a request entering Hermes, context being built, a model deciding whether to use a tool, tool results returning to the model, and a final response.</desc>
 <defs>
   <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#2563eb"/></marker>
   <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#16a34a"/></marker>
@@ -16,7 +16,7 @@
   </style>
 </defs>
 <rect width="1500" height="620" fill="#fbfdff"/>
-<text x="70" y="62" class="title">The Hermes Agent Loop</text>
+<text x="70" y="62" class="title">My Hermes Agent Setup — Agent Loop</text>
 <text x="70" y="94" class="subtitle">The model decides whether to respond or call a tool, then evaluates each tool result.</text>
 
 <!-- Agent loop boundary -->

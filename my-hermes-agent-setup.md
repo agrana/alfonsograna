@@ -1,7 +1,7 @@
 ---
 layout: page
-title: My Hermes Setup
-permalink: /home-hermes-setup/
+title: My Hermes Agent Setup
+permalink: /my-hermes-agent-setup/
 ---
 
 <style>
@@ -88,12 +88,12 @@ permalink: /home-hermes-setup/
 
 <div class="diagram-page">
 
-<h1>My Hermes Setup</h1>
+<h1>My Hermes Agent Setup</h1>
 
 <p>There is a reason <a href="https://hermes-agent.nousresearch.com/">Hermes</a> is the top agent on <a href="https://openrouter.ai/">OpenRouter</a>: it is designed to keep working beyond a single chat. It runs persistently, carries memory across sessions, builds reusable skills, calls tools, and handles scheduled work. That combination makes it useful as a personal assistant coordinating work for other agents. OpenRouter currently ranks Hermes first among coding agents by token volume. This measures public traffic routed through OpenRouter, not the total usage of each agent across every provider, so tools that mainly use their own APIs are undercounted.</p>
 
 <div class="diagram-frame">
-  <img src="{{ '/assets/images/hermes-agent-token-usage.png' | relative_url }}" alt="Hermes Agent leading a coding assistant token usage dashboard">
+  <img src="{{ '/assets/images/my-hermes-agent-setup-openrouter-usage.png' | relative_url }}" alt="My Hermes Agent Setup OpenRouter usage ranking">
 </div>
 
 <h3>Recent results</h3>
@@ -122,14 +122,14 @@ permalink: /home-hermes-setup/
 <p>Hermes is the agent runtime at the center of my AI setup. It runs continuously on a self-hosted box and connects conversations, tools, memory, scheduled jobs, and external services. Can be any always-on machine.</p>
 
 <div class="diagram-frame">
-  <button class="diagram-expand" type="button" data-dialog-target="architecture-dialog" aria-label="Expand the home AI operating layer diagram">
-    <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
+  <button class="diagram-expand" type="button" data-dialog-target="architecture-dialog" aria-label="Expand the My Hermes Agent Setup architecture diagram">
+    <img src="{{ '/assets/diagrams/my-hermes-agent-setup.svg' | relative_url }}" alt="My Hermes Agent Setup architecture diagram">
   </button>
 </div>
 
-<dialog class="diagram-dialog" id="architecture-dialog" aria-label="Expanded home AI operating layer diagram">
+<dialog class="diagram-dialog" id="architecture-dialog" aria-label="Expanded My Hermes Agent Setup architecture diagram">
   <button class="diagram-dialog-close" type="button">Close</button>
-  <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
+  <img src="{{ '/assets/diagrams/my-hermes-agent-setup.svg' | relative_url }}" alt="My Hermes Agent Setup architecture diagram">
 </dialog>
 
 <h3>Components</h3>
@@ -156,14 +156,14 @@ permalink: /home-hermes-setup/
 <p>Each request moves through a simple loop that adds context, invokes a model, and repeats tool use until Hermes can return a final response.</p>
 
 <div class="diagram-frame">
-  <button class="diagram-expand" type="button" data-dialog-target="agent-loop-dialog" aria-label="Expand the Hermes agent loop diagram">
-    <img src="{{ '/assets/diagrams/hermes-agent-loop.svg' | relative_url }}" alt="Hermes agent loop diagram">
+  <button class="diagram-expand" type="button" data-dialog-target="agent-loop-dialog" aria-label="Expand the My Hermes Agent Setup agent loop diagram">
+    <img src="{{ '/assets/diagrams/my-hermes-agent-setup-agent-loop.svg' | relative_url }}" alt="My Hermes Agent Setup agent loop diagram">
   </button>
 </div>
 
-<dialog class="diagram-dialog" id="agent-loop-dialog" aria-label="Expanded Hermes agent loop diagram">
+<dialog class="diagram-dialog" id="agent-loop-dialog" aria-label="Expanded My Hermes Agent Setup agent loop diagram">
   <button class="diagram-dialog-close" type="button">Close</button>
-  <img src="{{ '/assets/diagrams/hermes-agent-loop.svg' | relative_url }}" alt="Hermes agent loop diagram">
+  <img src="{{ '/assets/diagrams/my-hermes-agent-setup-agent-loop.svg' | relative_url }}" alt="My Hermes Agent Setup agent loop diagram">
 </dialog>
 
 <h3>Context and memory</h3>

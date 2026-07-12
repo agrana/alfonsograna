@@ -17,7 +17,7 @@ editorial STIX Two Text design system and overrides in `assets/css/custom.css`.
 - `_includes/` — `featured-links.html`, `post-list.html`, `head-custom.html`, `mermaid.html`.
 - `assets/` — `css/`, `images/`, `diagrams/`.
 - `_config.yml` — site settings (title, baseurl, plugins, cross-posting flags).
-- `index.md`, `about.md`, plus standalone pages at the root (e.g. `home-hermes-setup.md`).
+- `index.md`, `about.md`, plus standalone pages at the root (e.g. `my-hermes-agent-setup.md`).
 - `_*-template.md` — copy-paste templates. They start with `_`, so Jekyll never
   publishes them. Use them as references; do not edit or commit them unless asked.
 

@@ -8,7 +8,7 @@ permalink: /your-page-slug/
   STANDALONE PAGE TEMPLATE
   ------------------------
   Use this for a standalone page (the kind linked under "Some things here"),
-  e.g. `home-hermes-setup.md`. For dated blog posts that appear under
+  e.g. `my-hermes-agent-setup.md`. For dated blog posts that appear under
   "Writing", use `_post-template.md` instead.
 
   HOW TO USE
@@ -30,7 +30,7 @@ permalink: /your-page-slug/
 [Your content here...]
 
 <!--
-  OPTIONAL: embed an image or diagram (see `home-hermes-setup.md` for a full
+  OPTIONAL: embed an image or diagram (see `my-hermes-agent-setup.md` for a full
   working example, including the styling).
 
   <div class="diagram-frame">
