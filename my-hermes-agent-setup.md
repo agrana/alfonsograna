@@ -100,7 +100,7 @@ permalink: /my-hermes-agent-setup/
 
 <h3>OpenRouter usage</h3>
 
-<p>On <a href="https://openrouter.ai/">OpenRouter</a>, Hermes currently ranks first among coding agents by token volume. This measures public traffic routed through OpenRouter, not the total usage of each agent across every provider, so tools that mainly use their own APIs are undercounted.</p>
+<p>On <a href="https://openrouter.ai/">OpenRouter</a>, Hermes currently ranks first among coding agents by token volume.</p>
 
 <div class="diagram-frame">
   <img src="{{ '/assets/images/my-hermes-agent-setup-openrouter-usage.png' | relative_url }}" alt="My Hermes Agent Setup OpenRouter usage ranking">
