@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1280" viewBox="0 0 1700 1280" role="img" aria-labelledby="title desc">
 <title id="title">Home AI Operating Layer</title>
-<desc id="desc">Architecture diagram of Alfons' home Hermes setup on a Fedora mini PC: WhatsApp and SSH/RDP access, Hermes gateway and core, memory layers, Hue lamp control, and separated external inference, coding, and shipping systems.</desc>
+<desc id="desc">Architecture diagram of Alfons' self-hosted Hermes setup on a Linux box: WhatsApp and SSH/RDP access, Hermes gateway and core, memory layers, Hue lamp control, and separated external inference, coding, and shipping systems.</desc>
 <defs>
   <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#2563eb"/></marker>
   <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#16a34a"/></marker>
@@ -26,14 +26,14 @@
 </defs>
 <rect width="1700" height="1280" fill="#fbfdff"/>
 <text x="80" y="66" class="title">Home AI Operating Layer</text>
-<text x="80" y="98" class="subtitle">One Fedora box runs Hermes — chat, tools, memory, inference, coding, shipping, and IoT hooks.</text>
-<text x="80" y="126" class="machine">Machine: fedora.home · Fedora Linux 44 · AMD Ryzen 3 3300U · 13Gi RAM · 475G disk · kernel 6.19.10-300.fc44.x86_64</text>
+<text x="80" y="98" class="subtitle">One self-hosted Linux box runs Hermes — chat, tools, memory, inference, coding, shipping, and IoT hooks.</text>
+<text x="80" y="126" class="machine">Host: any always-on Linux machine · hardware and distribution are interchangeable</text>
 
 <!-- Main columns -->
 <rect x="70" y="165" width="360" height="610" rx="24" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10 9"/>
 <text x="98" y="207" class="section">Access surfaces</text>
 <rect x="475" y="165" width="620" height="610" rx="24" fill="#eff6ff" stroke="#60a5fa" stroke-width="2" stroke-dasharray="10 9"/>
-<text x="503" y="207" class="section">Home Fedora mini PC</text>
+<text x="503" y="207" class="section">Self-hosted Linux box</text>
 <rect x="1140" y="165" width="485" height="690" rx="24" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" stroke-dasharray="10 9"/>
 <text x="1168" y="207" class="section">External systems</text>
 
@@ -75,7 +75,7 @@
   <text x="137" y="622" class="card-body">from any channel</text>
 </g>
 
-<!-- Fedora mini PC -->
+<!-- Self-hosted Linux box -->
 <g id="gateway" filter="url(#shadow)">
   <rect x="675" y="270" width="220" height="82" rx="18" fill="#ffffff"/>
   <rect x="675" y="270" width="220" height="82" rx="18" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>

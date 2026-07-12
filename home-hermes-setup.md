@@ -87,7 +87,7 @@ permalink: /home-hermes-setup/
 
 <h1>Home Hermes Setup</h1>
 
-<p>There is a reason Hermes is the top agent on OpenRouter: it is designed to keep working beyond a single chat. It runs persistently, carries memory across sessions, builds reusable skills, calls tools, and handles scheduled work. That combination makes it useful as a personal operating layer rather than only a coding assistant.</p>
+<p>There is a reason <a href="https://hermes-agent.nousresearch.com/">Hermes</a> is the top agent on <a href="https://openrouter.ai/">OpenRouter</a>: it is designed to keep working beyond a single chat. It runs persistently, carries memory across sessions, builds reusable skills, calls tools, and handles scheduled work. That combination makes it useful as a personal operating layer rather than only a coding assistant.</p>
 
 <h2>Hermes on OpenRouter</h2>
 
@@ -108,11 +108,11 @@ permalink: /home-hermes-setup/
     </tr>
   </thead>
   <tbody>
-    <tr><td>1</td><td>Hermes Agent</td><td>995B</td></tr>
-    <tr><td>2</td><td>Kilo Code</td><td>262B</td></tr>
-    <tr><td>3</td><td>Claude Code</td><td>196B</td></tr>
-    <tr><td>4</td><td>OpenClaw</td><td>165B</td></tr>
-    <tr><td>5</td><td>Cline</td><td>102B</td></tr>
+    <tr><td>1</td><td><a href="https://openrouter.ai/apps/hermes-agent">Hermes Agent</a></td><td>995B</td></tr>
+    <tr><td>2</td><td><a href="https://openrouter.ai/apps/kilo-code">Kilo Code</a></td><td>262B</td></tr>
+    <tr><td>3</td><td><a href="https://openrouter.ai/apps/claude-code">Claude Code</a></td><td>196B</td></tr>
+    <tr><td>4</td><td><a href="https://openrouter.ai/apps/openclaw">OpenClaw</a></td><td>165B</td></tr>
+    <tr><td>5</td><td><a href="https://openrouter.ai/apps/cline">Cline</a></td><td>102B</td></tr>
   </tbody>
 </table>
 
@@ -120,15 +120,15 @@ permalink: /home-hermes-setup/
 
 <h2>How this setup works</h2>
 
-<p>Hermes is the agent runtime at the center of my home AI setup. It runs continuously on a Fedora PC and connects conversations, tools, memory, scheduled jobs, and external services.</p>
+<p>Hermes is the agent runtime at the center of my home AI setup. It runs continuously on a self-hosted Linux box and connects conversations, tools, memory, scheduled jobs, and external services. I use a small computer at home, but the host can be any always-on Linux machine.</p>
 
 <div class="diagram-frame">
-  <button class="diagram-expand" type="button" aria-label="Expand the home AI operating layer diagram">
+  <button class="diagram-expand" type="button" data-dialog-target="architecture-dialog" aria-label="Expand the home AI operating layer diagram">
     <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
   </button>
 </div>
 
-<dialog class="diagram-dialog" aria-label="Expanded home AI operating layer diagram">
+<dialog class="diagram-dialog" id="architecture-dialog" aria-label="Expanded home AI operating layer diagram">
   <button class="diagram-dialog-close" type="button">Close</button>
   <img src="{{ '/assets/diagrams/home-hermes-setup.svg' | relative_url }}" alt="Home AI operating layer diagram">
 </dialog>
@@ -136,40 +136,38 @@ permalink: /home-hermes-setup/
 <h3>Components</h3>
 
 <dl>
-  <dt><strong>WhatsApp</strong></dt>
-  <dd>The messaging interface. Hermes only replies to my own messages.</dd>
-  <dt><strong>Fedora PC</strong></dt>
-  <dd>The always-on execution environment.</dd>
-  <dt><strong>Hermes Gateway</strong></dt>
-  <dd>Turns incoming messages into agent sessions.</dd>
-  <dt><strong>Hermes Agent</strong></dt>
+  <dt><strong><a href="https://www.linux.org/">Linux box</a></strong></dt>
+  <dd>The always-on execution environment. It can be any Linux machine; mine is self-hosted at home.</dd>
+  <dt><strong><a href="https://hermes-agent.nousresearch.com/">Hermes Agent</a></strong></dt>
   <dd>Reasons, calls tools, edits files, runs commands, and coordinates workflows.</dd>
-  <dt><strong>Honcho and Obsidian</strong></dt>
+  <dt><strong><a href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging/">Hermes Gateway</a></strong></dt>
+  <dd>Turns incoming messages into agent sessions.</dd>
+  <dt><strong><a href="https://honcho.dev/">Honcho</a> and <a href="https://obsidian.md/">Obsidian</a></strong></dt>
   <dd>Provide two complementary memory layers: one agent-native and one human-native.</dd>
   <dt><strong>External services</strong></dt>
-  <dd>Inference providers, coding agents, GitHub, Gmail, Hue lights, and other APIs remain modular and can be swapped without changing the core setup.</dd>
+  <dd>Inference through <a href="https://openrouter.ai/">OpenRouter</a>, coding agents, <a href="https://github.com/">GitHub</a>, <a href="https://mail.google.com/">Gmail</a>, <a href="https://www.philips-hue.com/">Hue lights</a>, and other APIs remain modular and can be swapped without changing the core setup.</dd>
 </dl>
 
-<h3>WhatsApp is the front door</h3>
+<h3><a href="https://www.whatsapp.com/">WhatsApp</a> is the front door</h3>
 
 <p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the Hermes Gateway. I already used that conversation to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
 
 <h3>The agent loop</h3>
 
-<div class="mermaid">
-flowchart LR
-    Request[Request] --> Context[Build context]
-    Context --> Model[Call model]
-    Model --> Decision{Use a tool?}
-    Decision -->|Yes| Tool[Run tool]
-    Tool --> Result[Add result to context]
-    Result --> Model
-    Decision -->|No| Response[Return response]
+<div class="diagram-frame">
+  <button class="diagram-expand" type="button" data-dialog-target="agent-loop-dialog" aria-label="Expand the Hermes agent loop diagram">
+    <img src="{{ '/assets/diagrams/hermes-agent-loop.svg' | relative_url }}" alt="Hermes agent loop diagram">
+  </button>
 </div>
+
+<dialog class="diagram-dialog" id="agent-loop-dialog" aria-label="Expanded Hermes agent loop diagram">
+  <button class="diagram-dialog-close" type="button">Close</button>
+  <img src="{{ '/assets/diagrams/hermes-agent-loop.svg' | relative_url }}" alt="Hermes agent loop diagram">
+</dialog>
 
 <h3>Context and memory</h3>
 
-<p>Context is where personalization happens. Hermes combines the current conversation with its personality, user profile, durable memory, available skills, tool descriptions, and relevant past sessions. Local session history maintains continuity within day-to-day conversations, while Obsidian and Honcho cover two different kinds of long-term context.</p>
+<p>Context is where personalization happens. Hermes combines the current conversation with its personality, user profile, durable memory, available skills, tool descriptions, and relevant past sessions. Local session history maintains continuity within day-to-day conversations, while <a href="https://obsidian.md/">Obsidian</a> and <a href="https://honcho.dev/">Honcho</a> cover two different kinds of long-term context.</p>
 
 <h4>Obsidian: the human-readable knowledge base</h4>
 
@@ -181,7 +179,7 @@ flowchart LR
 
 <h3>Scheduled work</h3>
 
-<p>Hermes cron jobs turn a prompt into unattended recurring work. A job can use a standard cron expression or a natural-language schedule and can include specific skills and a delivery target.</p>
+<p><a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/cron">Hermes cron jobs</a> turn a prompt into unattended recurring work. A job can use a standard cron expression or a natural-language schedule and can include specific skills and a delivery target.</p>
 
 <p>The scheduler is part of the Hermes Gateway. While the gateway is running, it checks for due jobs every 60 seconds. Each due job starts in a fresh agent session, loads any attached skills, runs its prompt to completion, and delivers the final response to its configured chat or local output. Hermes then records the result and calculates the next run time.</p>
 
@@ -190,15 +188,16 @@ flowchart LR
 </div>
 
 <script>
-  const diagramDialog = document.querySelector('.diagram-dialog');
-  const diagramExpandButton = document.querySelector('.diagram-expand');
-  const diagramCloseButton = document.querySelector('.diagram-dialog-close');
+  document.querySelectorAll('[data-dialog-target]').forEach((diagramExpandButton) => {
+    const diagramDialog = document.getElementById(diagramExpandButton.dataset.dialogTarget);
+    const diagramCloseButton = diagramDialog.querySelector('.diagram-dialog-close');
 
-  diagramExpandButton.addEventListener('click', () => diagramDialog.showModal());
-  diagramCloseButton.addEventListener('click', () => diagramDialog.close());
-  diagramDialog.addEventListener('click', (event) => {
-    if (event.target === diagramDialog) {
-      diagramDialog.close();
-    }
+    diagramExpandButton.addEventListener('click', () => diagramDialog.showModal());
+    diagramCloseButton.addEventListener('click', () => diagramDialog.close());
+    diagramDialog.addEventListener('click', (event) => {
+      if (event.target === diagramDialog) {
+        diagramDialog.close();
+      }
+    });
   });
 </script>
