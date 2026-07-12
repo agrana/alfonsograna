@@ -25,10 +25,8 @@
 
 <!-- Connections -->
 <path d="M250,265 H300" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
-<path d="M300,265 H350" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
 <path d="M550,265 H610" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
 <path d="M830,265 H870" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
-<path d="M1090,265 H1120 V550 H330 V475 H300" fill="none" stroke="#16a34a" stroke-width="3"/>
 <text x="1135" y="250" text-anchor="middle" class="label">No</text>
 <path d="M300,475 H250" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
 <path d="M980,340 V420" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
