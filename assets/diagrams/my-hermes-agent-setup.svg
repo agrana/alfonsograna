@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1280" viewBox="0 0 1700 1280" role="img" aria-labelledby="title desc">
 <title id="title">My Hermes Agent Setup</title>
-<desc id="desc">Architecture diagram of My Hermes Agent Setup on a self-hosted Linux box: WhatsApp and SSH/RDP access, Hermes gateway and core, memory layers, Hue lamp control, and separated external inference, coding, and shipping systems.</desc>
+<desc id="desc">Architecture diagram of My Hermes Agent Setup on a self-hosted Linux box: WhatsApp and SSH/RDP access, Hermes gateway and core, memory layers, and separated external inference, coding, and shipping systems.</desc>
 <defs>
   <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#2563eb"/></marker>
   <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#16a34a"/></marker>
@@ -26,7 +26,7 @@
 </defs>
 <rect width="1700" height="1280" fill="#fbfdff"/>
 <text x="80" y="66" class="title">My Hermes Agent Setup</text>
-<text x="80" y="98" class="subtitle">One self-hosted Linux box runs Hermes — chat, tools, memory, inference, coding, shipping, and IoT hooks.</text>
+<text x="80" y="98" class="subtitle">One self-hosted Linux box runs Hermes — chat, tools, memory, inference, coding, and shipping.</text>
 <text x="80" y="126" class="machine">Host: any always-on Linux machine · hardware and distribution are interchangeable</text>
 
 <!-- Main columns -->
@@ -34,7 +34,7 @@
 <text x="98" y="207" class="section">Access surfaces</text>
 <rect x="475" y="165" width="620" height="610" rx="24" fill="#eff6ff" stroke="#60a5fa" stroke-width="2" stroke-dasharray="10 9"/>
 <text x="503" y="207" class="section">Self-hosted Linux box</text>
-<rect x="1140" y="165" width="485" height="690" rx="24" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" stroke-dasharray="10 9"/>
+<rect x="1140" y="165" width="485" height="610" rx="24" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" stroke-dasharray="10 9"/>
 <text x="1168" y="207" class="section">External systems</text>
 
 <!-- Category zones inside column 2 -->
@@ -46,13 +46,12 @@
 
 <!-- Connections behind cards -->
 <path d="M385,405 C435,420 490,440 545,459" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M385,285 C490,288 580,300 675,311" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M785,352 L785,381 C785,398 785,400 790,400" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M385,285 C490,288 580,310 675,326" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M785,367 L785,381 C785,398 785,400 790,400" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
 <path d="M680,518 C688,560 680,600 677.5,635" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
-<path d="M900,518 C910,560 930,600 960,635" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
+<path d="M900,518 C910,560 925,600 945,635" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
 <path d="M1035,440 C1080,380 1120,330 1190,302" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
 <path d="M1035,465 C1080,474 1135,486 1190,486" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M1035,495 C1094,610 1135,750 1190,794" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
 
 <!-- Access cards -->
 <g id="whatsapp" filter="url(#shadow)">
@@ -77,10 +76,10 @@
 
 <!-- Self-hosted Linux box -->
 <g id="gateway" filter="url(#shadow)">
-  <rect x="675" y="270" width="220" height="82" rx="18" fill="#ffffff"/>
-  <rect x="675" y="270" width="220" height="82" rx="18" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
-  <text x="697" y="302" class="card-title">Hermes Gateway</text>
-  <text x="697" y="330" class="card-body">inbound messages</text>
+  <rect x="675" y="285" width="220" height="82" rx="18" fill="#ffffff"/>
+  <rect x="675" y="285" width="220" height="82" rx="18" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <text x="697" y="317" class="card-title">Hermes Gateway</text>
+  <text x="697" y="345" class="card-body">inbound messages</text>
 </g>
 <g id="hermes" filter="url(#shadow)">
   <rect x="545" y="400" width="490" height="118" rx="24" fill="#ffffff"/>
@@ -97,10 +96,10 @@
   <text x="557" y="712" class="card-body">recall and user model</text>
 </g>
 <g id="obsidian" filter="url(#shadow)">
-  <rect x="850" y="635" width="220" height="86" rx="18" fill="#ffffff"/>
-  <rect x="850" y="635" width="220" height="86" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
-  <text x="872" y="667" class="card-title">Obsidian</text>
-  <text x="872" y="695" class="card-body">notes vault</text>
+  <rect x="840" y="635" width="210" height="86" rx="18" fill="#ffffff"/>
+  <rect x="840" y="635" width="210" height="86" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <text x="862" y="667" class="card-title">Obsidian</text>
+  <text x="862" y="695" class="card-body">notes vault</text>
 </g>
 
 <!-- External systems cards arranged by category -->
@@ -127,13 +126,6 @@
   <rect x="1190" y="448" width="405" height="76" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
   <text x="1212" y="478" class="card-title">Cursor + Codex CLIs</text>
   <text x="1212" y="504" class="card-body">coding agents</text>
-</g>
-<text x="1190" y="742" class="category">IOT</text>
-<g id="iot-box" filter="url(#shadow)">
-  <rect x="1190" y="760" width="405" height="72" rx="18" fill="#ffffff"/>
-  <rect x="1190" y="760" width="405" height="72" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
-  <text x="1212" y="790" class="card-title">Philips Hue</text>
-  <text x="1212" y="814" class="card-body">lamp control</text>
 </g>
 <g id="shipping-stack-box">
   <text x="1190" y="542" class="category">SHIPPING TOOLS</text>
@@ -164,10 +156,8 @@
 <!-- Compact flow labels -->
 <rect x="430" y="378" width="128" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
 <text x="438" y="395" class="small" fill="#2563eb">SSH / RDP</text>
-<rect x="416" y="248" width="168" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
-<text x="424" y="265" class="small" fill="#16a34a">WhatsApp → Gateway</text>
-<rect x="688" y="368" width="118" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
-<text x="696" y="385" class="small" fill="#16a34a">to Hermes</text>
+<rect x="688" y="374" width="118" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
+<text x="696" y="391" class="small" fill="#16a34a">to Hermes</text>
 <rect x="618" y="536" width="98" height="24" rx="8" fill="#fbfdff" stroke="#7c3aed" stroke-width="1" opacity="0.96"/>
 <text x="626" y="553" class="small" fill="#7c3aed">Honcho</text>
 <rect x="918" y="536" width="98" height="24" rx="8" fill="#fbfdff" stroke="#ea580c" stroke-width="1" opacity="0.96"/>
@@ -176,8 +166,6 @@
 <text x="1056" y="377" class="small" fill="#dc2626">LLMs</text>
 <rect x="1048" y="474" width="130" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
 <text x="1056" y="491" class="small" fill="#2563eb">coding</text>
-<rect x="1048" y="640" width="118" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
-<text x="1056" y="657" class="small" fill="#16a34a">IoT control</text>
 <rect x="1328" y="616" width="130" height="24" rx="8" fill="#fbfdff" stroke="#64748b" stroke-width="1" opacity="0.96"/>
 <text x="1336" y="633" class="small" fill="#64748b">deploy</text>
 
@@ -194,16 +182,13 @@
   <text x="70" y="145" class="caption">Obsidian notes</text>
   <line x1="0" y1="174" x2="54" y2="174" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
   <text x="70" y="179" class="caption">Coding/shipping: GitHub → Vercel → Supabase → web apps</text>
-  <line x1="0" y1="208" x2="54" y2="208" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
-  <text x="70" y="213" class="caption">Hermes → Philips Hue lamp control</text>
 </g>
 <g filter="url(#shadow)">
-  <rect x="560" y="908" width="1065" height="205" rx="22" fill="#ffffff"/>
-  <rect x="560" y="908" width="1065" height="205" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="560" y="908" width="1065" height="175" rx="22" fill="#ffffff"/>
+  <rect x="560" y="908" width="1065" height="175" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
   <text x="600" y="958" class="section">How it fits together</text>
   <text x="600" y="998" class="subtitle">WhatsApp hits Gateway first; SSH and RDP talk to Hermes directly. Hermes is chat and agent together.</text>
   <text x="600" y="1030" class="subtitle">Honcho holds agent memory. Obsidian holds your notes. OpenAI and OpenRouter sit in the inference layer.</text>
-  <text x="600" y="1062" class="subtitle">Hermes also reaches local IoT through Philips Hue lamp control.</text>
-  <text x="600" y="1094" class="subtitle">Coding tools and the shipping stack are grouped separately from inference and IoT.</text>
+  <text x="600" y="1062" class="subtitle">Coding tools and the shipping stack are grouped separately from inference.</text>
 </g>
 </svg>

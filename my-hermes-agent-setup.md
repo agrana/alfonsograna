@@ -119,7 +119,7 @@ permalink: /my-hermes-agent-setup/
 
 <h2>How this setup works</h2>
 
-<p>Hermes is the agent runtime at the center of my AI setup. It runs continuously on a self-hosted box and connects conversations, tools, memory, scheduled jobs, and external services. Can be any always-on machine.</p>
+<p>Hermes is the agent runtime at the center of my AI setup. It runs continuously on a self-hosted box and connects conversations, tools, memory, scheduled jobs, and external services. It can be any always-on machine, such as a <a href="https://www.raspberrypi.com/">Raspberry Pi</a>, a cloud VM, or a <a href="https://www.apple.com/mac-mini/">Mac mini</a> at home.</p>
 
 <div class="diagram-frame">
   <button class="diagram-expand" type="button" data-dialog-target="architecture-dialog" aria-label="Expand the My Hermes Agent Setup architecture diagram">
