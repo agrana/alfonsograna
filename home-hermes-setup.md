@@ -90,11 +90,7 @@ permalink: /home-hermes-setup/
 
 <h1>My Hermes Setup</h1>
 
-<p>There is a reason <a href="https://hermes-agent.nousresearch.com/">Hermes</a> is the top agent on <a href="https://openrouter.ai/">OpenRouter</a>: it is designed to keep working beyond a single chat. It runs persistently, carries memory across sessions, builds reusable skills, calls tools, and handles scheduled work. That combination makes it useful as a personal assistant cordinating work for other agents.</p>
-
-<h2>Hermes on OpenRouter</h2>
-
-<p>OpenRouter currently ranks Hermes first among coding agents by token volume. This measures public traffic routed through OpenRouter, not the total usage of each agent across every provider, so tools that mainly use their own APIs are undercounted.</p>
+<p>There is a reason <a href="https://hermes-agent.nousresearch.com/">Hermes</a> is the top agent on <a href="https://openrouter.ai/">OpenRouter</a>: it is designed to keep working beyond a single chat. It runs persistently, carries memory across sessions, builds reusable skills, calls tools, and handles scheduled work. That combination makes it useful as a personal assistant coordinating work for other agents. OpenRouter currently ranks Hermes first among coding agents by token volume. This measures public traffic routed through OpenRouter, not the total usage of each agent across every provider, so tools that mainly use their own APIs are undercounted.</p>
 
 <div class="diagram-frame">
   <img src="{{ '/assets/images/hermes-agent-token-usage.png' | relative_url }}" alt="Hermes Agent leading a coding assistant token usage dashboard">
