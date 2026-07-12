@@ -151,7 +151,7 @@ permalink: /home-hermes-setup/
 
 <h3>Hermes Gateway</h3>
 
-<p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the <a href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging/">Hermes Gateway</a>. WhatsApp is my choice, not a Hermes requirement: the same gateway supports more than 20 messaging services, including Telegram, Discord, Slack, Signal, email, SMS, and Microsoft Teams.</p>
+<p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the <a href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging/">Hermes Gateway</a>. WhatsApp is my choice; the same gateway supports more than 20 messaging services, including Telegram, Discord, Slack, Signal, email, SMS, and Microsoft Teams.</p>
 
 <p>I already used my private conversation to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
 

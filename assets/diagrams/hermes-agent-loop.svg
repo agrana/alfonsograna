@@ -21,11 +21,11 @@
 <path d="M260,235 H330" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
 <path d="M560,235 H630" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
 <path d="M860,235 H930" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
-<text x="895" y="219" text-anchor="middle" class="label">Tool needed</text>
+<text x="895" y="160" text-anchor="middle" class="label">Tool needed?</text>
 <path d="M805,175 C900,120 1175,120 1275,175" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
 <text x="1040" y="128" text-anchor="middle" class="label">Request complete</text>
 <path d="M1045,305 V380 H745 V305" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
-<text x="875" y="402" class="label">Tool result becomes new context</text>
+<text x="895" y="402" text-anchor="middle" class="label">Tool result becomes new context</text>
 
 <g filter="url(#shadow)">
   <rect x="70" y="175" width="190" height="120" rx="18" fill="#ffffff" stroke="#60a5fa" stroke-width="2.5"/>
