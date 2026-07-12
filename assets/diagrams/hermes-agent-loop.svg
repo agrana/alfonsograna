@@ -19,9 +19,9 @@
 <text x="70" y="62" class="title">The Hermes Agent Loop</text>
 <text x="70" y="94" class="subtitle">The model decides whether to respond or call a tool, then evaluates each tool result.</text>
 
-<!-- Tool-use loop boundary -->
+<!-- Agent loop boundary -->
 <rect x="580" y="145" width="550" height="420" rx="24" fill="#faf5ff" fill-opacity="0.45" stroke="#7c3aed" stroke-width="2" stroke-dasharray="9 8"/>
-<text x="605" y="176" class="loop-label">TOOL-USE LOOP</text>
+<text x="605" y="176" class="loop-label">AGENT LOOP</text>
 
 <!-- Connections -->
 <path d="M250,265 H320" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
