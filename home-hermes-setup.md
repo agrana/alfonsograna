@@ -148,9 +148,11 @@ permalink: /home-hermes-setup/
   <dd>Inference through <a href="https://openrouter.ai/">OpenRouter</a>, coding agents, <a href="https://github.com/">GitHub</a>, <a href="https://mail.google.com/">Gmail</a>, <a href="https://www.philips-hue.com/">Hue lights</a>, and other APIs remain modular and can be swapped without changing the core setup.</dd>
 </dl>
 
-<h3><a href="https://www.whatsapp.com/">WhatsApp</a> is the front door</h3>
+<h3>WhatsApp is my front door</h3>
 
-<p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the Hermes Gateway. I already used that conversation to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
+<p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the <a href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging/">Hermes Gateway</a>. WhatsApp is my choice, not a Hermes requirement: the same gateway supports more than 20 messaging services, including Telegram, Discord, Slack, Signal, email, SMS, and Microsoft Teams.</p>
+
+<p>I already used my private conversation to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
 
 <h3>The agent loop</h3>
 
