@@ -18,7 +18,7 @@
 <text x="70" y="94" class="subtitle">The model decides whether to respond or call a tool, then evaluates each tool result.</text>
 
 <!-- Agent loop boundary -->
-<rect x="300" y="145" width="850" height="420" rx="24" fill="#eff6ff" fill-opacity="0.45" stroke="#2563eb" stroke-width="2" stroke-dasharray="9 8"/>
+<rect x="300" y="145" width="850" height="420" rx="24" fill="#ede9fe" fill-opacity="0.65" stroke="#2563eb" stroke-width="2" stroke-dasharray="9 8"/>
 <text x="325" y="176" class="loop-label">AGENT LOOP</text>
 
 <!-- Connections -->
