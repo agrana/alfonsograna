@@ -27,7 +27,7 @@
 <path d="M250,265 H300" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
 <path d="M550,265 H610" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
 <path d="M830,265 H870" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
-<text x="1135" y="250" text-anchor="middle" class="label">No</text>
+<text x="1105" y="250" class="label">No</text>
 <path d="M300,475 H250" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
 <path d="M980,340 V420" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
 <text x="997" y="388" class="label">Yes</text>
