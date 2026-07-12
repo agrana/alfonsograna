@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What using 1B+ tokens in Cursor taught me"
+title: "My findings in agentic coding"
 date: 2026-06-16 00:00:00 -0000
 categories: [ai, software-engineering]
 tags: [cursor, ai-coding, coding-agents, software-engineering, workflow]
