@@ -3,7 +3,8 @@
   <p>Everything in this feed is AI-generated with little human review.</p>
   <ul class="post-list">
     {% assign post_limit = include.limit | default: 5 %}
-    {% for post in site.posts limit:post_limit %}
+    {% assign feed_posts = site.posts | where_exp: "post", "post.slug != 'what-using-1b-tokens-in-cursor-taught-me'" %}
+    {% for post in feed_posts limit:post_limit %}
     <li class="post-card">
       <article>
         <h3 class="post-card-title">
