@@ -24,11 +24,15 @@
 <text x="605" y="176" class="loop-label">AGENT LOOP</text>
 
 <!-- Connections -->
+<path d="M20,265 H70" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
+<text x="45" y="245" text-anchor="middle" class="label">Input</text>
 <path d="M250,265 H320" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
 <path d="M540,265 H610" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
 <path d="M830,265 H870" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
 <path d="M1090,265 H1240" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
 <text x="1165" y="250" text-anchor="middle" class="label">No</text>
+<path d="M1430,265 H1480" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
+<text x="1455" y="245" text-anchor="middle" class="label">Output</text>
 <path d="M980,340 V420" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
 <text x="997" y="388" class="label">Yes</text>
 <path d="M870,475 H820" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
