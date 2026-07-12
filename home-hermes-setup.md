@@ -119,7 +119,7 @@ permalink: /home-hermes-setup/
   </tbody>
 </table>
 
-<p class="source-note">Source: <a href="https://openrouter.ai/apps/category/coding">OpenRouter Coding Agents Rankings</a>, captured July 12, 2026. OpenRouter also provides an authenticated <a href="https://openrouter.ai/docs/cookbook/administration/data-api">Data API</a> for app rankings and daily model totals.</p>
+<p class="source-note">Source: <a href="https://openrouter.ai/apps/category/coding">OpenRouter Coding Agents Rankings</a>, captured July 12, 2026.</p>
 
 <h2>How this setup works</h2>
 
