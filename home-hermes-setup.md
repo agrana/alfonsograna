@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Home Hermes Setup
+title: My Hermes Setup
 permalink: /home-hermes-setup/
 ---
 
@@ -81,11 +81,14 @@ permalink: /home-hermes-setup/
   margin-bottom: 1.5rem;
   font-size: .9rem;
 }
+.diagram-page code {
+  font-size: .85em;
+}
 </style>
 
 <div class="diagram-page">
 
-<h1>Home Hermes Setup</h1>
+<h1>My Hermes Setup</h1>
 
 <p>There is a reason <a href="https://hermes-agent.nousresearch.com/">Hermes</a> is the top agent on <a href="https://openrouter.ai/">OpenRouter</a>: it is designed to keep working beyond a single chat. It runs persistently, carries memory across sessions, builds reusable skills, calls tools, and handles scheduled work. That combination makes it useful as a personal operating layer rather than only a coding assistant.</p>
 
@@ -135,6 +138,8 @@ permalink: /home-hermes-setup/
 
 <h3>Components</h3>
 
+<p>The core setup separates agent execution, message delivery, and long-term memory into three distinct layers.</p>
+
 <dl>
   <dt><strong><a href="https://hermes-agent.nousresearch.com/">Hermes Agent</a></strong></dt>
   <dd>Reasons, calls tools, edits files, runs commands, and coordinates workflows.</dd>
@@ -142,8 +147,6 @@ permalink: /home-hermes-setup/
   <dd>Turns incoming messages into agent sessions.</dd>
   <dt><strong><a href="https://honcho.dev/">Honcho</a> and <a href="https://obsidian.md/">Obsidian</a></strong></dt>
   <dd>Provide two complementary memory layers: one agent-native and one human-native.</dd>
-  <dt><strong>External services</strong></dt>
-  <dd>Inference through <a href="https://openrouter.ai/">OpenRouter</a>, coding agents, <a href="https://github.com/">GitHub</a>, <a href="https://mail.google.com/">Gmail</a>, <a href="https://www.philips-hue.com/">Hue lights</a>, and other APIs remain modular and can be swapped without changing the core setup.</dd>
 </dl>
 
 <h3>Hermes Gateway</h3>
@@ -153,6 +156,8 @@ permalink: /home-hermes-setup/
 <p>I already used my private conversation to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
 
 <h3>The agent loop</h3>
+
+<p>Each request moves through a simple loop that adds context, invokes a model, and repeats tool use until Hermes can return a final response.</p>
 
 <div class="diagram-frame">
   <button class="diagram-expand" type="button" data-dialog-target="agent-loop-dialog" aria-label="Expand the Hermes agent loop diagram">
