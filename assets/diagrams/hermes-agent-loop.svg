@@ -24,15 +24,11 @@
 <text x="605" y="176" class="loop-label">AGENT LOOP</text>
 
 <!-- Connections -->
-<path d="M20,265 H70" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
-<text x="45" y="245" text-anchor="middle" class="label">Input</text>
 <path d="M250,265 H320" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
 <path d="M540,265 H610" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
 <path d="M830,265 H870" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
-<path d="M1090,265 H1240" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
-<text x="1165" y="250" text-anchor="middle" class="label">No</text>
-<path d="M1430,265 H1480" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
-<text x="1455" y="245" text-anchor="middle" class="label">Output</text>
+<path d="M1090,265 H1180 V585 H160 V520" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
+<text x="1135" y="250" text-anchor="middle" class="label">No</text>
 <path d="M980,340 V420" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
 <text x="997" y="388" class="label">Yes</text>
 <path d="M870,475 H820" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow-purple)"/>
@@ -68,9 +64,9 @@
 
 <!-- Response -->
 <g filter="url(#shadow)">
-  <rect x="1240" y="220" width="190" height="90" rx="45" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>
-  <text x="1335" y="258" text-anchor="middle" class="step">Respond</text>
-  <text x="1335" y="284" text-anchor="middle" class="detail">Return final result</text>
+  <rect x="70" y="430" width="180" height="90" rx="45" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="160" y="468" text-anchor="middle" class="step">Respond</text>
+  <text x="160" y="494" text-anchor="middle" class="detail">Return final result</text>
 </g>
 
 <!-- Tool branch -->
