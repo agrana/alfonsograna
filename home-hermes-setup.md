@@ -90,7 +90,7 @@ permalink: /home-hermes-setup/
 
 <h1>My Hermes Setup</h1>
 
-<p>There is a reason <a href="https://hermes-agent.nousresearch.com/">Hermes</a> is the top agent on <a href="https://openrouter.ai/">OpenRouter</a>: it is designed to keep working beyond a single chat. It runs persistently, carries memory across sessions, builds reusable skills, calls tools, and handles scheduled work. That combination makes it useful as a personal operating layer rather than only a coding assistant.</p>
+<p>There is a reason <a href="https://hermes-agent.nousresearch.com/">Hermes</a> is the top agent on <a href="https://openrouter.ai/">OpenRouter</a>: it is designed to keep working beyond a single chat. It runs persistently, carries memory across sessions, builds reusable skills, calls tools, and handles scheduled work. That combination makes it useful as a personal assistant cordinating work for other agents.</p>
 
 <h2>Hermes on OpenRouter</h2>
 
@@ -123,7 +123,7 @@ permalink: /home-hermes-setup/
 
 <h2>How this setup works</h2>
 
-<p>Hermes is the agent runtime at the center of my home AI setup. It runs continuously on a self-hosted Linux box and connects conversations, tools, memory, scheduled jobs, and external services. I use a small computer at home, but the host can be any always-on Linux machine.</p>
+<p>Hermes is the agent runtime at the center of my AI setup. It runs continuously on a self-hosted box and connects conversations, tools, memory, scheduled jobs, and external services. Can be any always-on machine.</p>
 
 <div class="diagram-frame">
   <button class="diagram-expand" type="button" data-dialog-target="architecture-dialog" aria-label="Expand the home AI operating layer diagram">
@@ -151,9 +151,9 @@ permalink: /home-hermes-setup/
 
 <h3>Hermes Gateway</h3>
 
-<p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the <a href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging/">Hermes Gateway</a>. WhatsApp is my choice; the same gateway supports more than 20 messaging services, including Telegram, Discord, Slack, Signal, email, SMS, and Microsoft Teams.</p>
+<p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the <a href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging/">Hermes Gateway</a>. ; The gateway supports more than 20 messaging services, including Telegram, Discord, Slack, Signal, email, SMS, and Microsoft Teams.</p>
 
-<p>I already used my private conversation to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
+<p>I already used this same whtasapp thread to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
 
 <h3>The agent loop</h3>
 
@@ -174,13 +174,13 @@ permalink: /home-hermes-setup/
 
 <p>Context is where personalization happens. Hermes combines the current conversation with its personality, user profile, durable memory, available skills, tool descriptions, and relevant past sessions. Local session history maintains continuity within day-to-day conversations, while <a href="https://obsidian.md/">Obsidian</a> and <a href="https://honcho.dev/">Honcho</a> cover two different kinds of long-term context.</p>
 
-<h4><a href="https://obsidian.md/">Obsidian</a>: the human-readable knowledge base</h4>
+<h4><a href="https://obsidian.md/">Obsidian</a>: External memory in MD format easy to read and edit a knowledge base that Hermes Agent knows it can grab at any time</h4>
 
-<p>Obsidian holds the material I want to read, organize, and edit myself: saved links, research, project notes, summaries, and connections between ideas. Because the vault is made of Markdown files, Hermes can search and update it with normal file tools while the knowledge remains portable and easy to audit.</p>
+<p>Obsidian holds the material I want to read, organize, and edit myself: saved links, research, project notes, summaries, and connections between ideas. Because the vault is made of Markdown files, Hermes can search and update it with normal file tools while the knowledge remains portable and easy to audit. Is basically a folder structure with mark-up files inside obsidian is just the interfase that can be anything.</p>
 
 <h4><a href="https://honcho.dev/">Honcho</a>: agent-native memory</h4>
 
-<p>Honcho gives Hermes persistent memory across sessions. It builds a model of my preferences, goals, communication style, and recurring patterns from previous conversations. Hermes can retrieve relevant conclusions through semantic search and inject session context when responding, so useful personal context does not have to be restated in every conversation.</p>
+<p>Honcho gives Hermes persistent memory across sessions. It builds a model of my preferences, goals, communication style, and recurring patterns from previous conversations. Hermes can retrieve relevant conclusions through semantic search and inject session context when responding, so useful personal context does not have to be restated in every conversation. I am still learning how honcho works It seems a bit magicall still. Honcho is self-hosted for me.</p>
 
 <h3>Scheduled work</h3>
 
