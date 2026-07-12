@@ -127,7 +127,7 @@ permalink: /my-hermes-agent-setup/
 
 <p class="source-note">Source: <a href="https://openrouter.ai/apps/category/coding">OpenRouter Coding Agents Rankings</a>, captured July 12, 2026.</p>
 
-<h2>How this setup works</h2>
+<h2>Architecture</h2>
 
 <p>Hermes is the agent runtime at the center of my AI setup. It runs continuously on a self-hosted box and connects conversations, tools, memory, scheduled jobs, and external services. It can be any always-on machine, such as a <a href="https://www.raspberrypi.com/">Raspberry Pi</a>, a cloud VM, or a <a href="https://www.apple.com/mac-mini/">Mac mini</a> at home.</p>
 
