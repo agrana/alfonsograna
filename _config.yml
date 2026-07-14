@@ -31,5 +31,8 @@ show_excerpts: true
 canonical_url: true
 medium_crosspost: true
 
+# Public site identifier for Cloudflare Web Analytics
+cloudflare_web_analytics_token: "b9f535ff33364995a4ec4eaa3636be26"
+
 # Allow future posts to be displayed
 future: true
