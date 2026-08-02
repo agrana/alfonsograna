@@ -184,9 +184,11 @@ permalink: /my-hermes-agent-setup/
 
 <p>Obsidian holds the material I want to read, organize, and edit myself: saved links, research, project notes, summaries, and connections between ideas. Because the vault is made of Markdown files, Hermes can search and update it with normal file tools while the knowledge remains portable and easy to audit. Is basically a folder structure with mark-up files inside obsidian is just the interfase that can be anything.</p>
 
-<h4><a href="https://honcho.dev/">Honcho</a>: agent-native memory</h4>
+<h4><a href="https://honcho.dev/">Honcho</a>: agent-native long-term memory</h4>
 
-<p>Honcho gives Hermes persistent memory across sessions. It builds a model of my preferences, goals, communication style, and recurring patterns from previous conversations. Hermes can retrieve relevant conclusions through semantic search and inject session context when responding, so useful personal context does not have to be restated in every conversation. I am still learning how honcho works It seems a bit magicall still. Honcho is self-hosted for me.</p>
+<p>Honcho is Hermes's external memory provider. It stores completed turns, derives conclusions, and builds directional representations of both the user and AI peers. Before a model request, Hermes retrieves the prepared session summary, peer representations, peer cards, and dialectic synthesis from Honcho. It appends that recalled material to an API-only copy of the current user message, keeping the stored conversation free of injected context.</p>
+
+<p>I self-host the Honcho API, datastore, queue, and background processing. <a href="{% post_url 2026-08-02-how-i-run-honcho-for-hermes-long-term-memory-and-personalities %}">How I Run Honcho for Hermes: Long-Term Memory and Personalities</a> describes the architecture and operating model.</p>
 
 <h3>Scheduled work</h3>
 
