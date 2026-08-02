@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "How I Run Honcho as Hermes's Memory Layer"
+title: "How I Run Honcho for Hermes: Persistent Memory and Personalities"
 date: 2026-08-02 15:55:56 +0200
 categories: [ai, self-hosting, devops]
 tags: [honcho, hermes-agent, memory, netdata, podman]
-excerpt: "I self-host Honcho to give Hermes useful memory across conversations and repositories. This is how the memory model, services, session boundaries, backups, and monitoring fit together on my machine."
+excerpt: "I self-host Honcho to give Hermes persistent memory and directional models of both participants. This is how the memory system, services, session boundaries, backups, and monitoring fit together on my machine."
 author: "Alfonso Grana"
 ---
 
-# How I Run Honcho as Hermes's Memory Layer
+# How I Run Honcho for Hermes: Persistent Memory and Personalities
 
 In [my Hermes setup]({{ '/my-hermes-agent-setup/' | relative_url }}), I described Honcho as the part that gives Hermes persistent memory. At the time, I was still learning what happened behind that interface.
 
