@@ -69,6 +69,22 @@ author: "Alfonso Grana"
    - Standalone (non-dated) pages use `_page-template.md` and link from
      `_includes/featured-links.html`.
 
+## Writing style
+
+- Use affirmative definitions: state what a subject is, what it does, and what it
+  enables.
+- Revise habitual contrastive negation, including “X, not Y,” “not just X but Y,”
+  “No X, more Y,” negation-led hooks, and lists of what something is not. Rewrite
+  around the subject's positive identity, action, capability, or outcome.
+- Use negation when it communicates a factual prohibition, unsupported capability,
+  technical or contractual limit, direct correction, or meaningful decision
+  boundary. State the limit once and near the action it governs.
+- Prefer concrete capabilities and outcomes in calm, precise language. Use a short
+  contrast only when the contrast changes or clarifies the meaning.
+- Name concrete tasks, deliverables, components, interfaces, responsibilities, and
+  failure boundaries instead of relying on vague references such as “the work” or
+  generic architectural “layers.”
+
 Treat `https://alfonsograna.com/` as the canonical site URL. Medium cross-posting
 is a manual import workflow; see `_cross-posting-template.md` and the flags in
 `_config.yml`. Do not introduce the old `agrana.github.io/alfonsograna/` URL.
