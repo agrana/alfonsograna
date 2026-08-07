@@ -183,35 +183,7 @@ I configured Hermes to use a per-repository session strategy. I also mapped `/ho
 
 When I start Hermes inside a repository, that repository normally determines the Honcho session. Starting it in the Honcho repository resolves to the `honcho` session. The session key is selected at startup. Moving to another directory inside the same Hermes process keeps that session.
 
-My working rules are:
-
-1. Start Hermes inside the repository that owns the task.
-2. Keep the session when another repository contributes to the same outcome.
-3. Give a significant cross-repository effort a clear title so it becomes one named workstream.
-4. Start a separate Hermes process for unrelated work in another repository.
-5. Map a shared parent directory when a group of repositories forms one permanent work area.
 
 This makes the workstream the task boundary and the repository the default starting point.
 
 Manual directory mappings have the highest precedence in the session resolver. A title comes next, followed by gateway and session identifiers, then the configured repository or directory strategy. I start repository work inside the repository because my home directory has an intentional mapping to `personal`.
-
-## Backups and memory maintenance
-
-A daily systemd timer runs a custom PostgreSQL backup with `pg_dump`. It stores private backup files under `~/.local/share/honcho/backups`, retains 14 days, and catches up after downtime because the timer is persistent.
-
-I tested the recovery path by restoring the first backup into a temporary database and comparing its record counts with the running database.
-
-The backups currently share a disk with the database. They protect against database mistakes and corruption. An encrypted off-machine copy would extend that protection to loss of the computer or disk.
-
-A monthly timer creates a read-only memory report under `~/.local/share/honcho/reviews`. It covers all four directional peer cards and the latest conclusions for each relationship. I review Hermes's model of me first because it has the greatest effect on personalized recall.
-
-I use the following maintenance rules:
-
-- Stable identity belongs in a peer card.
-- Changing observations belong in conclusions.
-- A false or outdated conclusion receives an explicit correction in its workstream.
-- Dreaming gets time to reconcile the correction.
-- Deletion is reserved for privacy, security, or persistently harmful false memory, with a backup taken first.
-- Honcho interfaces manage Honcho records.
-
-I also run a review after a clearly wrong recall, a major change in my work or life, or a change to the model or memory configuration. A quarterly review covers the broader direction of the memory.
