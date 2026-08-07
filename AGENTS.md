@@ -97,6 +97,9 @@ is a manual import workflow; see `_cross-posting-template.md` and the flags in
 - **This repo is on GitHub, not GitLab.** Do not use GitLab `merge_request.*` push
   options here. Open PRs with `gh pr create` when review is wanted; plain `git push`
   otherwise.
+- GitHub CLI authentication uses the desktop keyring. Run `gh` network checks with
+  sandbox escalation. Treat an authentication failure as real only when the
+  escalated `gh auth status` check fails.
 - Commit messages use a lowercase type prefix matching existing history:
   `content:`, `copy:`, `style:`, `fix:`, `docs:`, `feat:`.
 - Only commit files relevant to the task; leave unrelated untracked files alone.
