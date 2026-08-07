@@ -53,27 +53,49 @@ The parts have separate responsibilities:
 
 - The Honcho API receives messages and serves recall requests.
 - PostgreSQL is the durable store. Its pgvector extension stores embeddings.
-- Redis carries background work. {what is background work?}
+- Redis provides a shared cache for the API and deriver.
 - The deriver turns new material into conclusions and representations.
 - Dreaming revisits accumulated conclusions and consolidates them.
 
 ## Peers make memory directional
 
-Honcho organizes the memories in workspaces isolated betweeen them.
+Honcho organizes memory in workspaces that isolate their records. This workspace
+has two peers:
 
 - `Myself` represents me.
 - `Hermes` represents Hermes.
 
-Honcho maintains four directional relationships between them:
+Each model owner observes a peer and maintains a directional representation:
 
-1. My model of myself.
-2. Hermes's model of me.
-3. My model of Hermes.
-4. Hermes's model of itself.
+```mermaid
+flowchart LR
+    subgraph owners["Model owner"]
+        direction TB
+        meOwner["Myself"]
+        hermesOwner["Hermes"]
+    end
 
-Direction gives a statement its owner and subject. My preferences become part of Hermes's model of me. A separate relationship contains Hermes's account of its own role and working behavior. These representations give each participant a distinct point of view while `SOUL.md` defines Hermes's chosen voice and principles.
+    subgraph models["Directional representation"]
+        direction TB
+        meOfMe["My model of myself"]
+        meOfHermes["My model of Hermes"]
+        hermesOfMe["Hermes's model of me"]
+        hermesOfHermes["Hermes's model of itself"]
+    end
 
-Each relationship can have a peer card and a larger body of conclusions. A peer card contains a small set of stable identity facts. Conclusions contain observations and deductions that can evolve. My cards can remain sparse while thousands of conclusions accumulate. I prefer an empty card to one filled with temporary facts.
+    subgraph subjects["Modeled peer"]
+        direction TB
+        meSubject["Myself"]
+        hermesSubject["Hermes"]
+    end
+
+    meOwner --> meOfMe --> meSubject
+    meOwner --> meOfHermes --> hermesSubject
+    hermesOwner --> hermesOfMe --> meSubject
+    hermesOwner --> hermesOfHermes --> hermesSubject
+```
+
+Each relationship can have a peer card and a larger body of conclusions. A peer card contains a small set of stable identity facts. Conclusions contain observations and deductions that can evolve.
 
 ## What Hermes inserts into the model context
 
@@ -85,13 +107,30 @@ Hermes then starts a background prewarm for the selected Honcho session. The pre
 
 For each non-trivial user turn, the following sequence runs:
 
-1. Hermes passes the original user message to the memory manager before calling the main model.
-2. The Honcho adapter consumes prepared base context from the session summary, user representation, user peer card, AI self-representation, and AI identity card. A refresh uses the user message as a semantic search query and caches its result for a later turn.
-3. The adapter adds a dialectic supplement when one is ready. Honcho produces this supplement through `peer.chat()`, using its model of the user to answer which context matters for the current conversation.
-4. Hermes joins the base context and dialectic supplement and limits the result to the configured 1,200-token budget.
-5. The memory manager wraps the result in a `<memory-context>` block with a system note identifying it as recalled reference data.
-6. Hermes creates an API-only copy of the current user message and appends the block to that copy.
-7. The complete request sent to the main model contains the stable system prompt, the conversation history, and the current user message with its recalled-memory block.
+```mermaid
+sequenceDiagram
+    participant H as Hermes
+    participant M as Memory manager
+    participant A as Honcho adapter
+    participant O as Honcho
+    participant L as Main model
+
+    H->>M: Pass original user message
+    M->>A: Request recalled context
+    A->>A: Consume prepared base context
+    Note right of A: Session summary<br/>User representation<br/>User peer card<br/>AI self-representation<br/>AI identity card
+    A-->>O: Start semantic refresh using the user message
+    O-->>A: Return context to cache for a later turn
+    opt Prepared dialectic supplement is ready
+        O-->>A: Return peer.chat() result based on the user model
+    end
+    A->>A: Join context and enforce the 1,200-token budget
+    A-->>M: Return recalled context
+    M->>M: Wrap it in a memory-context block with a system note
+    M-->>H: Return recalled-memory block
+    H->>H: Append block to an API-only copy of the user message
+    H->>L: Send stable system prompt, history, and enriched user message
+```
 
 The shape of the API-only user message is approximately:
 
