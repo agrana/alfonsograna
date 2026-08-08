@@ -62,37 +62,41 @@ The parts have separate responsibilities:
 Honcho organizes memory in workspaces that isolate their records. This workspace
 has two peers:
 
-- `Myself` represents me.
-- `Hermes` represents Hermes.
+- `Human` represents me.
+- `AI` represents Hermes.
 
 Each model owner observes a peer and maintains a directional representation:
 
 ```mermaid
 flowchart LR
-    subgraph owners["Model owner"]
-        direction TB
-        meOwner["Myself"]
-        hermesOwner["Hermes"]
-    end
+    subgraph workspace["Honcho workspace"]
+        direction LR
 
-    subgraph models["Directional representation"]
-        direction TB
-        meOfMe["My model of myself"]
-        meOfHermes["My model of Hermes"]
-        hermesOfMe["Hermes's model of me"]
-        hermesOfHermes["Hermes's model of itself"]
-    end
+        subgraph owners["Model owner"]
+            direction TB
+            humanOwner["Human"]
+            aiOwner["AI"]
+        end
 
-    subgraph subjects["Modeled peer"]
-        direction TB
-        meSubject["Myself"]
-        hermesSubject["Hermes"]
-    end
+        subgraph models["Directional representation"]
+            direction TB
+            humanOfHuman["Human's model of itself"]
+            humanOfAi["Human's model of AI"]
+            aiOfHuman["AI's model of Human"]
+            aiOfAi["AI's model of itself"]
+        end
 
-    meOwner --> meOfMe --> meSubject
-    meOwner --> meOfHermes --> hermesSubject
-    hermesOwner --> hermesOfMe --> meSubject
-    hermesOwner --> hermesOfHermes --> hermesSubject
+        subgraph subjects["Modeled peer"]
+            direction TB
+            humanSubject["Human"]
+            aiSubject["AI"]
+        end
+
+        humanOwner --> humanOfHuman --> humanSubject
+        humanOwner --> humanOfAi --> aiSubject
+        aiOwner --> aiOfHuman --> humanSubject
+        aiOwner --> aiOfAi --> aiSubject
+    end
 ```
 
 Each relationship can have a peer card and a larger body of conclusions. A peer card contains a small set of stable identity facts. Conclusions contain observations and deductions that can evolve.
