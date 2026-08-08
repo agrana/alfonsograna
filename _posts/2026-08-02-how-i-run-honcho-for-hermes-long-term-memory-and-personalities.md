@@ -1,23 +1,22 @@
 ---
 layout: post
-title: "How I Run Honcho for Hermes: Long-Term Memory and Personalities"
+title: "How I Run Honcho for Long-Term Agent Memory"
 date: 2026-08-02 15:55:56 +0200
 categories: [ai, self-hosting, devops]
-tags: [honcho, hermes-agent, memory, netdata, podman]
-excerpt: "I self-host Honcho as Hermes's external memory provider. This is how it stores conversations, builds directional models of the user and agent, and inserts recalled context into each model request."
+tags: [honcho, ai-agents, memory, self-hosting, podman]
+excerpt: "I self-host Honcho as a shared memory backend for my agents. This is how it stores conversations, builds directional representations, and returns relevant context to an agent runtime."
 author: "Alfonso Grana"
 ---
 
-# How I Run Honcho for Hermes: Long-Term Memory and Personalities
+# How I Run Honcho for Long-Term Agent Memory
 
-In [my Hermes setup]({{ '/my-hermes-agent-setup/' | relative_url }}), I described Honcho as the system that gives Hermes long term memory.
-I have since worked through the system from message ingestion to recall, including dreaming, session boundaries and more.
+Long-term agent memory carries identity, preferences, decisions, and workstream context across sessions. I self-host [Honcho](https://honcho.dev/) as the shared memory backend for my agents. Honcho stores what happened, derives useful conclusions, models the participants, and returns relevant context later.
 
-[Honcho](https://honcho.dev/) stores what happened, derives useful conclusions, models the participants, and returns relevant context later.
+This article follows that process from message ingestion to recall, including directional representations, dreaming, and session boundaries. [Hermes]({{ '/my-hermes-agent-setup/' | relative_url }}) provides the concrete adapter implementation in my current setup.
 
 ## Honcho storage
 
-Honcho receives messages from Hermes inside a workspace. It turns those messages into several forms of memory:
+Agents write messages to Honcho inside a workspace. Honcho turns those messages into several forms of memory:
 
 - Messages (conversation history).
 - Embeddings support semantic retrieval.
@@ -31,35 +30,40 @@ Honcho receives messages from Hermes inside a workspace. It turns those messages
 
 ```mermaid
 flowchart TD
-    hermes["Hermes memory-provider adapter"]
+    agent["Agent runtime"]
+    adapter["Memory adapter"]
     api["Honcho API"]
     postgres[("PostgreSQL + pgvector")]
     redis[("Redis")]
-    workers["Honcho deriver and dreaming"]
-    openai["OpenAI language and embedding models"]
+    workers["Deriver and dreaming workers"]
+    models["Language and embedding models"]
 
-    hermes -->|"Messages, context requests, and tool calls"| api
+    agent -->|"Messages and context requests"| adapter
+    adapter -->|"Honcho API calls"| api
     api --> postgres
     api --> redis
-    workers --> api
-    workers --> openai
+    redis --> workers
+    workers --> postgres
+    workers --> models
 ```
 
-- The Honcho API receives messages and serves recall requests.
-- PostgreSQL with pgvector extension stores embeddings.
-- Redis provides a shared cache for the API and deriver.
-- The deriver turns new sessions into conclusions and representations.
-- Dreaming revisits accumulated conclusions and consolidates them.
+- The agent runtime delegates memory operations to an adapter.
+- The Honcho API receives messages, persists records, queues derivation work, and serves recall requests.
+- PostgreSQL with pgvector stores records and their embeddings.
+- Redis coordinates caching and queued derivation work.
+- The deriver turns new messages into conclusions and representations.
+- Dreaming workers revisit accumulated conclusions and consolidate them.
 
-## Directional peers
+## Peers and directional representations
 
-Honcho organizes memory in workspaces that isolate their records. This workspace
-has at least two peers:
+Honcho organizes memory in workspaces that isolate their records. Peers are created independently inside a workspace, so a workspace can contain zero, one, or many peers. For a human-agent memory system, a sensible default is to have two peers:
 
-- `Human` represents me.
-- `AI` represents Hermes.
+- `Human` represents the user.
+- `AI` represents the agent.
 
-Each model owner observes a peer and maintains a mental model:
+In my current deployment, the `AI` peer represents Hermes.
+
+Each observer-observed pairing maintains a directional representation, or mental model:
 
 ```mermaid
 flowchart LR
@@ -95,25 +99,25 @@ flowchart LR
 
 Each relationship can have a peer card and a larger body of conclusions. A peer card contains a small set of stable identity facts. Conclusions contain observations and deductions that can evolve.
 
-## Honcho context 
+## Connecting an agent to Honcho
 
-The installed Hermes integration has two context paths: a static provider notice and live recalled memory.
+An agent integration connects its runtime to Honcho through a memory adapter. The adapter writes completed exchanges, requests relevant context, and converts Honcho's response into the runtime's model-input format.
 
-At startup, Hermes reads `memory.provider: honcho`, loads the Honcho adapter, resolves the session and registers five Honcho tools. It adds a short notice to the cached system prompt stating that Honcho runs in hybrid mode, automatic recall is active, and memory tools are available. This notice describes the capability. It contains no recalled facts.
+My Hermes implementation provides two context paths: automatic recalled memory and explicit memory tools. At startup, Hermes reads `memory.provider: honcho`, loads the Honcho adapter, resolves the session, and registers five Honcho tools. It adds a short capability notice to the cached system prompt.
 
-Hermes then starts a background prewarm for the selected Honcho session. The prewarm requests base context and a dialectic synthesis so the first useful turn can begin with memory available.
+The adapter then starts a background prewarm for the selected Honcho session. The prewarm requests base context and a dialectic synthesis so the first useful turn can begin with memory available.
 
 For each non-trivial user turn, the following sequence runs:
 
 ```mermaid
 sequenceDiagram
-    participant H as Hermes
+    participant R as Agent runtime
     participant M as Memory manager
     participant A as Honcho adapter
     participant O as Honcho
     participant L as Main model
 
-    H->>M: Pass original user message
+    R->>M: Pass original user message
     M->>A: Request recalled context
     A->>A: Consume prepared base context
     Note right of A: Session summary<br/>User representation<br/>User peer card<br/>AI self-representation<br/>AI identity card
@@ -125,10 +129,12 @@ sequenceDiagram
     A->>A: Join context and enforce the 1,200-token budget
     A-->>M: Return recalled context
     M->>M: Wrap it in a memory-context block with a system note
-    M-->>H: Return recalled-memory block
-    H->>H: Append block to an API-only copy of the user message
-    H->>L: Send stable system prompt, history, and enriched user message
+    M-->>R: Return recalled-memory block
+    R->>R: Append block to an API-only copy of the user message
+    R->>L: Send stable system prompt, history, and enriched user message
 ```
+
+This sequence shows the prewarmed recall path in my current adapter. Other agent runtimes can implement the same write-and-recall contract with their own timing, token budget, and session strategy.
 
 The shape of the API-only user message is approximately:
 
@@ -157,15 +163,15 @@ The shape of the API-only user message is approximately:
 </memory-context>
 ```
 
-The injected block exists only in the model request. for each model call in the tool loop, The recalled context remains available while it uses tools.
+The injected block exists only in the model request. The recalled context remains available for each model call in the tool loop.
 
-Trivial prompts such as acknowledgements and slash commands skip automatic injection. An unavailable Honcho service produces an empty recall result while Hermes continues the conversation.
+My adapter skips automatic injection for acknowledgements and slash commands. An unavailable Honcho service produces an empty recall result while the agent continues the conversation.
 
-Hybrid mode also exposes `honcho_profile`, `honcho_search`, `honcho_context`, `honcho_reasoning`, and `honcho_conclude`. When Hermes calls one of these tools, its result enters the conversation as a normal tool response. This explicit tool path complements the automatic context block.
+The Hermes adapter's hybrid mode also exposes `honcho_profile`, `honcho_search`, `honcho_context`, `honcho_reasoning`, and `honcho_conclude`. Their results enter the conversation as normal tool responses and complement the automatic context block.
 
-## How memory is stored 
+## How memory is stored
 
-After the agent completes a response, the memory manager sends the original user message and final assistant response to Honcho on a background worker. Interrupted turns stay out of the durable memory stream because their tool chain or response may be incomplete.
+After an agent completes a response, its memory adapter sends the original user message and final assistant response to Honcho on a background worker. My adapter keeps interrupted turns out of the durable memory stream because their tool chain or response may be incomplete.
 
 The same worker starts recall for the next turn. Base context refreshes every turn in my configuration. Dialectic synthesis starts at session initialization and then becomes eligible every two turns. The next non-trivial turn consumes the prepared result. A single dialectic pass starts at low reasoning effort, and the query-length heuristic can raise it as far as high.
 
@@ -173,10 +179,16 @@ The deriver processes saved messages into conclusions and representations. It gr
 
 Dreaming handles slower consolidation. A cycle becomes eligible after 50 new explicit conclusions, with an eight-hour cooldown and a 60-minute idle period. It can reconcile existing conclusions, derive new ones, and update stable representations. I verified that these cycles run on my installation.
 
-## Sessions
+## Session boundaries
 
-I configured Hermes to use a per-repository session strategy. I also mapped `/home/<username>` to a `personal` session.
+Honcho sessions group messages and derived context around a conversation or workstream. I configured my current adapter to use a per-repository session strategy. I also mapped `/home/<username>` to a `personal` session.
 
-When I start Hermes inside a repository, that repository normally determines the Honcho session. Starting it in the Honcho repository resolves to the `honcho` session. The session key is selected at startup.
+When I start an agent inside a repository, that repository normally determines the Honcho session. Starting Hermes in the Honcho repository resolves to the `honcho` session. The session key is selected at startup.
 
 This makes the workstream the task boundary and the repository the default starting point.
+
+## Reusable pattern
+
+Honcho makes long-term memory a service shared by agent runtimes. An agent writes completed exchanges through its memory adapter, the Honcho API persists them and queues derivation work, background workers build conclusions and representations, and the adapter retrieves relevant context for a later model request.
+
+Workspaces provide isolation, peers define the participants, directional representations preserve perspective, and sessions establish retrieval boundaries. Hermes is one client of this memory service. The same integration boundary lets additional agents use Honcho without duplicating the storage, derivation, and recall system.
