@@ -10,28 +10,24 @@ author: "Alfonso Grana"
 
 # How I Run Honcho for Hermes: Long-Term Memory and Personalities
 
-In [my Hermes setup]({{ '/my-hermes-agent-setup/' | relative_url }}), I described Honcho as the part that gives Hermes persistent memory. At the time, I was still learning what happened behind that interface.
+In [my Hermes setup]({{ '/my-hermes-agent-setup/' | relative_url }}), I described Honcho as the system that gives Hermes long term memory.
+I have since worked through the system from message ingestion to recall, including dreaming, session boundaries and more.
 
-I have since worked through the system from message ingestion to recall, including the background processing <Is this dreaming?>, session boundaries, backups, and monitoring. This article describes the setup I built and how I use it.
+[Honcho](https://honcho.dev/) stores what happened, derives useful conclusions, models the participants, and returns relevant context later.
 
-[Honcho](https://honcho.dev/) is its external memory provider. It stores what happened, derives useful conclusions, models the participants, and returns relevant context to Hermes later.
-
-## What Honcho stores
+## Honcho storage
 
 Honcho receives messages from Hermes inside a workspace. It turns those messages into several forms of memory:
 
-- Messages preserve the conversation history.
+- Messages (conversation history).
 - Embeddings support semantic retrieval.
 - Conclusions capture facts and patterns derived from conversations.
 - Session summaries preserve the shape of longer work.
 - Peer representations model what one participant knows or believes about another.
 - Dialectic recall builds context for the current conversation from stored memory.
 
-Hermes acts on the recalled context. Honcho provides continuity across conversations.
+## Architecture
 
-## My self-hosted architecture
-
-I run the Honcho data plane on the same Fedora machine as Hermes.
 
 ```mermaid
 flowchart TD
@@ -49,23 +45,21 @@ flowchart TD
     workers --> openai
 ```
 
-The parts have separate responsibilities:
-
 - The Honcho API receives messages and serves recall requests.
-- PostgreSQL is the durable store. Its pgvector extension stores embeddings.
+- PostgreSQL with pgvector extension stores embeddings.
 - Redis provides a shared cache for the API and deriver.
-- The deriver turns new material into conclusions and representations.
+- The deriver turns new sessions into conclusions and representations.
 - Dreaming revisits accumulated conclusions and consolidates them.
 
-## Peers make memory directional
+## Directional peers
 
 Honcho organizes memory in workspaces that isolate their records. This workspace
-has two peers:
+has at least two peers:
 
 - `Human` represents me.
 - `AI` represents Hermes.
 
-Each model owner observes a peer and maintains a directional representation:
+Each model owner observes a peer and maintains a mental model:
 
 ```mermaid
 flowchart LR
@@ -101,7 +95,7 @@ flowchart LR
 
 Each relationship can have a peer card and a larger body of conclusions. A peer card contains a small set of stable identity facts. Conclusions contain observations and deductions that can evolve.
 
-## What Hermes inserts into the model context
+## Honcho context 
 
 The installed Hermes integration has two context paths: a static provider notice and live recalled memory.
 
@@ -163,15 +157,15 @@ The shape of the API-only user message is approximately:
 </memory-context>
 ```
 
-This placement preserves a byte-stable system prompt for upstream prompt caching. The injected block exists only in the model request. Hermes rebuilds the same API-only message for each model call in the tool loop, so the recalled context remains available while it uses tools. Hermes keeps the original user message unchanged in its session history, removes recalled-memory blocks from streamed output, and strips them before sending the completed conversation back to Honcho.
+The injected block exists only in the model request. for each model call in the tool loop, The recalled context remains available while it uses tools.
 
 Trivial prompts such as acknowledgements and slash commands skip automatic injection. An unavailable Honcho service produces an empty recall result while Hermes continues the conversation.
 
 Hybrid mode also exposes `honcho_profile`, `honcho_search`, `honcho_context`, `honcho_reasoning`, and `honcho_conclude`. When Hermes calls one of these tools, its result enters the conversation as a normal tool response. This explicit tool path complements the automatic context block.
 
-## How memory advances after a turn
+## How memory is stored 
 
-After Hermes completes a response, the memory manager sends the original user message and final assistant response to Honcho on a background worker. Interrupted turns stay out of the durable memory stream because their tool chain or response may be incomplete.
+After the agent completes a response, the memory manager sends the original user message and final assistant response to Honcho on a background worker. Interrupted turns stay out of the durable memory stream because their tool chain or response may be incomplete.
 
 The same worker starts recall for the next turn. Base context refreshes every turn in my configuration. Dialectic synthesis starts at session initialization and then becomes eligible every two turns. The next non-trivial turn consumes the prepared result. A single dialectic pass starts at low reasoning effort, and the query-length heuristic can raise it as far as high.
 
@@ -179,15 +173,10 @@ The deriver processes saved messages into conclusions and representations. It gr
 
 Dreaming handles slower consolidation. A cycle becomes eligible after 50 new explicit conclusions, with an eight-hour cooldown and a 60-minute idle period. It can reconcile existing conclusions, derive new ones, and update stable representations. I verified that these cycles run on my installation.
 
-## Sessions for work across repositories
-
-I often start in one repository and discover that the task requires a change in another. The session strategy preserves the connection between those changes and gives every project its own default memory stream.
+## Sessions
 
 I configured Hermes to use a per-repository session strategy. I also mapped `/home/<username>` to a `personal` session.
 
-When I start Hermes inside a repository, that repository normally determines the Honcho session. Starting it in the Honcho repository resolves to the `honcho` session. The session key is selected at startup. Moving to another directory inside the same Hermes process keeps that session.
-
+When I start Hermes inside a repository, that repository normally determines the Honcho session. Starting it in the Honcho repository resolves to the `honcho` session. The session key is selected at startup.
 
 This makes the workstream the task boundary and the repository the default starting point.
-
-Manual directory mappings have the highest precedence in the session resolver. A title comes next, followed by gateway and session identifiers, then the configured repository or directory strategy. I start repository work inside the repository because my home directory has an intentional mapping to `personal`.
