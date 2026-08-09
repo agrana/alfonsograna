@@ -10,9 +10,9 @@ author: "Alfonso Grana"
 
 # How I Run Honcho for Long-Term Agent Memory
 
-Long-term agent memory carries identity, preferences, decisions, and workstream context across sessions. I self-host [Honcho](https://honcho.dev/) as the shared memory backend for my agents. Honcho stores what happened, derives useful conclusions, models the participants, and returns relevant context later.
+ I self-host [Honcho](https://honcho.dev/) as the shared memory backend for my agents. Honcho stores what happened, derives useful conclusions, models the participants, and returns relevant context.
 
-This article follows that process from message ingestion to recall, including directional representations, dreaming, and session boundaries. [Hermes]({{ '/my-hermes-agent-setup/' | relative_url }}) provides the concrete adapter implementation in my current setup.
+This article follows the process from message ingestion to memory recall, including conclusions, directional representation of peers and dreaming.
 
 ## Honcho storage
 
@@ -21,7 +21,7 @@ Agents write messages to Honcho inside a workspace. Honcho turns those messages 
 - Messages (conversation history).
 - Embeddings support semantic retrieval.
 - Conclusions capture facts and patterns derived from conversations.
-- Session summaries preserve the shape of longer work.
+- Session summaries
 - Peer representations model what one participant knows or believes about another.
 - Dialectic recall builds context for the current conversation from stored memory.
 
@@ -165,7 +165,8 @@ The shape of the API-only user message is approximately:
 
 The injected block exists only in the model request. The recalled context remains available for each model call in the tool loop.
 
-My adapter skips automatic injection for acknowledgements and slash commands. An unavailable Honcho service produces an empty recall result while the agent continues the conversation.
+My adapter skips automatic injection for acknowledgements and slash commands. 
+An unavailable Honcho service produces an empty recall result while the agent continues the conversation.
 
 The Hermes adapter's hybrid mode also exposes `honcho_profile`, `honcho_search`, `honcho_context`, `honcho_reasoning`, and `honcho_conclude`. Their results enter the conversation as normal tool responses and complement the automatic context block.
 
