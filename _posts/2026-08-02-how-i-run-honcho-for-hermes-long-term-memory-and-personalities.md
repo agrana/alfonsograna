@@ -5,10 +5,15 @@ date: 2026-08-02 15:55:56 +0200
 categories: [ai, self-hosting, devops]
 tags: [honcho, ai-agents, memory, self-hosting, podman]
 excerpt: "I self-host Honcho as a shared memory backend for my agents. This is how it stores conversations, builds directional representations, and returns relevant context to an agent runtime."
+image: /assets/images/honcho-long-term-agent-memory.webp
 author: "Alfonso Grana"
 ---
 
 # How I Run Honcho for Long-Term Agent Memory
+
+<figure class="post-hero">
+  <img src="{{ '/assets/images/honcho-long-term-agent-memory.webp' | relative_url }}" alt="Human and AI conversation streams converging in a luminous long-term memory core and emerging as recalled context" width="1672" height="941" fetchpriority="high">
+</figure>
 
  I self-host [Honcho](https://honcho.dev/) as the shared memory backend for my agents. Honcho stores what happened, derives useful conclusions, models the participants, and returns relevant context.
 
@@ -47,12 +52,24 @@ flowchart TD
     workers --> models
 ```
 
+## Components
+
 - The agent runtime delegates memory operations to an adapter.
 - The Honcho API receives messages, persists records, queues derivation work, and serves recall requests.
 - PostgreSQL with pgvector stores records and their embeddings.
 - Redis coordinates caching and queued derivation work.
 - The deriver turns new messages into conclusions and representations.
 - Dreaming workers revisit accumulated conclusions and consolidate them.
+
+## How memory is stored
+
+After an agent completes a response, its memory adapter sends the original user message and final assistant response to Honcho on a background worker. My adapter keeps interrupted turns out of the durable memory stream because their tool chain or response may be incomplete.
+
+The same worker starts recall for the next turn. Base context refreshes every turn in my configuration. Dialectic synthesis starts at session initialization and then becomes eligible every two turns. The next non-trivial turn consumes the prepared result. A single dialectic pass starts at low reasoning effort, and the query-length heuristic can raise it as far as high.
+
+The deriver processes saved messages into conclusions and representations. It groups representation work around a 512-token target, so a small pending batch is a normal waiting state.
+
+Dreaming handles slower consolidation. A cycle becomes eligible after 50 new explicit conclusions, with an eight-hour cooldown and a 60-minute idle period. It can reconcile existing conclusions, derive new ones, and update stable representations. I verified that these cycles run on my installation.
 
 ## Peers and directional representations
 
@@ -170,25 +187,58 @@ An unavailable Honcho service produces an empty recall result while the agent co
 
 The Hermes adapter's hybrid mode also exposes `honcho_profile`, `honcho_search`, `honcho_context`, `honcho_reasoning`, and `honcho_conclude`. Their results enter the conversation as normal tool responses and complement the automatic context block.
 
-## How memory is stored
+### Using Honcho through MCP
 
-After an agent completes a response, its memory adapter sends the original user message and final assistant response to Honcho on a background worker. My adapter keeps interrupted turns out of the durable memory stream because their tool chain or response may be incomplete.
+Honcho also ships an [MCP server](https://honcho.dev/docs/v3/guides/integrations/mcp) that exposes workspaces, peers, sessions, messages, conclusions, search, and dialectic chat as typed tools. I run the MCP gateway beside my self-hosted API and point its backend at the API's loopback address. Claude Code, Codex, Cursor, Kiro, and other MCP clients can then use the same Honcho workspace.
 
-The same worker starts recall for the next turn. Base context refreshes every turn in my configuration. Dialectic synthesis starts at session initialization and then becomes eligible every two turns. The next non-trivial turn consumes the prepared result. A single dialectic pass starts at low reasoning effort, and the query-length heuristic can raise it as far as high.
+Each client connection supplies an authorization token plus headers for the user peer, agent peer, and workspace. This preserves one user identity while giving each agent its own representation:
 
-The deriver processes saved messages into conclusions and representations. It groups representation work around a 512-token target, so a small pending batch is a normal waiting state.
+- `Authorization`: bearer token for the MCP endpoint.
+- `X-Honcho-User-Name`: the human peer.
+- `X-Honcho-Assistant-Name`: the agent peer, such as `claude-code` or `codex`.
+- `X-Honcho-Workspace-ID`: the shared workspace, such as `hermes`.
 
-Dreaming handles slower consolidation. A cycle becomes eligible after 50 new explicit conclusions, with an eight-hour cooldown and a 60-minute idle period. It can reconcile existing conclusions, derive new ones, and update stable representations. I verified that these cycles run on my installation.
+Claude Code can connect directly to a Streamable HTTP endpoint:
 
-## Session boundaries
+```bash
+claude mcp add honcho \
+  --transport http \
+  --url "https://mcp.example.com" \
+  --header "Authorization: Bearer ${HONCHO_MCP_TOKEN}" \
+  --header "X-Honcho-User-Name: Alfons" \
+  --header "X-Honcho-Assistant-Name: claude-code" \
+  --header "X-Honcho-Workspace-ID: hermes"
+```
 
-Honcho sessions group messages and derived context around a conversation or workstream. I configured my current adapter to use a per-repository session strategy. I also mapped `/home/<username>` to a `personal` session.
+Codex can use `mcp-remote` as a local STDIO bridge so the connection includes the Honcho headers. The corresponding user-level `~/.codex/config.toml` entry is:
 
-When I start an agent inside a repository, that repository normally determines the Honcho session. Starting Hermes in the Honcho repository resolves to the `honcho` session. The session key is selected at startup.
+```toml
+[mcp_servers.honcho]
+command = "npx"
+args = [
+  "-y",
+  "mcp-remote",
+  "https://mcp.example.com",
+  "--header",
+  "Authorization:${AUTH_HEADER}",
+  "--header",
+  "X-Honcho-User-Name:${USER_NAME}",
+  "--header",
+  "X-Honcho-Assistant-Name:codex",
+  "--header",
+  "X-Honcho-Workspace-ID:workspace"
+]
 
-This makes the workstream the task boundary and the repository the default starting point.
+[mcp_servers.honcho.env]
+AUTH_HEADER = "Bearer <token>"
+USER_NAME = "Username"
+```
 
-## Reusable pattern
+The MCP tools provide explicit memory operations. Client instructions can orchestrate the standard flow of creating a session, adding completed exchanges, and querying Honcho for context or a synthesized answer. A runtime adapter such as my Hermes integration adds automatic per-turn recall and background writes around that tool surface.
+
+I keep bearer tokens in user-level configuration with restrictive file permissions. An endpoint reachable beyond a trusted private network should use HTTPS.
+
+## Conclusion
 
 Honcho makes long-term memory a service shared by agent runtimes. An agent writes completed exchanges through its memory adapter, the Honcho API persists them and queues derivation work, background workers build conclusions and representations, and the adapter retrieves relevant context for a later model request.
 
