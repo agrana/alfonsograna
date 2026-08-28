@@ -15,6 +15,7 @@ author: "Alfonso Grana"
   <img src="{{ '/assets/images/honcho-long-term-agent-memory.webp' | relative_url }}" alt="Human and AI conversation streams converging in a luminous long-term memory core and emerging as recalled context" width="1672" height="941" fetchpriority="high">
 </figure>
 
+
  I self-host [Honcho](https://honcho.dev/) as the shared memory backend for my agents. Honcho stores what happened, derives useful conclusions, models the participants, and returns relevant context.
 
 This article follows the process from message ingestion to memory recall, including conclusions, directional representation of peers and dreaming.
@@ -63,13 +64,36 @@ flowchart TD
 
 ## How memory is stored
 
-After an agent completes a response, its memory adapter sends the original user message and final assistant response to Honcho on a background worker. My adapter keeps interrupted turns out of the durable memory stream because their tool chain or response may be incomplete.
+The flow is:
 
-The same worker starts recall for the next turn. Base context refreshes every turn in my configuration. Dialectic synthesis starts at session initialization and then becomes eligible every two turns. The next non-trivial turn consumes the prepared result. A single dialectic pass starts at low reasoning effort, and the query-length heuristic can raise it as far as high.
+```mermaid
+flowchart LR
+    write["Write messages"] --> background["Deriver and dreamer<br/>build memory in the background"]
+    background --> serve["Adapter prepares base context<br/>every turn and dialectic<br/>synthesis every ~2 turns"]
+    serve --> trivial{"Non-trivial turn?"}
+    trivial -->|No| skip["Skip automatic injection"]
+    trivial -->|Yes| inject["Inject recalled context"]
+    inject --> depth["Scale dialectic depth<br/>by query length"]
+```
 
-The deriver processes saved messages into conclusions and representations. It groups representation work around a 512-token target, so a small pending batch is a normal waiting state.
+After an agent completes a response, it's memory adapter sends the original user prompt and final response to Honcho on a background worker. 
 
-Dreaming handles slower consolidation. A cycle becomes eligible after 50 new explicit conclusions, with an eight-hour cooldown and a 60-minute idle period. It can reconcile existing conclusions, derive new ones, and update stable representations. I verified that these cycles run on my installation.
+Those saved interactions enter Honcho's background pipeline. The deriver processes them into conclusions and representations. It groups representations in batches of around a 512-tokens, so short messages can sit in a small pending batch until enough content accumulates. Dreaming handles slower consolidation. A cycle becomes eligible after 50 new explicit conclusions, with an eight-hour cooldown and a 60-minute idle period. It can reconcile existing conclusions, derive new ones, and update stable representations. 
+
+The same worker that wrote the exchange also starts recall for later turns. 
+
+Honcho exposes two complementary recall paths, and the adapter schedules them differently:
+
+- **Base context** is the structured pack from Honcho's context path: 
+	- session summary, 
+	- peer cards, and 
+	- representations. 
+	- It refreshes every turn so the next request sees updates from the latest write.
+- **Dialectic synthesis** is a `peer.chat()` call: Honcho searches stored conclusions and related memory, then synthesizes a natural-language answer to a query about the peer. That answer becomes the dialectic supplement in the recalled block. Synthesis starts at session initialization and then becomes eligible every two turns.
+
+Preparation is ahead of consumption. The worker prepares the result in the background; the next non-trivial turn consumes the cached pack instead of blocking on a full recall first. In this adapter, non-trivial means a real conversational turn. Acknowledgements and slash commands skip automatic injection.
+
+A single dialectic pass starts at low reasoning effort. A query-length heuristic can raise that effort as far as high when the user message is long enough to justify deeper synthesis.
 
 ## Peers and directional representations
 
@@ -120,7 +144,7 @@ Each relationship can have a peer card and a larger body of conclusions. A peer 
 
 An agent integration connects its runtime to Honcho through a memory adapter. The adapter writes completed exchanges, requests relevant context, and converts Honcho's response into the runtime's model-input format.
 
-My Hermes implementation provides two context paths: automatic recalled memory and explicit memory tools. At startup, Hermes reads `memory.provider: honcho`, loads the Honcho adapter, resolves the session, and registers five Honcho tools. It adds a short capability notice to the cached system prompt.
+I use two context paths: automatic recalled memory and explicit memory tools. For instance Hemes at startup, reads `memory.provider: honcho`, loads the Honcho adapter, resolves the session, and registers Honcho tools. Honcho announces itself adding a capability notice to the cached system prompt.
 
 The adapter then starts a background prewarm for the selected Honcho session. The prewarm requests base context and a dialectic synthesis so the first useful turn can begin with memory available.
 
