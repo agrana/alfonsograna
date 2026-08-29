@@ -89,11 +89,15 @@ Honcho exposes two complementary recall paths, and the adapter schedules them di
 	- peer cards, and 
 	- representations. 
 	- It refreshes every turn so the next request sees updates from the latest write.
-- **Dialectic synthesis** is a `peer.chat()` call: Honcho searches stored conclusions and related memory, then synthesizes a natural-language answer to a query about the peer. That answer becomes the dialectic supplement in the recalled block. Synthesis starts at session initialization and then becomes eligible every two turns.
+- **Dialectic synthesis** is Honcho's natural-language answer to a question about the user:
+	- The adapter asks that question through `peer.chat()`.
+	- Honcho searches stored conclusions and related memory, then writes the answer.
+	- The adapter appends that answer to the recalled context as the dialectic supplement.
+	- The adapter requests a new synthesis at session start, then every two turns.
 
-Preparation is ahead of consumption. The worker prepares the result in the background; the next non-trivial turn consumes the cached pack instead of blocking on a full recall first. In this adapter, non-trivial means a real conversational turn. Acknowledgements and slash commands skip automatic injection.
+Preparation is ahead of consumption. The worker prepares the result in the background; the next non-trivial turn consumes the cached pack instead of blocking on a full recall first.
 
-A single dialectic pass starts at low reasoning effort. A query-length heuristic can raise that effort as far as high when the user message is long enough to justify deeper synthesis.
+A dialectic pass starts at low reasoning effort. This setting can increase if the user message is long enough to justify deeper synthesis.
 
 ## Peers and directional representations
 
@@ -101,8 +105,6 @@ Honcho organizes memory in workspaces that isolate their records. Peers are crea
 
 - `Human` represents the user.
 - `AI` represents the agent.
-
-In my current deployment, the `AI` peer represents Hermes.
 
 Each observer-observed pairing maintains a directional representation, or mental model:
 
@@ -175,7 +177,7 @@ sequenceDiagram
     R->>L: Send stable system prompt, history, and enriched user message
 ```
 
-This sequence shows the prewarmed recall path in my current adapter. Other agent runtimes can implement the same write-and-recall contract with their own timing, token budget, and session strategy.
+This sequence shows the prewarmed recall path in the adapter. Other agent runtimes can implement the same write-and-recall contract with their own timing, token budget, and session strategy.
 
 The shape of the API-only user message is approximately:
 
