@@ -327,6 +327,29 @@ pre {
 
 img {
   max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 32px 0;
+}
+
+figure a img {
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  transition: border-color 0.15s ease;
+}
+
+figure a:hover img,
+figure a:focus-visible img {
+  border-color: var(--accent);
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  text-align: center;
 }
 
 /* Expand Mermaid diagrams into a fullscreen viewer. */
