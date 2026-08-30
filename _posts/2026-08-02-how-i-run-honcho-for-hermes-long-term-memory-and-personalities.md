@@ -270,9 +270,9 @@ I keep bearer tokens in user-level configuration with restrictive file permissio
 
 <figure>
   <a href="{{ '/assets/images/honcho-openconcho-hermes-workspace.png' | relative_url }}" target="_blank" rel="noopener" title="Open full-resolution image">
-    <img src="{{ '/assets/images/honcho-openconcho-hermes-workspace.png' | relative_url }}" alt="OpenConcho workspace overview for the hermes workspace, with cards for peers, sessions, conclusions, webhooks, and queue and dreams, plus live queue status" width="2786" height="744" loading="lazy">
+    <img src="{{ '/assets/images/honcho-openconcho-hermes-workspace-preview.png' | relative_url }}" alt="OpenConcho workspace overview for the hermes workspace, with cards for peers, sessions, conclusions, webhooks, and queue and dreams, plus live queue status" width="1323" height="744" loading="lazy">
   </a>
-  <figcaption>OpenConcho dashboard — click the image to open it at full resolution.</figcaption>
+  <figcaption>OpenConcho dashboard — click to open the full workspace view.</figcaption>
 </figure>
 
 ## Conclusion
