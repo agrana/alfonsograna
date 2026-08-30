@@ -264,6 +264,14 @@ The MCP tools provide explicit memory operations. Client instructions can orches
 
 I keep bearer tokens in user-level configuration with restrictive file permissions. An endpoint reachable beyond a trusted private network should use HTTPS.
 
+## Browsing memory with OpenConcho
+
+[OpenConcho](https://github.com/offendingcommit/openconcho) gives this stack a web UI. It runs as one more rootless Podman container beside the Honcho API, and its built-in proxy forwards requests only to the allow-listed Honcho address. From a workspace overview I can browse peers with their cards and directional representations, read session histories with summaries, search conclusions semantically, watch the derivation queue and dream runs live, manage webhooks, apply reusable peer-card seed kits, chat with full memory context through the dialectic endpoint, and trigger a dream consolidation pass on demand.
+
+<figure>
+  <img src="{{ '/assets/images/honcho-openconcho-hermes-workspace.png' | relative_url }}" alt="OpenConcho workspace overview for the hermes workspace, with cards for peers, sessions, conclusions, webhooks, and queue and dreams, plus live queue status" width="1600" height="660" loading="lazy">
+</figure>
+
 ## Conclusion
 
 Honcho makes long-term memory a service shared by agent runtimes. An agent writes completed exchanges through its memory adapter, the Honcho API persists them and queues derivation work, background workers build conclusions and representations, and the adapter retrieves relevant context for a later model request.
