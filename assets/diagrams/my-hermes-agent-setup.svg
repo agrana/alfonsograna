@@ -57,8 +57,11 @@
 <g id="discord" filter="url(#shadow)">
   <rect x="115" y="243" width="270" height="84" rx="18" fill="#ffffff"/>
   <rect x="115" y="243" width="270" height="84" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
-  <text x="137" y="275" class="card-title">Discord</text>
-  <text x="137" y="303" class="card-body">via Gateway</text>
+  <g transform="translate(137 263) scale(.8)" aria-hidden="true">
+    <path d="M41.2351 0C40.6164 1.09866 40.0607 2.2352 39.5556 3.397C34.7569 2.67719 29.8697 2.67719 25.0584 3.397C24.5658 2.2352 23.9976 1.09866 23.3788 0C18.8705.770324 14.4759 2.12155 10.3085 4.02841C2.04967 16.2652-.185531 28.1863.925755 39.9432C5.76238 43.517 11.1799 46.2447 16.951 47.9874C18.2517 46.2447 19.4009 44.3883 20.3859 42.4562C18.5169 41.7616 16.7111 40.8903 14.981 39.88C15.4356 39.5517 15.8776 39.2107 16.307 38.8824C26.4475 43.6559 38.1917 43.6559 48.3449 38.8824C48.7742 39.236 49.2162 39.577 49.6708 39.88C47.9408 40.9029 46.1349 41.7616 44.2533 42.4688C45.2383 44.4009 46.3875 46.2573 47.6882 48C53.4593 46.2573 58.8768 43.5422 63.7134 39.9684C65.0268 26.3299 61.4656 14.5099 54.3054 4.04104C50.1507 2.13418 45.7561.782952 41.2478.0252565L41.2351 0ZM21.8003 32.7072C18.6811 32.7072 16.0923 29.8785 16.0923 26.3804C16.0923 22.8824 18.5801 20.041 21.7876 20.041C24.9952 20.041 27.5461 22.895 27.4956 26.3804C27.4451 29.8658 24.9826 32.7072 21.8003 32.7072ZM42.8389 32.7072C39.7071 32.7072 37.1436 29.8785 37.1436 26.3804C37.1436 22.8824 39.6314 20.041 42.8389 20.041C46.0465 20.041 48.5848 22.895 48.5343 26.3804C48.4838 29.8658 46.0213 32.7072 42.8389 32.7072Z" fill="#5865f2"/>
+  </g>
+  <text x="207" y="275" class="card-title">Discord</text>
+  <text x="207" y="303" class="card-body">via Gateway</text>
 </g>
 <g id="ssh-rdp" filter="url(#shadow)">
   <rect x="115" y="363" width="270" height="84" rx="18" fill="#ffffff"/>
@@ -84,22 +87,30 @@
 <g id="hermes" filter="url(#shadow)">
   <rect x="545" y="400" width="490" height="118" rx="24" fill="#ffffff"/>
   <rect x="545" y="400" width="490" height="118" rx="24" fill="#dff4ff" stroke="#0284c7" stroke-width="4.5"/>
-  <text x="585" y="438" class="center-title">Hermes</text>
-  <text x="587" y="468" class="card-body">chat · tools · browser · skills</text>
-  <text x="587" y="494" class="card-body">conversation and execution in one place</text>
+  <text x="615" y="475" text-anchor="middle" font-size="66" font-family="'Segoe UI Symbol','Noto Sans Symbols 2',sans-serif" fill="#0f172a" aria-hidden="true">⚕</text>
+  <text x="675" y="438" class="center-title">Hermes</text>
+  <text x="675" y="468" class="card-body">chat · tools · browser · skills</text>
+  <text x="675" y="494" class="card-body">conversation and execution in one place</text>
 </g>
 <g id="honcho" filter="url(#shadow)">
   <rect x="535" y="635" width="285" height="86" rx="18" fill="#ffffff"/>
   <rect x="535" y="635" width="285" height="86" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="2.5"/>
-  <text x="557" y="667" class="card-title">Honcho</text>
-  <text x="557" y="690" class="card-body">agent memory</text>
-  <text x="557" y="712" class="card-body">recall and user model</text>
+  <g transform="translate(557 653) scale(.347222)" aria-hidden="true">
+    <circle cx="72" cy="72" r="72" fill="#b7d7f1"/>
+    <g fill="#0f172a"><rect x="66.57" y="34.41" width="16.52" height="6.89"/><rect x="83.09" y="41.3" width="10.66" height="6.8"/><rect x="93.75" y="48.1" width="6.71" height="6.71"/><rect x="100.46" y="54.81" width="6.88" height="9.77"/><rect x="107.34" y="64.57" width="6.79" height="16.38"/><rect x="100.47" y="80.96" width="6.87" height="9.77"/><rect x="93.75" y="90.72" width="6.72" height="6.8"/><rect x="83.09" y="97.52" width="10.66" height="6.85"/><rect x="63.64" y="104.37" width="19.45" height="6.69"/><rect x="52.98" y="97.52" width="10.66" height="6.85"/><rect x="46.19" y="90.72" width="6.79" height="6.8"/><rect x="39.32" y="80.96" width="6.87" height="9.77"/><polygon points="32.67 68.38 32.67 54.81 27.8 54.81 27.8 75.21 32.67 75.21 32.67 80.96 39.32 80.96 39.32 68.38"/><rect x="39.32" y="61.58" width="6.79" height="6.79"/><rect x="46.19" y="41.3" width="20.38" height="6.8"/><rect x="66.59" y="48.1" width="6.71" height="6.71"/><polygon points="46.12 61.58 66.59 61.58 66.59 54.81 46.19 54.81 46.19 48.1 32.67 48.1 32.67 54.81 46.12 54.81"/><rect x="59.78" y="64.57" width="6.81" height="6.71"/><rect x="80.08" y="64.57" width="6.81" height="6.71"/><rect x="59.78" y="84.88" width="27.18" height="5.84"/></g>
+  </g>
+  <text x="620" y="667" class="card-title">Honcho</text>
+  <text x="620" y="690" class="card-body">agent memory</text>
+  <text x="620" y="712" class="card-body">recall and user model</text>
 </g>
 <g id="obsidian" filter="url(#shadow)">
   <rect x="840" y="635" width="210" height="86" rx="18" fill="#ffffff"/>
   <rect x="840" y="635" width="210" height="86" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
-  <text x="862" y="667" class="card-title">Obsidian</text>
-  <text x="862" y="695" class="card-body">notes vault</text>
+  <g transform="translate(858 653) scale(.09765625)" aria-hidden="true">
+    <path d="M382.3 475.6c-3.1 23.4-26 41.6-48.7 35.3-32.4-8.9-69.9-22.8-103.6-25.4l-51.7-4a34 34 0 0 1-22-10.2l-89-91.7a34 34 0 0 1-6.7-37.7s55-121 57.1-127.3c2-6.3 9.6-61.2 14-90.6 1.2-7.9 5-15 11-20.3L248 8.9a34.1 34.1 0 0 1 49.6 4.3L386 125.6a37 37 0 0 1 7.6 22.4c0 21.3 1.8 65 13.6 93.2 11.5 27.3 32.5 57 43.5 71.5a17.3 17.3 0 0 1 1.3 19.2 1494 1494 0 0 1-44.8 70.6c-15 22.3-21.9 49.9-25 73.1z" fill="#6c31e3"/><path d="M165.9 478.3c41.4-84 40.2-144.2 22.6-187-16.2-39.6-46.3-64.5-70-80-.6 2.3-1.3 4.4-2.2 6.5L60.6 342a34 34 0 0 0 6.6 37.7l89.1 91.7a34 34 0 0 0 9.6 7z" fill="#a885e8"/><path d="M278.4 307.8c-19.7-49.4-25.8-86.4-24.5-115.9a171 171 0 0 1 19.4-71c2.3-4.8 4.8-9.5 7.2-14.1 7.1-13.9 14-27 17.6-41.4a96 96 0 0 0-2-54A34.1 34.1 0 0 0 248 9l-105.4 94.8a34.1 34.1 0 0 0-10.9 20.3l-12.8 85-.5 2.3c23.8 15.5 54 40.4 70.1 80a147 147 0 0 1 7.8 24.8c28-6.8 55.7-11 82.1-8.3z" fill="#7f4cec"/><path d="M333.6 511c22.7 6.2 45.6-12 48.7-35.4a187 187 0 0 1 19.4-63.9c-25.6-55-56.5-83.6-90.4-96.3-36-13.4-75.2-9-115 .7 8.9 40.4 3.6 93.3-30.4 162.2 4 1.8 8.1 3 12.5 3.3 0 0 24.4 2 53.6 4.1 29 2 72.4 17.1 101.6 25.3z" fill="#5b21b6"/>
+  </g>
+  <text x="920" y="667" class="card-title">Obsidian</text>
+  <text x="920" y="695" class="card-body">notes vault</text>
 </g>
 
 <!-- External systems cards arranged by category -->
