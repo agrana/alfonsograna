@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1280" viewBox="0 0 1700 1280" role="img" aria-labelledby="title desc">
 <title id="title">My Hermes Agent Setup</title>
-<desc id="desc">Architecture diagram of My Hermes Agent Setup on a self-hosted Linux box: Discord and SSH/RDP access, Hermes gateway and core, memory layers, and separated external inference, coding, and shipping systems.</desc>
+<desc id="desc">Architecture diagram of My Hermes Agent Setup: Discord and SSH/RDP access; a self-hosted Linux box running the Hermes Gateway, Cursor and Codex CLIs, Hermes, Honcho, and Obsidian integration; plus external inference and cloud infrastructure.</desc>
 <defs>
   <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#2563eb"/></marker>
   <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#16a34a"/></marker>
@@ -26,7 +26,7 @@
 </defs>
 <rect width="1700" height="1280" fill="#fbfdff"/>
 <text x="80" y="66" class="title">My Hermes Agent Setup</text>
-<text x="80" y="98" class="subtitle">One self-hosted Linux box runs Hermes — chat, tools, memory, inference, coding, and shipping.</text>
+<text x="80" y="98" class="subtitle">One self-hosted Linux box runs Hermes, its Gateway, coding CLIs, and memory connections.</text>
 <text x="80" y="126" class="machine">Host: any always-on Linux machine · hardware and distribution are interchangeable</text>
 
 <!-- Main columns -->
@@ -48,12 +48,13 @@
 
 <!-- Connections behind cards -->
 <path d="M385,405 C435,420 490,451 540,470" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M385,285 C490,288 580,300 675,300" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M785,341 L785,411" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M385,285 C445,288 490,300 535,300" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M630,341 L630,411" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M892.5,341 L892.5,411" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
 <path d="M675,529 C683,565 675,595 670.5,622" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
 <path d="M895,529 C905,565 920,595 938,622" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
 <path d="M1030,451 C1080,380 1120,330 1190,302" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
-<path d="M1030,476 C1080,474 1135,486 1190,486" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+
 
 <!-- Access cards -->
 <g id="discord" filter="url(#shadow)">
@@ -80,11 +81,23 @@
 </g>
 
 <!-- Self-hosted Linux box -->
-<g id="gateway" filter="url(#shadow)" transform="translate(0 -17)">
-  <rect x="675" y="276" width="220" height="82" rx="18" fill="#ffffff"/>
-  <rect x="675" y="276" width="220" height="82" rx="18" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
-  <text x="697" y="308" class="card-title">Hermes Gateway</text>
-  <text x="697" y="336" class="card-body">inbound messages</text>
+<g id="gateway" filter="url(#shadow)">
+  <rect x="535" y="259" width="190" height="82" rx="18" fill="#ffffff"/>
+  <rect x="535" y="259" width="190" height="82" rx="18" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <text x="552" y="291" font-size="19" font-weight="700" font-family="Inter, system-ui, sans-serif" fill="#0f172a">Hermes Gateway</text>
+  <text x="552" y="319" class="card-body">inbound messages</text>
+</g>
+<g id="coding" filter="url(#shadow)">
+  <rect x="750" y="259" width="285" height="82" rx="18" fill="#ffffff"/>
+  <rect x="750" y="259" width="285" height="82" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <g transform="translate(770 283) scale(1.4167)" aria-label="Cursor logo">
+    <path d="M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23" fill="#111827"/>
+  </g>
+  <g transform="translate(812 283) scale(1.4167)" aria-label="OpenAI Codex logo">
+    <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z" fill="#10a37f"/>
+  </g>
+  <text x="860" y="291" font-size="18" font-weight="700" font-family="Inter, system-ui, sans-serif" fill="#0f172a">Cursor + Codex</text>
+  <text x="860" y="319" class="card-body">coding CLIs</text>
 </g>
 <g id="hermes" filter="url(#shadow)" transform="translate(-5 11)">
   <rect x="545" y="400" width="490" height="118" rx="24" fill="#ffffff"/>
@@ -117,7 +130,11 @@
 </g>
 
 <!-- External systems cards arranged by category -->
-<text x="1190" y="244" class="category">INFERENCE</text>
+<g id="inference-layer">
+  <rect x="1165" y="225" width="445" height="150" rx="18" fill="#fff7ed" stroke="#f59e0b" stroke-width="1.6" stroke-dasharray="7 7" opacity="0.92"/>
+  <rect x="1178" y="216" width="104" height="24" rx="8" fill="#fff7ed"/>
+  <text x="1187" y="234" class="category">INFERENCE</text>
+</g>
 <g id="openai" filter="url(#shadow)">
   <rect x="1190" y="260" width="185" height="84" rx="18" fill="#ffffff"/>
   <rect x="1190" y="260" width="185" height="84" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
@@ -130,58 +147,49 @@
   <text x="1432" y="292" class="card-title">OpenRouter</text>
   <text x="1432" y="320" class="card-body">model routing</text>
 </g>
-<g id="coding-shipping-layer">
-  <rect x="1165" y="374" width="445" height="350" rx="20" fill="#f8fafc" stroke="#2563eb" stroke-width="2" stroke-dasharray="8 7" opacity="0.82"/>
-  <text x="1187" y="398" class="category">CODING + SHIPPING</text>
-</g>
-<text x="1190" y="432" class="category">CODING TOOLS</text>
-<g id="coding" filter="url(#shadow)">
-  <rect x="1190" y="448" width="405" height="76" rx="18" fill="#ffffff"/>
-  <rect x="1190" y="448" width="405" height="76" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
-  <text x="1212" y="478" class="card-title">Cursor + Codex CLIs</text>
-  <text x="1212" y="504" class="card-body">coding agents</text>
-</g>
-<g id="shipping-stack-box">
-  <text x="1190" y="542" class="category">SHIPPING TOOLS</text>
+<g id="cloud-infrastructure-layer">
+  <rect x="1165" y="390" width="445" height="345" rx="20" fill="#f8fafc" stroke="#2563eb" stroke-width="2" stroke-dasharray="8 7" opacity="0.82"/>
+  <rect x="1178" y="381" width="196" height="24" rx="8" fill="#f8fafc"/>
+  <text x="1187" y="399" class="category">CLOUD INFRASTRUCTURE</text>
 </g>
 <g id="github" filter="url(#shadow)">
-  <rect x="1185" y="570" width="122" height="44" rx="14" fill="#ffffff"/>
-  <rect x="1185" y="570" width="122" height="44" rx="14" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
-  <text x="1206" y="598" class="small">GitHub</text>
+  <rect x="1185" y="471" width="122" height="44" rx="14" fill="#ffffff"/>
+  <rect x="1185" y="471" width="122" height="44" rx="14" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+  <text x="1206" y="499" class="small">GitHub</text>
 </g>
 <g id="vercel" filter="url(#shadow)">
-  <rect x="1328" y="570" width="122" height="44" rx="14" fill="#ffffff"/>
-  <rect x="1328" y="570" width="122" height="44" rx="14" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-  <text x="1351" y="598" class="small">Vercel</text>
+  <rect x="1328" y="471" width="122" height="44" rx="14" fill="#ffffff"/>
+  <rect x="1328" y="471" width="122" height="44" rx="14" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="1351" y="499" class="small">Vercel</text>
 </g>
 <g id="supabase" filter="url(#shadow)">
-  <rect x="1470" y="570" width="122" height="44" rx="14" fill="#ffffff"/>
-  <rect x="1470" y="570" width="122" height="44" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
-  <text x="1491" y="598" class="small">Supabase</text>
+  <rect x="1470" y="471" width="122" height="44" rx="14" fill="#ffffff"/>
+  <rect x="1470" y="471" width="122" height="44" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="1491" y="499" class="small">Supabase</text>
 </g>
-<path d="M1392,616 L1392,642" fill="none" stroke="#64748b" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
+<path d="M1389,515 L1389,589" fill="none" stroke="#64748b" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
 <g id="webapps" filter="url(#shadow)">
-  <rect x="1190" y="642" width="405" height="66" rx="18" fill="#ffffff"/>
-  <rect x="1190" y="642" width="405" height="66" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
-  <text x="1212" y="670" class="card-title">Web apps</text>
-  <text x="1212" y="694" class="card-body">deployed products</text>
+  <rect x="1190" y="589" width="405" height="66" rx="18" fill="#ffffff"/>
+  <rect x="1190" y="589" width="405" height="66" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
+  <text x="1212" y="617" class="card-title">Web apps</text>
+  <text x="1212" y="641" class="card-body">deployed products</text>
 </g>
 
 <!-- Compact flow labels -->
 <rect x="430" y="378" width="128" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
 <text x="438" y="395" class="small" fill="#2563eb">SSH / RDP</text>
-<rect x="688" y="374" width="118" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
-<text x="696" y="391" class="small" fill="#16a34a">to Hermes</text>
+<rect x="578" y="374" width="104" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
+<text x="586" y="391" class="small" fill="#16a34a">to Hermes</text>
 <rect x="618" y="536" width="98" height="24" rx="8" fill="#fbfdff" stroke="#7c3aed" stroke-width="1" opacity="0.96"/>
 <text x="626" y="553" class="small" fill="#7c3aed">Honcho</text>
 <rect x="918" y="536" width="98" height="24" rx="8" fill="#fbfdff" stroke="#ea580c" stroke-width="1" opacity="0.96"/>
 <text x="926" y="553" class="small" fill="#ea580c">Obsidian</text>
 <rect x="1048" y="360" width="82" height="24" rx="8" fill="#fbfdff" stroke="#dc2626" stroke-width="1" opacity="0.96"/>
 <text x="1056" y="377" class="small" fill="#dc2626">LLMs</text>
-<rect x="1048" y="474" width="130" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
-<text x="1056" y="491" class="small" fill="#2563eb">coding</text>
-<rect x="1328" y="616" width="130" height="24" rx="8" fill="#fbfdff" stroke="#64748b" stroke-width="1" opacity="0.96"/>
-<text x="1336" y="633" class="small" fill="#64748b">deploy</text>
+<rect x="840" y="374" width="105" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
+<text x="848" y="391" class="small" fill="#2563eb">coding CLI</text>
+<rect x="1324" y="538" width="130" height="24" rx="8" fill="#fbfdff" stroke="#64748b" stroke-width="1" opacity="0.96"/>
+<text x="1332" y="555" class="small" fill="#64748b">deploy</text>
 
 <!-- Legend and operating notes -->
 <g transform="translate(90,910)">
@@ -195,14 +203,14 @@
   <line x1="0" y1="140" x2="54" y2="140" stroke="#ea580c" stroke-width="4" stroke-linecap="round"/>
   <text x="70" y="145" class="caption">Obsidian notes</text>
   <line x1="0" y1="174" x2="54" y2="174" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
-  <text x="70" y="179" class="caption">Coding/shipping: GitHub → Vercel → Supabase → web apps</text>
+  <text x="70" y="179" class="caption">Cloud infrastructure: GitHub → Vercel → Supabase → web apps</text>
 </g>
 <g filter="url(#shadow)">
   <rect x="560" y="908" width="1065" height="175" rx="22" fill="#ffffff"/>
   <rect x="560" y="908" width="1065" height="175" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
   <text x="600" y="958" class="section">How it fits together</text>
   <text x="600" y="998" class="subtitle">Discord hits Gateway first; SSH and RDP talk to Hermes directly. Hermes is chat and agent together.</text>
-  <text x="600" y="1030" class="subtitle">Honcho holds agent memory. Obsidian holds your notes. OpenAI and OpenRouter sit in the inference layer.</text>
-  <text x="600" y="1062" class="subtitle">Coding tools and the shipping stack are grouped separately from inference.</text>
+  <text x="600" y="1030" class="subtitle">Honcho holds agent memory. Obsidian holds your notes. Cursor and Codex run beside the Gateway on the host.</text>
+  <text x="600" y="1062" class="subtitle">OpenAI and OpenRouter provide inference. GitHub, Vercel, Supabase, and web apps form the cloud infrastructure.</text>
 </g>
 </svg>
