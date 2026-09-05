@@ -135,17 +135,20 @@
 </g>
 <path d="M1030,451 C1080,380 1120,330 1183,302" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
 <g id="openai" filter="url(#shadow)">
-  <rect x="1190" y="260" width="185" height="84" rx="18" fill="#ffffff"/>
-  <rect x="1190" y="260" width="185" height="84" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
+  <rect x="1190" y="260" width="170" height="84" rx="18" fill="#ffffff"/>
+  <rect x="1190" y="260" width="170" height="84" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
   <text x="1212" y="292" class="card-title">OpenAI</text>
-  <text x="1212" y="320" class="card-body">model APIs</text>
+  <text x="1212" y="320" class="card-body">primary inference</text>
 </g>
 <g id="openrouter" filter="url(#shadow)">
-  <rect x="1410" y="260" width="185" height="84" rx="18" fill="#ffffff"/>
-  <rect x="1410" y="260" width="185" height="84" rx="18" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/>
-  <text x="1432" y="292" class="card-title">OpenRouter</text>
-  <text x="1432" y="320" class="card-body">model routing</text>
+  <rect x="1425" y="260" width="170" height="84" rx="18" fill="#ffffff"/>
+  <rect x="1425" y="260" width="170" height="84" rx="18" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="1447" y="292" class="card-title">OpenRouter</text>
+  <text x="1447" y="320" class="card-body">fallback routing</text>
 </g>
+<text x="1368" y="286" class="tiny" fill="#64748b">failover</text>
+<path d="M1367,299 L1418,299" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
+<path d="M1418,311 L1367,311" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arrow-gray)"/>
 <g id="cloud-infrastructure-layer">
   <rect x="1165" y="390" width="445" height="345" rx="20" fill="#f8fafc" stroke="#2563eb" stroke-width="2" stroke-dasharray="8 7" opacity="0.82"/>
   <rect x="1178" y="381" width="196" height="24" rx="8" fill="#f8fafc"/>
@@ -187,21 +190,6 @@
   <text x="1212" y="663" class="card-title">Web apps</text>
   <text x="1212" y="687" class="card-body">deployed products</text>
 </g>
-
-<!-- Compact flow labels -->
-<rect x="430" y="378" width="88" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
-<text x="438" y="395" class="small" fill="#2563eb">SSH</text>
-<rect x="578" y="374" width="104" height="24" rx="8" fill="#fbfdff" stroke="#16a34a" stroke-width="1" opacity="0.96"/>
-<text x="586" y="391" class="small" fill="#16a34a">to Hermes</text>
-<rect x="618" y="536" width="98" height="24" rx="8" fill="#fbfdff" stroke="#7c3aed" stroke-width="1" opacity="0.96"/>
-<text x="626" y="553" class="small" fill="#7c3aed">Honcho</text>
-<rect x="918" y="536" width="98" height="24" rx="8" fill="#fbfdff" stroke="#ea580c" stroke-width="1" opacity="0.96"/>
-<text x="926" y="553" class="small" fill="#ea580c">Obsidian</text>
-<rect x="1048" y="360" width="82" height="24" rx="8" fill="#fbfdff" stroke="#dc2626" stroke-width="1" opacity="0.96"/>
-<text x="1056" y="377" class="small" fill="#dc2626">LLMs</text>
-<rect x="840" y="374" width="105" height="24" rx="8" fill="#fbfdff" stroke="#2563eb" stroke-width="1" opacity="0.96"/>
-<text x="848" y="391" class="small" fill="#2563eb">agent task</text>
-
 
 <!-- Legend and operating notes -->
 <g transform="translate(98,515)">
