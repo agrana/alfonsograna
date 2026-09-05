@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1280" viewBox="0 0 1700 1280" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="835" viewBox="0 0 1700 835" role="img" aria-labelledby="title desc">
 <title id="title">My Hermes Agent Setup</title>
-<desc id="desc">Architecture diagram of My Hermes Agent Setup: Discord and SSH/RDP access; a self-hosted Linux box running the Hermes Gateway, Cursor and Codex CLIs, Hermes, Honcho, and Obsidian integration; plus external inference and cloud infrastructure.</desc>
+<desc id="desc">Architecture diagram of My Hermes Agent Setup: a stick figure labeled me uses Discord and SSH/RDP; a self-hosted Linux box runs the Hermes Gateway, Cursor and Codex CLIs, Hermes, Honcho, and Obsidian integration; external systems provide inference and cloud infrastructure.</desc>
 <defs>
   <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#2563eb"/></marker>
   <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#16a34a"/></marker>
@@ -58,26 +58,24 @@
 
 <!-- Access cards -->
 <g id="discord" filter="url(#shadow)">
-  <rect x="115" y="243" width="270" height="84" rx="18" fill="#ffffff"/>
-  <rect x="115" y="243" width="270" height="84" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
-  <g transform="translate(137 263) scale(.8)" aria-hidden="true">
+  <rect x="155" y="243" width="230" height="84" rx="18" fill="#ffffff"/>
+  <rect x="155" y="243" width="230" height="84" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+  <g transform="translate(171 264) scale(.65)" aria-hidden="true">
     <path d="M41.2351 0C40.6164 1.09866 40.0607 2.2352 39.5556 3.397C34.7569 2.67719 29.8697 2.67719 25.0584 3.397C24.5658 2.2352 23.9976 1.09866 23.3788 0C18.8705.770324 14.4759 2.12155 10.3085 4.02841C2.04967 16.2652-.185531 28.1863.925755 39.9432C5.76238 43.517 11.1799 46.2447 16.951 47.9874C18.2517 46.2447 19.4009 44.3883 20.3859 42.4562C18.5169 41.7616 16.7111 40.8903 14.981 39.88C15.4356 39.5517 15.8776 39.2107 16.307 38.8824C26.4475 43.6559 38.1917 43.6559 48.3449 38.8824C48.7742 39.236 49.2162 39.577 49.6708 39.88C47.9408 40.9029 46.1349 41.7616 44.2533 42.4688C45.2383 44.4009 46.3875 46.2573 47.6882 48C53.4593 46.2573 58.8768 43.5422 63.7134 39.9684C65.0268 26.3299 61.4656 14.5099 54.3054 4.04104C50.1507 2.13418 45.7561.782952 41.2478.0252565L41.2351 0ZM21.8003 32.7072C18.6811 32.7072 16.0923 29.8785 16.0923 26.3804C16.0923 22.8824 18.5801 20.041 21.7876 20.041C24.9952 20.041 27.5461 22.895 27.4956 26.3804C27.4451 29.8658 24.9826 32.7072 21.8003 32.7072ZM42.8389 32.7072C39.7071 32.7072 37.1436 29.8785 37.1436 26.3804C37.1436 22.8824 39.6314 20.041 42.8389 20.041C46.0465 20.041 48.5848 22.895 48.5343 26.3804C48.4838 29.8658 46.0213 32.7072 42.8389 32.7072Z" fill="#5865f2"/>
   </g>
-  <text x="207" y="275" class="card-title">Discord</text>
-  <text x="207" y="303" class="card-body">via Gateway</text>
+  <text x="225" y="275" class="card-title">Discord</text>
+  <text x="225" y="303" class="card-body">via Gateway</text>
 </g>
 <g id="ssh-rdp" filter="url(#shadow)">
-  <rect x="115" y="363" width="270" height="84" rx="18" fill="#ffffff"/>
-  <rect x="115" y="363" width="270" height="84" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
-  <text x="137" y="395" class="card-title">SSH / RDP</text>
-  <text x="137" y="423" class="card-body">direct to Hermes</text>
+  <rect x="155" y="363" width="230" height="84" rx="18" fill="#ffffff"/>
+  <rect x="155" y="363" width="230" height="84" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="177" y="395" class="card-title">SSH / RDP</text>
+  <text x="177" y="423" class="card-body">direct to Hermes</text>
 </g>
-<g id="operator" filter="url(#shadow)">
-  <rect x="115" y="540" width="270" height="104" rx="18" fill="#ffffff"/>
-  <rect x="115" y="540" width="270" height="104" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
-  <text x="137" y="572" class="card-title">Alfons</text>
-  <text x="137" y="600" class="card-body">prompts and decisions</text>
-  <text x="137" y="622" class="card-body">from any channel</text>
+<g id="operator" aria-label="me">
+  <circle cx="112" cy="307" r="14" fill="#ffffff" stroke="#475569" stroke-width="4"/>
+  <path d="M112,321 L112,367 M88,341 L136,341 M112,367 L94,397 M112,367 L130,397" fill="none" stroke="#475569" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="100" y="424" class="card-title">me</text>
 </g>
 
 <!-- Self-hosted Linux box -->
@@ -208,7 +206,7 @@
 
 
 <!-- Legend and operating notes -->
-<g transform="translate(90,910)">
+<g transform="translate(98,515)">
   <text x="0" y="0" class="section">Flow legend</text>
   <line x1="0" y1="38" x2="54" y2="38" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
   <text x="70" y="43" class="caption">SSH / RDP to Hermes</text>
@@ -219,14 +217,6 @@
   <line x1="0" y1="140" x2="54" y2="140" stroke="#ea580c" stroke-width="4" stroke-linecap="round"/>
   <text x="70" y="145" class="caption">Obsidian notes</text>
   <line x1="0" y1="174" x2="54" y2="174" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
-  <text x="70" y="179" class="caption">GitHub deploys to Vercel, Supabase, and Cloudflare → web apps</text>
-</g>
-<g filter="url(#shadow)">
-  <rect x="560" y="908" width="1065" height="175" rx="22" fill="#ffffff"/>
-  <rect x="560" y="908" width="1065" height="175" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="600" y="958" class="section">How it fits together</text>
-  <text x="600" y="998" class="subtitle">Discord hits Gateway first; SSH and RDP talk to Hermes directly. Hermes is chat and agent together.</text>
-  <text x="600" y="1030" class="subtitle">Honcho holds agent memory. Obsidian holds your notes. Cursor and Codex run beside the Gateway on the host.</text>
-  <text x="600" y="1062" class="subtitle">OpenAI and OpenRouter provide inference. GitHub deploys through Vercel, Supabase, and Cloudflare.</text>
+  <text x="70" y="179" class="caption">Cloud deployment flow</text>
 </g>
 </svg>
