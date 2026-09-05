@@ -185,10 +185,10 @@
   <text x="1514" y="568" font-size="12" font-weight="700" font-family="Inter, system-ui, sans-serif" fill="#334155">Cloudflare</text>
 </g>
 <g id="webapps" filter="url(#shadow)">
-  <rect x="1190" y="635" width="405" height="66" rx="18" fill="#ffffff"/>
-  <rect x="1190" y="635" width="405" height="66" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
-  <text x="1212" y="663" class="card-title">Web apps</text>
-  <text x="1212" y="687" class="card-body">deployed products</text>
+  <rect x="1190" y="610" width="405" height="66" rx="18" fill="#ffffff"/>
+  <rect x="1190" y="610" width="405" height="66" rx="18" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
+  <text x="1212" y="638" class="card-title">Web apps</text>
+  <text x="1212" y="662" class="card-body">deployed products</text>
 </g>
 
 <!-- Legend and operating notes -->
