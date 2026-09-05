@@ -103,35 +103,6 @@ image: /assets/images/my-hermes-agent-setup.webp
 
 <p>Both Hermes and <a href="https://docs.openclaw.ai/">OpenClaw</a> are self-hosted, multi-channel agents with support for different model providers. I chose Hermes because its core emphasis is the learning loop: persistent memory, reusable skills, and skill improvement across sessions. OpenClaw places more emphasis on its messaging gateway, channel plugins, and connected-device ecosystem; those are valuable, but less central to how I want to use the agent.</p>
 
-<h3>OpenRouter usage</h3>
-
-<p>On <a href="https://openrouter.ai/">OpenRouter</a>, Hermes currently ranks first among coding agents by token volume.</p>
-
-<div class="diagram-frame">
-  <img src="{{ '/assets/images/my-hermes-agent-setup-openrouter-usage.png' | relative_url }}" alt="My Hermes Agent Setup OpenRouter usage ranking">
-</div>
-
-<h4>Recent results</h4>
-
-<table class="usage-table">
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Coding agent</th>
-      <th>Tokens today</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td><a href="https://openrouter.ai/apps/hermes-agent">Hermes Agent</a></td><td>995B</td></tr>
-    <tr><td>2</td><td><a href="https://openrouter.ai/apps/kilo-code">Kilo Code</a></td><td>262B</td></tr>
-    <tr><td>3</td><td><a href="https://openrouter.ai/apps/claude-code">Claude Code</a></td><td>196B</td></tr>
-    <tr><td>4</td><td><a href="https://openrouter.ai/apps/openclaw">OpenClaw</a></td><td>165B</td></tr>
-    <tr><td>5</td><td><a href="https://openrouter.ai/apps/cline">Cline</a></td><td>102B</td></tr>
-  </tbody>
-</table>
-
-<p class="source-note">Source: <a href="https://openrouter.ai/apps/category/coding">OpenRouter Coding Agents Rankings</a>, captured July 12, 2026.</p>
-
 <h2>Architecture</h2>
 
 <p>Hermes is the agent runtime at the center of my AI setup. It runs continuously on a self-hosted box and connects conversations, tools, memory, scheduled jobs, and external services. It can be any always-on machine, such as a <a href="https://www.apple.com/mac-mini/">Mac mini</a>, a <a href="https://www.raspberrypi.com/">Raspberry Pi</a>, a <a href="https://kubernetes.io/docs/concepts/workloads/pods/">pod</a>, a cloud VM, etc.</p>
