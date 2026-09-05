@@ -46,8 +46,8 @@
 
 <!-- Connections behind cards -->
 <path d="M385,405 C435,420 490,440 545,459" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M385,285 C490,288 580,310 675,326" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M785,367 L785,381 C785,398 785,400 790,400" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M385,285 C490,288 580,307 675,317" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M785,358 L785,372 C785,392 785,400 790,400" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
 <path d="M680,518 C688,560 680,600 677.5,635" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
 <path d="M900,518 C910,560 925,600 945,635" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
 <path d="M1035,440 C1080,380 1120,330 1190,302" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
@@ -79,10 +79,10 @@
 
 <!-- Self-hosted Linux box -->
 <g id="gateway" filter="url(#shadow)">
-  <rect x="675" y="285" width="220" height="82" rx="18" fill="#ffffff"/>
-  <rect x="675" y="285" width="220" height="82" rx="18" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
-  <text x="697" y="317" class="card-title">Hermes Gateway</text>
-  <text x="697" y="345" class="card-body">inbound messages</text>
+  <rect x="675" y="276" width="220" height="82" rx="18" fill="#ffffff"/>
+  <rect x="675" y="276" width="220" height="82" rx="18" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <text x="697" y="308" class="card-title">Hermes Gateway</text>
+  <text x="697" y="336" class="card-body">inbound messages</text>
 </g>
 <g id="hermes" filter="url(#shadow)">
   <rect x="545" y="400" width="490" height="118" rx="24" fill="#ffffff"/>
