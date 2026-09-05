@@ -2,12 +2,12 @@
 <title id="title">My Hermes Agent Setup</title>
 <desc id="desc">Architecture diagram of My Hermes Agent Setup: a stick figure labeled me uses Discord and SSH; a self-hosted Linux box runs the Hermes Gateway, coding agents, Hermes, Honcho, and Obsidian integration; external systems provide inference and cloud infrastructure.</desc>
 <defs>
-  <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#2563eb"/></marker>
-  <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#16a34a"/></marker>
-  <marker id="arrow-purple" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#7c3aed"/></marker>
-  <marker id="arrow-orange" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#ea580c"/></marker>
+  <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#64748b"/></marker>
+  <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#64748b"/></marker>
+  <marker id="arrow-purple" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#64748b"/></marker>
+  <marker id="arrow-orange" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#64748b"/></marker>
   <marker id="arrow-gray" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#64748b"/></marker>
-  <marker id="arrow-red" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#dc2626"/></marker>
+  <marker id="arrow-red" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#64748b"/></marker>
   <filter id="shadow" x="-12%" y="-12%" width="124%" height="124%"><feDropShadow dx="0" dy="4" stdDeviation="9" flood-color="#0f172a" flood-opacity="0.14"/></filter>
   <style>
     .title { font: 800 36px Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #111827; }
@@ -47,12 +47,12 @@
 <text x="526" y="604" class="category">MEMORY</text>
 
 <!-- Connections behind cards -->
-<path d="M385,405 C435,420 490,451 540,470" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M385,285 C445,288 490,300 528,300" fill="none" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M630,341 L630,404" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
-<path d="M892.5,411 L892.5,348" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-<path d="M675,529 C683,565 675,595 670.5,622" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
-<path d="M895,529 C905,565 920,595 938,622" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
+<path d="M385,405 C435,420 490,451 540,470" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M385,285 C445,288 490,300 528,300" fill="none" stroke="#64748b" stroke-width="3.4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M630,341 L630,404" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+<path d="M892.5,411 L892.5,348" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M675,529 C683,565 675,595 670.5,622" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<path d="M895,529 C905,565 920,595 938,622" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-orange)"/>
 
 
 
@@ -74,7 +74,7 @@
 </g>
 <g id="operator" aria-label="me">
   <circle cx="112" cy="307" r="14" fill="#ffffff" stroke="#475569" stroke-width="4"/>
-  <path d="M112,321 L112,367 M88,341 L136,341 M112,367 L94,397 M112,367 L130,397" fill="none" stroke="#475569" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112,321 L112,367 M88,341 L136,341 M112,367 L94,397 M112,367 L130,397" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="100" y="424" class="card-title">me</text>
 </g>
 
@@ -133,7 +133,7 @@
   <rect x="1178" y="216" width="104" height="24" rx="8" fill="#fff7ed"/>
   <text x="1187" y="234" class="category">INFERENCE</text>
 </g>
-<path d="M1030,451 C1080,380 1120,330 1183,302" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
+<path d="M1030,451 C1080,380 1120,330 1183,302" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-red)"/>
 <g id="openai" filter="url(#shadow)">
   <rect x="1190" y="260" width="170" height="84" rx="18" fill="#ffffff"/>
   <rect x="1190" y="260" width="170" height="84" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
@@ -154,7 +154,7 @@
   <rect x="1178" y="381" width="196" height="24" rx="8" fill="#f8fafc"/>
   <text x="1187" y="399" class="category">CLOUD INFRASTRUCTURE</text>
 </g>
-<path d="M1035,330 C1100,355 1155,451 1298,451" fill="none" stroke="#2563eb" stroke-width="2.8" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M1035,330 C1100,355 1155,451 1298,451" fill="none" stroke="#64748b" stroke-width="2.8" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
 <!-- GitHub deploys to each cloud platform -->
 <path d="M1387.5,477 L1387.5,505 M1247.5,505 L1531.5,505" fill="none" stroke="#64748b" stroke-width="1.6" stroke-linecap="round"/>
 <path d="M1247.5,505 L1247.5,535 M1389.5,505 L1389.5,535 M1531.5,505 L1531.5,535" fill="none" stroke="#64748b" stroke-width="1.6" stroke-linecap="round"/>
@@ -191,18 +191,4 @@
   <text x="1212" y="662" class="card-body">deployed products</text>
 </g>
 
-<!-- Legend and operating notes -->
-<g transform="translate(98,515)">
-  <text x="0" y="0" class="section">Flow legend</text>
-  <line x1="0" y1="38" x2="54" y2="38" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
-  <text x="70" y="43" class="caption">SSH to Hermes</text>
-  <line x1="0" y1="72" x2="54" y2="72" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
-  <text x="70" y="77" class="caption">Discord → Gateway → Hermes</text>
-  <line x1="0" y1="106" x2="54" y2="106" stroke="#7c3aed" stroke-width="4" stroke-linecap="round"/>
-  <text x="70" y="111" class="caption">Honcho memory</text>
-  <line x1="0" y1="140" x2="54" y2="140" stroke="#ea580c" stroke-width="4" stroke-linecap="round"/>
-  <text x="70" y="145" class="caption">Obsidian notes</text>
-  <line x1="0" y1="174" x2="54" y2="174" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
-  <text x="70" y="179" class="caption">Cloud deployment flow</text>
-</g>
 </svg>
