@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1280" viewBox="0 0 1700 1280" role="img" aria-labelledby="title desc">
 <title id="title">My Hermes Agent Setup</title>
-<desc id="desc">Architecture diagram of My Hermes Agent Setup on a self-hosted Linux box: WhatsApp and SSH/RDP access, Hermes gateway and core, memory layers, and separated external inference, coding, and shipping systems.</desc>
+<desc id="desc">Architecture diagram of My Hermes Agent Setup on a self-hosted Linux box: Discord and SSH/RDP access, Hermes gateway and core, memory layers, and separated external inference, coding, and shipping systems.</desc>
 <defs>
   <marker id="arrow-blue" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#2563eb"/></marker>
   <marker id="arrow-green" markerWidth="12" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L12,4.5 L0,9 Z" fill="#16a34a"/></marker>
@@ -54,10 +54,10 @@
 <path d="M1035,465 C1080,474 1135,486 1190,486" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
 
 <!-- Access cards -->
-<g id="whatsapp" filter="url(#shadow)">
+<g id="discord" filter="url(#shadow)">
   <rect x="115" y="243" width="270" height="84" rx="18" fill="#ffffff"/>
   <rect x="115" y="243" width="270" height="84" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
-  <text x="137" y="275" class="card-title">WhatsApp</text>
+  <text x="137" y="275" class="card-title">Discord</text>
   <text x="137" y="303" class="card-body">via Gateway</text>
 </g>
 <g id="ssh-rdp" filter="url(#shadow)">
@@ -175,7 +175,7 @@
   <line x1="0" y1="38" x2="54" y2="38" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
   <text x="70" y="43" class="caption">SSH / RDP to Hermes</text>
   <line x1="0" y1="72" x2="54" y2="72" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
-  <text x="70" y="77" class="caption">WhatsApp → Gateway → Hermes</text>
+  <text x="70" y="77" class="caption">Discord → Gateway → Hermes</text>
   <line x1="0" y1="106" x2="54" y2="106" stroke="#7c3aed" stroke-width="4" stroke-linecap="round"/>
   <text x="70" y="111" class="caption">Honcho memory</text>
   <line x1="0" y1="140" x2="54" y2="140" stroke="#ea580c" stroke-width="4" stroke-linecap="round"/>
@@ -187,7 +187,7 @@
   <rect x="560" y="908" width="1065" height="175" rx="22" fill="#ffffff"/>
   <rect x="560" y="908" width="1065" height="175" rx="22" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
   <text x="600" y="958" class="section">How it fits together</text>
-  <text x="600" y="998" class="subtitle">WhatsApp hits Gateway first; SSH and RDP talk to Hermes directly. Hermes is chat and agent together.</text>
+  <text x="600" y="998" class="subtitle">Discord hits Gateway first; SSH and RDP talk to Hermes directly. Hermes is chat and agent together.</text>
   <text x="600" y="1030" class="subtitle">Honcho holds agent memory. Obsidian holds your notes. OpenAI and OpenRouter sit in the inference layer.</text>
   <text x="600" y="1062" class="subtitle">Coding tools and the shipping stack are grouped separately from inference.</text>
 </g>

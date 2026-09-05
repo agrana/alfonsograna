@@ -162,9 +162,7 @@ image: /assets/images/my-hermes-agent-setup.webp
 
 <h3>Hermes Gateway</h3>
 
-<p>I control Hermes mostly through a private WhatsApp conversation with myself, monitored by the <a href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging/">Hermes Gateway</a>. ; The gateway supports more than 20 messaging services, including Telegram, Discord, Slack, Signal, email, SMS, and Microsoft Teams.</p>
-
-<p>I already used this same whtasapp thread to save interesting things I found. With Hermes watching it, those messages can be indexed in my knowledge base and retrieved as context later.</p>
+<p>I use a private Discord server as the control plane for Hermes. For each task, I create a post in a forum channel and give it a descriptive title; Discord opens the post as a thread, and the <a href="https://hermes-agent.nousresearch.com/docs/user-guide/messaging/discord">Hermes Gateway</a> maps that thread to an isolated agent session. The Discord adapter supplies rich routing metadata, including the server, forum, thread title, thread ID, and participant identity. Hermes builds a readable session title from that context, and Honcho derives a stable session ID from it, such as <code>my-server-aiforum-Discord-as-AI-Agents-control-plane</code>. This makes concurrent tasks easy to find, resume, and keep separate while Honcho carries useful context between them. Discord handles text, images, and ordinary documents well, although generated archives still do not arrive as native attachments in my setup; that delivery path remains unresolved.</p>
 
 <h3>The agent loop</h3>
 
