@@ -89,7 +89,7 @@ image: /assets/images/my-hermes-agent-setup.webp
 
 <div class="diagram-page">
 
-<h1>My Hermes Agent Setup</h1>
+<h1>My Opinionated Hermes Agent Setup</h1>
 
 <figure class="post-hero">
   <img src="{{ '/assets/images/my-hermes-agent-setup.webp' | relative_url }}" alt="A luminous agent core coordinating messaging, tools, memory, scheduled work, and delegated workers from a home studio" width="1672" height="941" fetchpriority="high">
