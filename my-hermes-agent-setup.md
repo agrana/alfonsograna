@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My Hermes Agent Setup
+title: My Opinionated Hermes Agent Setup
 permalink: /my-hermes-agent-setup/
 image: /assets/images/my-hermes-agent-setup.webp
 ---
